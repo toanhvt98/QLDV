@@ -104,6 +104,12 @@
     <Compile Include="UCDaoTaoChung.Designer.cs">
       <DependentUpon>UCDaoTaoChung.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucDdlsVaQhng.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDdlsVaQhng.Designer.cs">
+      <DependentUpon>ucDdlsVaQhng.cs</DependentUpon>
+    </Compile>
     <Compile Include="uclDangVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
     <EmbeddedResource Include="UCDaoTaoChung.resx">
       <DependentUpon>UCDaoTaoChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDdlsVaQhng.resx">
+      <DependentUpon>ucDdlsVaQhng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uclDangVien.resx">
       <DependentUpon>uclDangVien.cs</DependentUpon>

@@ -49,7 +49,13 @@ namespace QLDV
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
+            dtvttdv.label1.Text = "III. ĐẶC ĐIỂM LỊCH SỬ VÀ QUAN HỆ VỚI NƯỚC NGOÀI";
+            int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
+            dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
+            dtvttdv.panel1.Controls.Add(ucDdlsVaQhng.Instance);
+            ucDdlsVaQhng.Instance.Dock = DockStyle.Fill;
+            ucDdlsVaQhng.Instance.BringToFront();
         }
     }
 }
