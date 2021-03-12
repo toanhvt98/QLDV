@@ -30,6 +30,8 @@ namespace QLDV
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -60,31 +62,35 @@ namespace QLDV
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
-            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
-            this.label23 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.richTextBox5);
             this.groupBox1.Controls.Add(this.richTextBox2);
             this.groupBox1.Controls.Add(this.dateTimePicker6);
             this.groupBox1.Controls.Add(this.dateTimePicker5);
@@ -117,6 +123,7 @@ namespace QLDV
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label17);
@@ -130,13 +137,29 @@ namespace QLDV
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đặc điểm lịch sử";
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(513, 350);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(466, 52);
+            this.richTextBox2.TabIndex = 19;
+            this.richTextBox2.Text = "";
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker6.Location = new System.Drawing.Point(244, 350);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(104, 22);
+            this.dateTimePicker6.TabIndex = 18;
+            // 
             // dateTimePicker5
             // 
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker5.Location = new System.Drawing.Point(222, 280);
+            this.dateTimePicker5.Location = new System.Drawing.Point(223, 290);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker5.TabIndex = 3;
+            this.dateTimePicker5.TabIndex = 16;
             // 
             // dateTimePicker4
             // 
@@ -144,7 +167,7 @@ namespace QLDV
             this.dateTimePicker4.Location = new System.Drawing.Point(284, 244);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker4.TabIndex = 3;
+            this.dateTimePicker4.TabIndex = 14;
             // 
             // dateTimePicker3
             // 
@@ -152,7 +175,7 @@ namespace QLDV
             this.dateTimePicker3.Location = new System.Drawing.Point(222, 195);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker3.TabIndex = 3;
+            this.dateTimePicker3.TabIndex = 12;
             // 
             // dateTimePicker2
             // 
@@ -160,7 +183,7 @@ namespace QLDV
             this.dateTimePicker2.Location = new System.Drawing.Point(642, 81);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(102, 22);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dateTimePicker2.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -168,91 +191,91 @@ namespace QLDV
             this.dateTimePicker1.Location = new System.Drawing.Point(642, 46);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(102, 22);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.TabIndex = 1;
             // 
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(513, 157);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(231, 22);
-            this.textBox10.TabIndex = 1;
+            this.textBox10.TabIndex = 10;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(513, 122);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(231, 22);
-            this.textBox6.TabIndex = 1;
+            this.textBox6.TabIndex = 7;
             // 
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(513, 241);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(231, 22);
-            this.textBox12.TabIndex = 1;
+            this.textBox12.TabIndex = 15;
             // 
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(513, 197);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(231, 22);
-            this.textBox11.TabIndex = 1;
+            this.textBox11.TabIndex = 13;
             // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(859, 157);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(231, 22);
-            this.textBox9.TabIndex = 1;
+            this.textBox9.TabIndex = 11;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(859, 122);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(231, 22);
-            this.textBox7.TabIndex = 1;
+            this.textBox7.TabIndex = 8;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(850, 81);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(231, 22);
-            this.textBox4.TabIndex = 1;
+            this.textBox4.TabIndex = 5;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(850, 46);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(231, 22);
-            this.textBox2.TabIndex = 1;
+            this.textBox2.TabIndex = 2;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(220, 157);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(202, 22);
-            this.textBox8.TabIndex = 1;
+            this.textBox8.TabIndex = 9;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(220, 122);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(202, 22);
-            this.textBox5.TabIndex = 1;
+            this.textBox5.TabIndex = 6;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(251, 81);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(202, 22);
-            this.textBox3.TabIndex = 1;
+            this.textBox3.TabIndex = 3;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(333, 46);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(216, 22);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 0;
             // 
             // label12
             // 
@@ -384,11 +407,31 @@ namespace QLDV
             this.label5.TabIndex = 0;
             this.label5.Text = "Ngày vào Đảng lần 2:";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(365, 353);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(122, 17);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Thêm thông tin:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(45, 353);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(191, 17);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Làm việc trong chế độ cũ";
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(21, 285);
+            this.label17.Location = new System.Drawing.Point(22, 295);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(194, 17);
             this.label17.TabIndex = 0;
@@ -443,78 +486,6 @@ namespace QLDV
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quan hệ với nước ngoài";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(45, 353);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(191, 17);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Làm việc trong chế độ cũ";
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker6.Location = new System.Drawing.Point(244, 350);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker6.TabIndex = 3;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(632, 45);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(466, 52);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(484, 48);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(122, 17);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Thêm thông tin:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(365, 353);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(122, 17);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Thêm thông tin:";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(513, 350);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(466, 52);
-            this.richTextBox2.TabIndex = 4;
-            this.richTextBox2.Text = "";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(21, 48);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(174, 17);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "a. Đã đi nước ngoài từ:";
-            // 
-            // dateTimePicker7
-            // 
-            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker7.Location = new System.Drawing.Point(201, 48);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker7.TabIndex = 3;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -525,31 +496,29 @@ namespace QLDV
             this.label22.TabIndex = 0;
             this.label22.Text = "đến";
             // 
-            // dateTimePicker8
+            // richTextBox4
             // 
-            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker8.Location = new System.Drawing.Point(354, 48);
-            this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker8.TabIndex = 3;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(21, 114);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(424, 17);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "b. Tham gia hoặc có quan hệ với các tổ chức nước ngoài:";
+            this.richTextBox4.Location = new System.Drawing.Point(496, 191);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(585, 52);
+            this.richTextBox4.TabIndex = 4;
+            this.richTextBox4.Text = "";
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(444, 111);
+            this.richTextBox3.Location = new System.Drawing.Point(496, 114);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.Size = new System.Drawing.Size(585, 52);
-            this.richTextBox3.TabIndex = 4;
+            this.richTextBox3.TabIndex = 3;
             this.richTextBox3.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(632, 45);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(466, 52);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
             // 
             // label24
             // 
@@ -561,19 +530,110 @@ namespace QLDV
             this.label24.TabIndex = 0;
             this.label24.Text = "c. Có người thân ở nước ngoài:";
             // 
-            // richTextBox4
+            // label23
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(444, 194);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(585, 52);
-            this.richTextBox4.TabIndex = 4;
-            this.richTextBox4.Text = "";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(21, 114);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(424, 17);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "b. Tham gia hoặc có quan hệ với các tổ chức nước ngoài:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(21, 48);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(174, 17);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "a. Đã đi nước ngoài từ:";
+            // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker8.Location = new System.Drawing.Point(354, 48);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.Size = new System.Drawing.Size(104, 22);
+            this.dateTimePicker8.TabIndex = 1;
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker7.Location = new System.Drawing.Point(201, 48);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(104, 22);
+            this.dateTimePicker7.TabIndex = 0;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(484, 48);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(122, 17);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Thêm thông tin:";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(901, 709);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 42);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Trở lại";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(793, 709);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 42);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Hủy";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1008, 709);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 42);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Tiếp tục";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(365, 295);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(122, 17);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Thêm thông tin:";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.Location = new System.Drawing.Point(513, 292);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(466, 52);
+            this.richTextBox5.TabIndex = 17;
+            this.richTextBox5.Text = "";
             // 
             // ucDdlsVaQhng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ucDdlsVaQhng";
@@ -639,5 +699,10 @@ namespace QLDV
         private System.Windows.Forms.DateTimePicker dateTimePicker8;
         private System.Windows.Forms.DateTimePicker dateTimePicker7;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.Label label25;
     }
 }

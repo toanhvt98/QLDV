@@ -33,5 +33,25 @@ namespace QLDV
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
+            DialogResult dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                dtvttdv.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
+            dtvttdv.label1.Text = "III. ĐÀO TẠO, BỒI DƯỠNG VỀ CHUYÊN MÔN, NGHIỆP VỤ, LÝ LUẬN CHÍNH TRỊ, NGOẠI NGỮ";
+            int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
+            dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
+            dtvttdv.panel1.Controls.Add(UCDaoTaoChung.Instance);
+            UCDaoTaoChung.Instance.Dock = DockStyle.Fill;
+            UCDaoTaoChung.Instance.BringToFront();
+        }
     }
 }

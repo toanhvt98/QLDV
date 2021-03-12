@@ -31,9 +31,6 @@ namespace QLDV
         {
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +52,12 @@ namespace QLDV
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
@@ -64,7 +66,7 @@ namespace QLDV
             this.button3.Location = new System.Drawing.Point(911, 706);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 42);
-            this.button3.TabIndex = 10;
+            this.button3.TabIndex = 4;
             this.button3.Text = "Trở lại";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -75,40 +77,10 @@ namespace QLDV
             this.button2.Location = new System.Drawing.Point(803, 706);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 42);
-            this.button2.TabIndex = 9;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Hủy";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(1044, 130);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(101, 42);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "Xóa";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(1044, 82);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(101, 42);
-            this.button8.TabIndex = 12;
-            this.button8.Text = "Sửa";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(1044, 34);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 42);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Thêm";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -116,7 +88,7 @@ namespace QLDV
             this.button1.Location = new System.Drawing.Point(1018, 706);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 42);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Tiếp tục";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -179,21 +151,21 @@ namespace QLDV
             this.textBox1.Location = new System.Drawing.Point(332, 391);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(492, 22);
-            this.textBox1.TabIndex = 16;
+            this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(332, 526);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(492, 22);
-            this.textBox2.TabIndex = 16;
+            this.textBox2.TabIndex = 1;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(332, 571);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(492, 22);
-            this.textBox3.TabIndex = 16;
+            this.textBox3.TabIndex = 2;
             // 
             // checkBox1
             // 
@@ -315,11 +287,54 @@ namespace QLDV
             this.checkBox12.Text = "65 năm";
             this.checkBox12.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Location = new System.Drawing.Point(1018, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(149, 218);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tác vụ";
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(23, 141);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(101, 42);
+            this.button9.TabIndex = 2;
+            this.button9.Text = "Xóa";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(23, 93);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(101, 42);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "Sửa";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(23, 45);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(101, 42);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Thêm";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // UCDaoTaoChung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.checkBox12);
             this.Controls.Add(this.checkBox11);
             this.Controls.Add(this.checkBox10);
@@ -341,14 +356,12 @@ namespace QLDV
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UCDaoTaoChung";
             this.Size = new System.Drawing.Size(1168, 781);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,9 +370,6 @@ namespace QLDV
         #endregion
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
@@ -381,5 +391,9 @@ namespace QLDV
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.CheckBox checkBox11;
         private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button5;
     }
 }

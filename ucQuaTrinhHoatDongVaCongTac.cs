@@ -47,7 +47,11 @@ namespace QLDV
         private void button2_Click(object sender, EventArgs e)
         {
             formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            dtvttdv.Close();
+            DialogResult dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                dtvttdv.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

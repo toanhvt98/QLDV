@@ -183,7 +183,7 @@ namespace QLDV
             this.comboBox2.Location = new System.Drawing.Point(116, 145);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(101, 24);
-            this.comboBox2.TabIndex = 6;
+            this.comboBox2.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
@@ -191,7 +191,7 @@ namespace QLDV
             this.dateTimePicker1.Location = new System.Drawing.Point(132, 61);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(103, 22);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // radioButton2
             // 
@@ -220,42 +220,42 @@ namespace QLDV
             this.textBox6.Location = new System.Drawing.Point(681, 103);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(433, 22);
-            this.textBox6.TabIndex = 2;
+            this.textBox6.TabIndex = 6;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(164, 103);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(380, 22);
-            this.textBox5.TabIndex = 2;
+            this.textBox5.TabIndex = 5;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(798, 63);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(316, 22);
-            this.textBox4.TabIndex = 2;
+            this.textBox4.TabIndex = 4;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(362, 63);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(281, 22);
-            this.textBox3.TabIndex = 2;
+            this.textBox3.TabIndex = 3;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(825, 25);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(289, 22);
-            this.textBox2.TabIndex = 2;
+            this.textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(197, 25);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(193, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 0;
             // 
             // button2
             // 
@@ -263,7 +263,7 @@ namespace QLDV
             this.button2.Location = new System.Drawing.Point(904, 713);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 42);
-            this.button2.TabIndex = 1;
+            this.button2.TabIndex = 43;
             this.button2.Text = "Hủy";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -274,7 +274,7 @@ namespace QLDV
             this.button1.Location = new System.Drawing.Point(1011, 713);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 42);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 42;
             this.button1.Text = "Tiếp tục";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -792,7 +792,7 @@ namespace QLDV
             this.checkBox2.Location = new System.Drawing.Point(864, 613);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(179, 21);
-            this.checkBox2.TabIndex = 7;
+            this.checkBox2.TabIndex = 38;
             this.checkBox2.Text = "Có công với Cách Mạng";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
@@ -802,7 +802,7 @@ namespace QLDV
             this.checkBox1.Location = new System.Drawing.Point(778, 613);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(71, 21);
-            this.checkBox1.TabIndex = 7;
+            this.checkBox1.TabIndex = 37;
             this.checkBox1.Text = "Liệt sỹ";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -822,7 +822,7 @@ namespace QLDV
             this.comboBox1.Location = new System.Drawing.Point(324, 145);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(116, 24);
-            this.comboBox1.TabIndex = 6;
+            this.comboBox1.TabIndex = 8;
             // 
             // dateTimePicker4
             // 
@@ -830,7 +830,7 @@ namespace QLDV
             this.dateTimePicker4.Location = new System.Drawing.Point(532, 348);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker4.TabIndex = 4;
+            this.dateTimePicker4.TabIndex = 18;
             // 
             // dateTimePicker7
             // 
@@ -838,7 +838,7 @@ namespace QLDV
             this.dateTimePicker7.Location = new System.Drawing.Point(711, 437);
             this.dateTimePicker7.Name = "dateTimePicker7";
             this.dateTimePicker7.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker7.TabIndex = 4;
+            this.dateTimePicker7.TabIndex = 24;
             // 
             // dateTimePicker9
             // 
@@ -846,7 +846,7 @@ namespace QLDV
             this.dateTimePicker9.Location = new System.Drawing.Point(982, 653);
             this.dateTimePicker9.Name = "dateTimePicker9";
             this.dateTimePicker9.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker9.TabIndex = 4;
+            this.dateTimePicker9.TabIndex = 41;
             // 
             // dateTimePicker8
             // 
@@ -854,7 +854,7 @@ namespace QLDV
             this.dateTimePicker8.Location = new System.Drawing.Point(982, 437);
             this.dateTimePicker8.Name = "dateTimePicker8";
             this.dateTimePicker8.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker8.TabIndex = 4;
+            this.dateTimePicker8.TabIndex = 25;
             // 
             // dateTimePicker6
             // 
@@ -862,7 +862,7 @@ namespace QLDV
             this.dateTimePicker6.Location = new System.Drawing.Point(980, 393);
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker6.TabIndex = 4;
+            this.dateTimePicker6.TabIndex = 22;
             // 
             // dateTimePicker5
             // 
@@ -870,7 +870,7 @@ namespace QLDV
             this.dateTimePicker5.Location = new System.Drawing.Point(252, 396);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker5.TabIndex = 4;
+            this.dateTimePicker5.TabIndex = 20;
             // 
             // dateTimePicker3
             // 
@@ -878,7 +878,7 @@ namespace QLDV
             this.dateTimePicker3.Location = new System.Drawing.Point(257, 348);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker3.TabIndex = 4;
+            this.dateTimePicker3.TabIndex = 17;
             // 
             // dateTimePicker2
             // 
@@ -886,168 +886,168 @@ namespace QLDV
             this.dateTimePicker2.Location = new System.Drawing.Point(180, 189);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(101, 22);
-            this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePicker2.TabIndex = 11;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(972, 147);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(142, 22);
-            this.textBox8.TabIndex = 2;
+            this.textBox8.TabIndex = 10;
             // 
             // textBox19
             // 
             this.textBox19.Location = new System.Drawing.Point(941, 482);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(173, 22);
-            this.textBox19.TabIndex = 2;
+            this.textBox19.TabIndex = 28;
             // 
             // textBox22
             // 
             this.textBox22.Location = new System.Drawing.Point(941, 527);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(173, 22);
-            this.textBox22.TabIndex = 2;
+            this.textBox22.TabIndex = 31;
             // 
             // textBox25
             // 
             this.textBox25.Location = new System.Drawing.Point(940, 572);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(174, 22);
-            this.textBox25.TabIndex = 2;
+            this.textBox25.TabIndex = 34;
             // 
             // textBox27
             // 
             this.textBox27.Location = new System.Drawing.Point(543, 612);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(100, 22);
-            this.textBox27.TabIndex = 2;
+            this.textBox27.TabIndex = 36;
             // 
             // textBox29
             // 
             this.textBox29.Location = new System.Drawing.Point(481, 653);
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(179, 22);
-            this.textBox29.TabIndex = 2;
+            this.textBox29.TabIndex = 40;
             // 
             // textBox28
             // 
             this.textBox28.Location = new System.Drawing.Point(137, 653);
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(171, 22);
-            this.textBox28.TabIndex = 2;
+            this.textBox28.TabIndex = 39;
             // 
             // textBox26
             // 
             this.textBox26.Location = new System.Drawing.Point(214, 612);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(152, 22);
-            this.textBox26.TabIndex = 2;
+            this.textBox26.TabIndex = 35;
             // 
             // textBox24
             // 
             this.textBox24.Location = new System.Drawing.Point(701, 572);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(118, 22);
-            this.textBox24.TabIndex = 2;
+            this.textBox24.TabIndex = 33;
             // 
             // textBox21
             // 
             this.textBox21.Location = new System.Drawing.Point(701, 527);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(118, 22);
-            this.textBox21.TabIndex = 2;
+            this.textBox21.TabIndex = 30;
             // 
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(571, 482);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(148, 22);
-            this.textBox18.TabIndex = 2;
+            this.textBox18.TabIndex = 27;
             // 
             // textBox23
             // 
             this.textBox23.Location = new System.Drawing.Point(195, 572);
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(361, 22);
-            this.textBox23.TabIndex = 2;
+            this.textBox23.TabIndex = 32;
             // 
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(314, 527);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(280, 22);
-            this.textBox20.TabIndex = 2;
+            this.textBox20.TabIndex = 29;
             // 
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(190, 482);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(176, 22);
-            this.textBox17.TabIndex = 2;
+            this.textBox17.TabIndex = 26;
             // 
             // textBox16
             // 
             this.textBox16.Location = new System.Drawing.Point(259, 437);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(285, 22);
-            this.textBox16.TabIndex = 2;
+            this.textBox16.TabIndex = 23;
             // 
             // textBox15
             // 
             this.textBox15.Location = new System.Drawing.Point(561, 393);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(255, 22);
-            this.textBox15.TabIndex = 2;
+            this.textBox15.TabIndex = 21;
             // 
             // textBox14
             // 
             this.textBox14.Location = new System.Drawing.Point(812, 350);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(302, 22);
-            this.textBox14.TabIndex = 2;
+            this.textBox14.TabIndex = 19;
             // 
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(812, 307);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(302, 22);
-            this.textBox13.TabIndex = 2;
+            this.textBox13.TabIndex = 16;
             // 
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(812, 268);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(302, 22);
-            this.textBox12.TabIndex = 2;
+            this.textBox12.TabIndex = 15;
             // 
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(812, 230);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(302, 22);
-            this.textBox11.TabIndex = 2;
+            this.textBox11.TabIndex = 14;
             // 
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(812, 191);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(302, 22);
-            this.textBox10.TabIndex = 2;
+            this.textBox10.TabIndex = 13;
             // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(415, 191);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(179, 22);
-            this.textBox9.TabIndex = 2;
+            this.textBox9.TabIndex = 12;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(640, 145);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(120, 22);
-            this.textBox7.TabIndex = 2;
+            this.textBox7.TabIndex = 9;
             // 
             // label21
             // 
