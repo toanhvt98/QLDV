@@ -32,6 +32,15 @@ namespace QLDV
         {
             connectDb con = new connectDb();
             con.rfAccDataGrid(dataGridView1,"taikhoan");
+            setViewDtg();
+            foreach(DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+        }
+        private void setViewDtg()
+        {
             dataGridView1.Columns[0].HeaderText = "STT";
             dataGridView1.Columns[1].HeaderText = "Tên tài khoản";
             dataGridView1.Columns[2].HeaderText = "Mật khẩu";
@@ -42,11 +51,6 @@ namespace QLDV
             dataGridView1.Columns[2].Width = 120;
             dataGridView1.Columns[3].Width = 90;
             dataGridView1.Columns[4].Width = 120;
-            foreach(DataGridViewColumn col in dataGridView1.Columns)
-            {
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
         }
         private void ucQLTK_Load(object sender, EventArgs e)
         {
@@ -90,5 +94,20 @@ namespace QLDV
             loaddata();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            connectDb con = new connectDb();
+            string col = "";
+            if (radioButton1.Checked)
+            {
+                col = "tentk";
+            }
+            else
+            {
+                col = "chibo";
+            }
+            setViewDtg();
+            con.dtgFilter(dataGridView1,col,textBox1.Text,"taikhoan");
+        }
     }
 }

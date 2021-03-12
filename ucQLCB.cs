@@ -32,12 +32,7 @@ namespace QLDV
         {
             connectDb con = new connectDb();
             con.rfAccDataGrid(dataGridView1, "chibo");
-            dataGridView1.Columns[0].HeaderText = "STT";
-            dataGridView1.Columns[1].HeaderText = "Mã chi bộ";
-            dataGridView1.Columns[2].HeaderText = "Tên chi bộ";
-            dataGridView1.Columns[0].Width = 70;
-            dataGridView1.Columns[1].Width = 120;
-            dataGridView1.Columns[2].Width = 250;
+            setViewDtg();
             foreach (DataGridViewColumn col in dataGridView1.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -48,6 +43,16 @@ namespace QLDV
         {
             radioButton1.Checked = true;
             loaddata();
+        }
+
+        private void setViewDtg()
+        {
+            dataGridView1.Columns[0].HeaderText = "STT";
+            dataGridView1.Columns[1].HeaderText = "Mã chi bộ";
+            dataGridView1.Columns[2].HeaderText = "Tên chi bộ";
+            dataGridView1.Columns[0].Width = 70;
+            dataGridView1.Columns[1].Width = 120;
+            dataGridView1.Columns[2].Width = 250;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,6 +89,22 @@ namespace QLDV
                 MessageBox.Show("Xóa thành công chi bộ: " + tenchibo, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             loaddata();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            connectDb con = new connectDb();
+            string col = "";
+            if (radioButton1.Checked)
+            {
+                col = "ten";
+            }
+            else
+            {
+                col = "ma";
+            }
+            setViewDtg();
+            con.dtgFilter(dataGridView1,col,textBox1.Text,"chibo");
         }
     }
 }

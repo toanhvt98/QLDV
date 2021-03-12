@@ -14,7 +14,7 @@ namespace QLDV
     class connectDb
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlStr.ToString());
-
+        
         public bool checkLogin(string tentk, string matkhau, string quyentruycap)
         {
             con.Open();
@@ -47,6 +47,21 @@ namespace QLDV
                 }
             }
         }
+
+        public void dtgFilter(DataGridView dtg,string col,string text, string tbl)
+        {
+            using (con)
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter("select * from " + tbl, con))
+                {
+                    DataTable dtb = new DataTable();
+                    sda.Fill(dtb);
+                    dtb.DefaultView.RowFilter = col + " like '%" + text + "%'";
+                    dtg.DataSource = dtb;
+                }
+            }
+        }
+
 
         // phuong thuc su dung quan ly tai khoan
         public bool checkAccAlready(string acc)
