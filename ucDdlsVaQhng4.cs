@@ -56,7 +56,13 @@ namespace QLDV
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
+            dtvttdv.label1.Text = "V. QUAN HỆ GIA ĐÌNH";
+            int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
+            dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
+            dtvttdv.panel1.Controls.Add(ucQuanHeGD5.Instance);
+            ucQuanHeGD5.Instance.Dock = DockStyle.Fill;
+            ucQuanHeGD5.Instance.BringToFront();
         }
     }
 }

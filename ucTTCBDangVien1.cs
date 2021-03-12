@@ -28,10 +28,6 @@ namespace QLDV
                 return _instance;
             }
         }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -53,5 +49,7 @@ namespace QLDV
             ucQuaTrinhHoatDongVaCongTac2.Instance.Dock = DockStyle.Fill;
             ucQuaTrinhHoatDongVaCongTac2.Instance.BringToFront();
         }
+
+
     }
 }

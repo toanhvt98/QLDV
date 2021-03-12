@@ -110,6 +110,12 @@
     <Compile Include="ucDdlsVaQhng4.Designer.cs">
       <DependentUpon>ucDdlsVaQhng4.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucHoanCanhGiaDinh6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucHoanCanhGiaDinh6.Designer.cs">
+      <DependentUpon>ucHoanCanhGiaDinh6.cs</DependentUpon>
+    </Compile>
     <Compile Include="uclDangVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +133,12 @@
     </Compile>
     <Compile Include="ucQLTK.Designer.cs">
       <DependentUpon>ucQLTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQuanHeGD5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQuanHeGD5.Designer.cs">
+      <DependentUpon>ucQuanHeGD5.cs</DependentUpon>
     </Compile>
     <Compile Include="ucQuaTrinhHoatDongVaCongTac2.cs">
       <SubType>UserControl</SubType>
@@ -176,6 +188,9 @@
     <EmbeddedResource Include="ucDdlsVaQhng4.resx">
       <DependentUpon>ucDdlsVaQhng4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucHoanCanhGiaDinh6.resx">
+      <DependentUpon>ucHoanCanhGiaDinh6.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uclDangVien.resx">
       <DependentUpon>uclDangVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLTK.resx">
       <DependentUpon>ucQLTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQuanHeGD5.resx">
+      <DependentUpon>ucQuanHeGD5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucQuaTrinhHoatDongVaCongTac2.resx">
       <DependentUpon>ucQuaTrinhHoatDongVaCongTac2.cs</DependentUpon>

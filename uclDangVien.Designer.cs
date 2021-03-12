@@ -49,10 +49,9 @@ namespace QLDV
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 148);
+            this.pictureBox1.Location = new System.Drawing.Point(100, 151);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 181);
+            this.pictureBox1.Size = new System.Drawing.Size(137, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -61,7 +60,7 @@ namespace QLDV
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 106);
+            this.label1.Location = new System.Drawing.Point(148, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 17);
             this.label1.TabIndex = 1;
@@ -70,7 +69,7 @@ namespace QLDV
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(242, 251);
+            this.button1.Location = new System.Drawing.Point(243, 213);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 36);
             this.button1.TabIndex = 1;
@@ -81,7 +80,7 @@ namespace QLDV
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(242, 293);
+            this.button2.Location = new System.Drawing.Point(243, 255);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 36);
             this.button2.TabIndex = 2;
@@ -112,27 +111,28 @@ namespace QLDV
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(607, 148);
+            this.textBox1.Location = new System.Drawing.Point(583, 148);
             this.textBox1.MaxLength = 50;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 22);
+            this.textBox1.Size = new System.Drawing.Size(138, 22);
             this.textBox1.TabIndex = 3;
+
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(607, 189);
+            this.textBox2.Location = new System.Drawing.Point(583, 189);
             this.textBox2.MaxLength = 50;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 22);
+            this.textBox2.Size = new System.Drawing.Size(138, 22);
             this.textBox2.TabIndex = 4;
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(607, 306);
+            this.button3.Location = new System.Drawing.Point(583, 246);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 45);
+            this.button3.Size = new System.Drawing.Size(138, 45);
             this.button3.TabIndex = 5;
             this.button3.Text = "Tiếp tục";
             this.button3.UseVisualStyleBackColor = true;

@@ -53,8 +53,7 @@ namespace QLDV
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            if(textBox1.Text != "")
+            if (textBox1.Text != "")
             {
                 if (textBox2.Text != "")
                 {
@@ -66,27 +65,29 @@ namespace QLDV
                             Image img = pictureBox1.Image;
                             byte[] arrImg;
                             ImageConverter converter = new ImageConverter();
-                            arrImg = (byte[])converter.ConvertTo(img,typeof(byte[]));
-                            con.addSllVaSt(arrImg,textBox1.Text,textBox2.Text);
+                            arrImg = (byte[])converter.ConvertTo(img, typeof(byte[]));
+                            con.addSllVaSt(arrImg, textBox1.Text, textBox2.Text);
                             formThemVaThongTinDangVien ftvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
                             if (ftvttdv == null)
                             {
                                 ftvttdv = new formThemVaThongTinDangVien();
                                 ftvttdv.AutoScroll = true;
                             }
-                            ftvttdv.ShowDialog() ;
+                            ftvttdv.ShowDialog();
                         }
                         else
-                            MessageBox.Show("Mã số thẻ Đảng viên: "+textBox2.Text+" đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Mã số thẻ Đảng viên: " + textBox2.Text + " đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                        MessageBox.Show("Mã số lý lịch Đảng viên: "+textBox1.Text+" đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Mã số lý lịch Đảng viên: " + textBox1.Text + " đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                    MessageBox.Show("Mã số thẻ Đảng viên không được bỏ trống!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Mã số thẻ Đảng viên không được bỏ trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
                 MessageBox.Show("Mã số lý lịch không được bỏ trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+
     }
 }

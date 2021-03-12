@@ -97,7 +97,7 @@ namespace QLDV
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(807, 720);
+            this.button2.Location = new System.Drawing.Point(798, 708);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 42);
             this.button2.TabIndex = 2;
@@ -108,7 +108,7 @@ namespace QLDV
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1022, 720);
+            this.button1.Location = new System.Drawing.Point(1013, 708);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 42);
             this.button1.TabIndex = 1;
@@ -119,7 +119,7 @@ namespace QLDV
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(915, 720);
+            this.button3.Location = new System.Drawing.Point(906, 708);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 42);
             this.button3.TabIndex = 2;
