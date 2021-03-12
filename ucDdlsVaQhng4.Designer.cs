@@ -1,7 +1,7 @@
 ﻿
 namespace QLDV
 {
-    partial class ucDdlsVaQhng
+    partial class ucDdlsVaQhng4
     {
         /// <summary> 
         /// Required designer variable.
@@ -607,6 +607,7 @@ namespace QLDV
             this.button1.TabIndex = 0;
             this.button1.Text = "Tiếp tục";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label25
             // 

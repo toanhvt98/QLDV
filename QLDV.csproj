@@ -98,17 +98,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCDaoTaoChung.cs">
+    <Compile Include="UCDaoTaoChung3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCDaoTaoChung.Designer.cs">
-      <DependentUpon>UCDaoTaoChung.cs</DependentUpon>
+    <Compile Include="UCDaoTaoChung3.Designer.cs">
+      <DependentUpon>UCDaoTaoChung3.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucDdlsVaQhng.cs">
+    <Compile Include="ucDdlsVaQhng4.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucDdlsVaQhng.Designer.cs">
-      <DependentUpon>ucDdlsVaQhng.cs</DependentUpon>
+    <Compile Include="ucDdlsVaQhng4.Designer.cs">
+      <DependentUpon>ucDdlsVaQhng4.cs</DependentUpon>
     </Compile>
     <Compile Include="uclDangVien.cs">
       <SubType>UserControl</SubType>
@@ -128,17 +128,17 @@
     <Compile Include="ucQLTK.Designer.cs">
       <DependentUpon>ucQLTK.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucQuaTrinhHoatDongVaCongTac.cs">
+    <Compile Include="ucQuaTrinhHoatDongVaCongTac2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucQuaTrinhHoatDongVaCongTac.Designer.cs">
-      <DependentUpon>ucQuaTrinhHoatDongVaCongTac.cs</DependentUpon>
+    <Compile Include="ucQuaTrinhHoatDongVaCongTac2.Designer.cs">
+      <DependentUpon>ucQuaTrinhHoatDongVaCongTac2.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucTTCBDangVien.cs">
+    <Compile Include="ucTTCBDangVien1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTTCBDangVien.Designer.cs">
-      <DependentUpon>ucTTCBDangVien.cs</DependentUpon>
+    <Compile Include="ucTTCBDangVien1.Designer.cs">
+      <DependentUpon>ucTTCBDangVien1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="formAddAcc.resx">
       <DependentUpon>formAddAcc.cs</DependentUpon>
@@ -170,11 +170,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UCDaoTaoChung.resx">
-      <DependentUpon>UCDaoTaoChung.cs</DependentUpon>
+    <EmbeddedResource Include="UCDaoTaoChung3.resx">
+      <DependentUpon>UCDaoTaoChung3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucDdlsVaQhng.resx">
-      <DependentUpon>ucDdlsVaQhng.cs</DependentUpon>
+    <EmbeddedResource Include="ucDdlsVaQhng4.resx">
+      <DependentUpon>ucDdlsVaQhng4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uclDangVien.resx">
       <DependentUpon>uclDangVien.cs</DependentUpon>
@@ -185,11 +185,11 @@
     <EmbeddedResource Include="ucQLTK.resx">
       <DependentUpon>ucQLTK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucQuaTrinhHoatDongVaCongTac.resx">
-      <DependentUpon>ucQuaTrinhHoatDongVaCongTac.cs</DependentUpon>
+    <EmbeddedResource Include="ucQuaTrinhHoatDongVaCongTac2.resx">
+      <DependentUpon>ucQuaTrinhHoatDongVaCongTac2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucTTCBDangVien.resx">
-      <DependentUpon>ucTTCBDangVien.cs</DependentUpon>
+    <EmbeddedResource Include="ucTTCBDangVien1.resx">
+      <DependentUpon>ucTTCBDangVien1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="chiboDataSet.xsc">
       <DependentUpon>chiboDataSet.xsd</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿
 namespace QLDV
 {
-    partial class UCDaoTaoChung
+    partial class UCDaoTaoChung3
     {
         /// <summary> 
         /// Required designer variable.

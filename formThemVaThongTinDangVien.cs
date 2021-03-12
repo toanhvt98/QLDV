@@ -25,7 +25,7 @@ namespace QLDV
             ucTTCBDangVien.Instance.Dock = DockStyle.Fill;
             ucTTCBDangVien.Instance.BringToFront();
 
-            panel1.Controls.Add(ucQuaTrinhHoatDongVaCongTac.Instance);
+            panel1.Controls.Add(ucQuaTrinhHoatDongVaCongTac2.Instance);
             label1.Text = "I. THÔNG TIN CƠ BẢN";
         }
 

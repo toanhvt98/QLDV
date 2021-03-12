@@ -10,35 +10,27 @@ using System.Windows.Forms;
 
 namespace QLDV
 {
-    public partial class UCDaoTaoChung : UserControl
+    public partial class ucDdlsVaQhng4 : UserControl
     {
-        public UCDaoTaoChung()
+        public ucDdlsVaQhng4()
         {
             InitializeComponent();
         }
-
-        private static UCDaoTaoChung _instance;
-        public static UCDaoTaoChung Instance
+        private static ucDdlsVaQhng4 _instance;
+        public static ucDdlsVaQhng4 Instance
         {
             get
             {
                 if(_instance == null)
                 {
-                    _instance = new UCDaoTaoChung();
+                    _instance = new ucDdlsVaQhng4();
                 }
                 return _instance;
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void ucDdlsVaQhng_Load(object sender, EventArgs e)
         {
-            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            dtvttdv.label1.Text = "II. TÓM TẮT QUÁ TRÌNH HOẠT ĐỘNG VÀ CÔNG TÁC";
-            int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
-            dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
-            dtvttdv.panel1.Controls.Add(ucQuaTrinhHoatDongVaCongTac.Instance);
-            ucQuaTrinhHoatDongVaCongTac.Instance.Dock = DockStyle.Fill;
-            ucQuaTrinhHoatDongVaCongTac.Instance.BringToFront();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,15 +43,20 @@ namespace QLDV
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            dtvttdv.label1.Text = "IV. ĐẶC ĐIỂM LỊCH SỬ VÀ QUAN HỆ VỚI NƯỚC NGOÀI";
+            dtvttdv.label1.Text = "III. ĐÀO TẠO, BỒI DƯỠNG VỀ CHUYÊN MÔN, NGHIỆP VỤ, LÝ LUẬN CHÍNH TRỊ, NGOẠI NGỮ";
             int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
             dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
-            dtvttdv.panel1.Controls.Add(ucDdlsVaQhng.Instance);
-            ucDdlsVaQhng.Instance.Dock = DockStyle.Fill;
-            ucDdlsVaQhng.Instance.BringToFront();
+            dtvttdv.panel1.Controls.Add(UCDaoTaoChung3.Instance);
+            UCDaoTaoChung3.Instance.Dock = DockStyle.Fill;
+            UCDaoTaoChung3.Instance.BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

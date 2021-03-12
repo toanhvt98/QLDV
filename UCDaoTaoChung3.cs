@@ -10,27 +10,35 @@ using System.Windows.Forms;
 
 namespace QLDV
 {
-    public partial class ucDdlsVaQhng : UserControl
+    public partial class UCDaoTaoChung3 : UserControl
     {
-        public ucDdlsVaQhng()
+        public UCDaoTaoChung3()
         {
             InitializeComponent();
         }
-        private static ucDdlsVaQhng _instance;
-        public static ucDdlsVaQhng Instance
+
+        private static UCDaoTaoChung3 _instance;
+        public static UCDaoTaoChung3 Instance
         {
             get
             {
                 if(_instance == null)
                 {
-                    _instance = new ucDdlsVaQhng();
+                    _instance = new UCDaoTaoChung3();
                 }
                 return _instance;
             }
         }
-        private void ucDdlsVaQhng_Load(object sender, EventArgs e)
-        {
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
+            dtvttdv.label1.Text = "II. TÓM TẮT QUÁ TRÌNH HOẠT ĐỘNG VÀ CÔNG TÁC";
+            int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
+            dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
+            dtvttdv.panel1.Controls.Add(ucQuaTrinhHoatDongVaCongTac2.Instance);
+            ucQuaTrinhHoatDongVaCongTac2.Instance.Dock = DockStyle.Fill;
+            ucQuaTrinhHoatDongVaCongTac2.Instance.BringToFront();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,15 +51,15 @@ namespace QLDV
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            dtvttdv.label1.Text = "III. ĐÀO TẠO, BỒI DƯỠNG VỀ CHUYÊN MÔN, NGHIỆP VỤ, LÝ LUẬN CHÍNH TRỊ, NGOẠI NGỮ";
+            dtvttdv.label1.Text = "IV. ĐẶC ĐIỂM LỊCH SỬ VÀ QUAN HỆ VỚI NƯỚC NGOÀI";
             int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
             dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
-            dtvttdv.panel1.Controls.Add(UCDaoTaoChung.Instance);
-            UCDaoTaoChung.Instance.Dock = DockStyle.Fill;
-            UCDaoTaoChung.Instance.BringToFront();
+            dtvttdv.panel1.Controls.Add(ucDdlsVaQhng4.Instance);
+            ucDdlsVaQhng4.Instance.Dock = DockStyle.Fill;
+            ucDdlsVaQhng4.Instance.BringToFront();
         }
     }
 }

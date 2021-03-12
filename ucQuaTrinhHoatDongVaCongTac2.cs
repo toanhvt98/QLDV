@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace QLDV
 {
-    public partial class ucQuaTrinhHoatDongVaCongTac : UserControl
+    public partial class ucQuaTrinhHoatDongVaCongTac2 : UserControl
     {
-        public ucQuaTrinhHoatDongVaCongTac()
+        public ucQuaTrinhHoatDongVaCongTac2()
         {
             InitializeComponent();
         }
-        private static ucQuaTrinhHoatDongVaCongTac _instance;
-        public static ucQuaTrinhHoatDongVaCongTac Instance
+        private static ucQuaTrinhHoatDongVaCongTac2 _instance;
+        public static ucQuaTrinhHoatDongVaCongTac2 Instance
         {
             get
             {
                 if(_instance == null)
                 {
-                    _instance = new ucQuaTrinhHoatDongVaCongTac();
+                    _instance = new ucQuaTrinhHoatDongVaCongTac2();
                 }
                 return _instance;
             }
@@ -60,9 +60,9 @@ namespace QLDV
             dtvttdv.label1.Text = "III. ĐÀO TẠO, BỒI DƯỠNG VỀ CHUYÊN MÔN, NGHIỆP VỤ, LÝ LUẬN CHÍNH TRỊ, NGOẠI NGỮ";
             int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
             dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
-            dtvttdv.panel1.Controls.Add(UCDaoTaoChung.Instance);
-            UCDaoTaoChung.Instance.Dock = DockStyle.Fill;
-            UCDaoTaoChung.Instance.BringToFront();
+            dtvttdv.panel1.Controls.Add(UCDaoTaoChung3.Instance);
+            UCDaoTaoChung3.Instance.Dock = DockStyle.Fill;
+            UCDaoTaoChung3.Instance.BringToFront();
         }
     }
 }

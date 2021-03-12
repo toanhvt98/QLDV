@@ -49,9 +49,9 @@ namespace QLDV
             dtvttdv.label1.Text = "II. TÓM TẮT QUÁ TRÌNH HOẠT ĐỘNG VÀ CÔNG TÁC";
             int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
             dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
-            dtvttdv.panel1.Controls.Add(ucQuaTrinhHoatDongVaCongTac.Instance);
-            ucQuaTrinhHoatDongVaCongTac.Instance.Dock = DockStyle.Fill;
-            ucQuaTrinhHoatDongVaCongTac.Instance.BringToFront();
+            dtvttdv.panel1.Controls.Add(ucQuaTrinhHoatDongVaCongTac2.Instance);
+            ucQuaTrinhHoatDongVaCongTac2.Instance.Dock = DockStyle.Fill;
+            ucQuaTrinhHoatDongVaCongTac2.Instance.BringToFront();
         }
     }
 }
