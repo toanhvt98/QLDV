@@ -12,6 +12,8 @@ namespace QLDV
 {
     public partial class UCDaoTaoChung3 : UserControl
     {
+
+        public List<string> l = new List<string>();
         public UCDaoTaoChung3()
         {
             InitializeComponent();
@@ -53,6 +55,55 @@ namespace QLDV
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                l.Add(checkBox1.Text);
+            }
+            if (checkBox2.Checked)
+            {
+                l.Add(checkBox2.Text);
+            }
+            if (checkBox3.Checked)
+            {
+                l.Add(checkBox3.Text);
+            }
+            if (checkBox4.Checked)
+            {
+                l.Add(checkBox4.Text);
+            }
+            if (checkBox5.Checked)
+            {
+                l.Add(checkBox5.Text);
+            }
+            if (checkBox6.Checked)
+            {
+                l.Add(checkBox6.Text);
+            }
+            if (checkBox7.Checked)
+            {
+                l.Add(checkBox7.Text);
+            }
+            if (checkBox8.Checked)
+            {
+                l.Add(checkBox8.Text);
+            }
+            if (checkBox9.Checked)
+            {
+                l.Add(checkBox9.Text);
+            }
+            if (checkBox10.Checked)
+            {
+                l.Add(checkBox10.Text);
+            }
+            if (checkBox11.Checked)
+            {
+                l.Add(checkBox11.Text);
+            }
+            if (checkBox12.Checked)
+            {
+                l.Add(checkBox12.Text);
+            }
+
             formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
             dtvttdv.label1.Text = "IV. ĐẶC ĐIỂM LỊCH SỬ VÀ QUAN HỆ VỚI NƯỚC NGOÀI";
             int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
@@ -60,6 +111,7 @@ namespace QLDV
             dtvttdv.panel1.Controls.Add(ucDdlsVaQhng4.Instance);
             ucDdlsVaQhng4.Instance.Dock = DockStyle.Fill;
             ucDdlsVaQhng4.Instance.BringToFront();
+            MessageBox.Show(richTextBox1.Text);
         }
     }
 }

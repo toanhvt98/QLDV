@@ -58,15 +58,16 @@ namespace QLDV
                 if (textBox2.Text != "")
                 {
                     connectDb con = new connectDb();
-                    if (con.checkSllVaSt("solylich"))
+                    if (con.checkSllVaSt("solylich",textBox1.Text))
                     {
-                        if (con.checkSllVaSt("sothe"))
+                        if (con.checkSllVaSt("sothe",textBox2.Text))
                         {
-                            Image img = pictureBox1.Image;
-                            byte[] arrImg;
-                            ImageConverter converter = new ImageConverter();
-                            arrImg = (byte[])converter.ConvertTo(img, typeof(byte[]));
-                            con.addSllVaSt(arrImg, textBox1.Text, textBox2.Text);
+                            //ucTTCBDangVien ttcb = new ucTTCBDangVien();
+                            //Image img = pictureBox1.Image;
+                            //byte[] arrImg;
+                            //ImageConverter converter = new ImageConverter();
+                            //arrImg = (byte[])converter.ConvertTo(img, typeof(byte[]));
+                            //con.addSllVaSt(arrImg,ttcb.textBox1.Text, textBox1.Text, textBox2.Text);
                             formThemVaThongTinDangVien ftvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
                             if (ftvttdv == null)
                             {

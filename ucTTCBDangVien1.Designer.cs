@@ -83,8 +83,6 @@ namespace QLDV
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
@@ -106,6 +104,7 @@ namespace QLDV
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
@@ -117,7 +116,10 @@ namespace QLDV
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,6 +194,7 @@ namespace QLDV
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(103, 22);
             this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // radioButton2
             // 
@@ -218,6 +221,7 @@ namespace QLDV
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(681, 103);
+            this.textBox6.MaxLength = 300;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(433, 22);
             this.textBox6.TabIndex = 6;
@@ -225,6 +229,7 @@ namespace QLDV
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(164, 103);
+            this.textBox5.MaxLength = 300;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(380, 22);
             this.textBox5.TabIndex = 5;
@@ -232,6 +237,7 @@ namespace QLDV
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(798, 63);
+            this.textBox4.MaxLength = 300;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(316, 22);
             this.textBox4.TabIndex = 4;
@@ -239,6 +245,7 @@ namespace QLDV
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(362, 63);
+            this.textBox3.MaxLength = 300;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(281, 22);
             this.textBox3.TabIndex = 3;
@@ -246,6 +253,7 @@ namespace QLDV
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(825, 25);
+            this.textBox2.MaxLength = 300;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(289, 22);
             this.textBox2.TabIndex = 1;
@@ -253,6 +261,7 @@ namespace QLDV
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(197, 25);
+            this.textBox1.MaxLength = 300;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(193, 22);
             this.textBox1.TabIndex = 0;
@@ -413,27 +422,27 @@ namespace QLDV
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(822, 575);
+            this.label38.Location = new System.Drawing.Point(22, 608);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(104, 17);
             this.label38.TabIndex = 0;
-            this.label38.Text = "17.8 Tin học:";
+            this.label38.Text = "17.9 Tin học:";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(571, 575);
+            this.label37.Location = new System.Drawing.Point(876, 570);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(124, 17);
             this.label37.TabIndex = 0;
-            this.label37.Text = "17.7 Ngoại ngữ:";
+            this.label37.Text = "17.8 Ngoại ngữ:";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(661, 615);
+            this.label41.Location = new System.Drawing.Point(24, 644);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(111, 17);
             this.label41.TabIndex = 0;
@@ -443,7 +452,7 @@ namespace QLDV
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(372, 615);
+            this.label40.Location = new System.Drawing.Point(687, 610);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(172, 17);
             this.label40.TabIndex = 0;
@@ -453,7 +462,7 @@ namespace QLDV
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(682, 656);
+            this.label43.Location = new System.Drawing.Point(22, 677);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(283, 17);
             this.label43.TabIndex = 0;
@@ -463,7 +472,7 @@ namespace QLDV
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(321, 656);
+            this.label44.Location = new System.Drawing.Point(716, 644);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(154, 17);
             this.label44.TabIndex = 0;
@@ -473,7 +482,7 @@ namespace QLDV
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(22, 656);
+            this.label42.Location = new System.Drawing.Point(417, 644);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(109, 17);
             this.label42.TabIndex = 0;
@@ -483,7 +492,7 @@ namespace QLDV
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(22, 615);
+            this.label39.Location = new System.Drawing.Point(325, 610);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(186, 17);
             this.label39.TabIndex = 0;
@@ -493,31 +502,31 @@ namespace QLDV
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(22, 575);
+            this.label36.Location = new System.Drawing.Point(325, 570);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(167, 17);
             this.label36.TabIndex = 0;
-            this.label36.Text = "17.6 Lý luận chính trị:";
+            this.label36.Text = "17.7 Lý luận chính trị:";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(822, 530);
+            this.label35.Location = new System.Drawing.Point(22, 570);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(113, 17);
             this.label35.TabIndex = 0;
-            this.label35.Text = "17.5 Học hàm:";
+            this.label35.Text = "17.6 Học hàm:";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(600, 530);
+            this.label34.Location = new System.Drawing.Point(892, 530);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(95, 17);
             this.label34.TabIndex = 0;
-            this.label34.Text = "17.4 Học vị:";
+            this.label34.Text = "17.5 Học vị:";
             // 
             // label33
             // 
@@ -525,15 +534,15 @@ namespace QLDV
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(22, 530);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(286, 17);
+            this.label33.Size = new System.Drawing.Size(175, 17);
             this.label33.TabIndex = 0;
-            this.label33.Text = "17.3 Giáo dục Đại học và sau đại học:";
+            this.label33.Text = "17.3 Giáo dục Đại học:";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(725, 485);
+            this.label32.Location = new System.Drawing.Point(747, 485);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(210, 17);
             this.label32.TabIndex = 0;
@@ -543,7 +552,7 @@ namespace QLDV
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(372, 485);
+            this.label31.Location = new System.Drawing.Point(385, 485);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(193, 17);
             this.label31.TabIndex = 0;
@@ -692,8 +701,8 @@ namespace QLDV
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.dateTimePicker4);
@@ -723,6 +732,7 @@ namespace QLDV
             this.panel1.Controls.Add(this.textBox21);
             this.panel1.Controls.Add(this.textBox18);
             this.panel1.Controls.Add(this.textBox23);
+            this.panel1.Controls.Add(this.textBox30);
             this.panel1.Controls.Add(this.textBox20);
             this.panel1.Controls.Add(this.textBox17);
             this.panel1.Controls.Add(this.textBox16);
@@ -762,6 +772,7 @@ namespace QLDV
             this.panel1.Controls.Add(this.label36);
             this.panel1.Controls.Add(this.label35);
             this.panel1.Controls.Add(this.label34);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label33);
             this.panel1.Controls.Add(this.label32);
             this.panel1.Controls.Add(this.label31);
@@ -780,30 +791,10 @@ namespace QLDV
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Location = new System.Drawing.Point(3, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1168, 781);
             this.panel1.TabIndex = 1;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(864, 613);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(179, 21);
-            this.checkBox2.TabIndex = 38;
-            this.checkBox2.Text = "Có công với Cách Mạng";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(778, 613);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(71, 21);
-            this.checkBox1.TabIndex = 37;
-            this.checkBox1.Text = "Liệt sỹ";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -830,6 +821,7 @@ namespace QLDV
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(101, 22);
             this.dateTimePicker4.TabIndex = 18;
+            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // dateTimePicker7
             // 
@@ -838,14 +830,16 @@ namespace QLDV
             this.dateTimePicker7.Name = "dateTimePicker7";
             this.dateTimePicker7.Size = new System.Drawing.Size(101, 22);
             this.dateTimePicker7.TabIndex = 24;
+            this.dateTimePicker7.ValueChanged += new System.EventHandler(this.dateTimePicker7_ValueChanged);
             // 
             // dateTimePicker9
             // 
             this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker9.Location = new System.Drawing.Point(982, 653);
+            this.dateTimePicker9.Location = new System.Drawing.Point(311, 677);
             this.dateTimePicker9.Name = "dateTimePicker9";
             this.dateTimePicker9.Size = new System.Drawing.Size(101, 22);
             this.dateTimePicker9.TabIndex = 41;
+            this.dateTimePicker9.ValueChanged += new System.EventHandler(this.dateTimePicker9_ValueChanged);
             // 
             // dateTimePicker8
             // 
@@ -854,6 +848,7 @@ namespace QLDV
             this.dateTimePicker8.Name = "dateTimePicker8";
             this.dateTimePicker8.Size = new System.Drawing.Size(101, 22);
             this.dateTimePicker8.TabIndex = 25;
+            this.dateTimePicker8.ValueChanged += new System.EventHandler(this.dateTimePicker8_ValueChanged);
             // 
             // dateTimePicker6
             // 
@@ -862,6 +857,7 @@ namespace QLDV
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.Size = new System.Drawing.Size(101, 22);
             this.dateTimePicker6.TabIndex = 22;
+            this.dateTimePicker6.ValueChanged += new System.EventHandler(this.dateTimePicker6_ValueChanged);
             // 
             // dateTimePicker5
             // 
@@ -870,6 +866,7 @@ namespace QLDV
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(101, 22);
             this.dateTimePicker5.TabIndex = 20;
+            this.dateTimePicker5.ValueChanged += new System.EventHandler(this.dateTimePicker5_ValueChanged);
             // 
             // dateTimePicker3
             // 
@@ -878,6 +875,7 @@ namespace QLDV
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(101, 22);
             this.dateTimePicker3.TabIndex = 17;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // dateTimePicker2
             // 
@@ -886,108 +884,132 @@ namespace QLDV
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(101, 22);
             this.dateTimePicker2.TabIndex = 11;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(972, 147);
+            this.textBox8.MaxLength = 300;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(142, 22);
             this.textBox8.TabIndex = 10;
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(941, 482);
+            this.textBox19.Location = new System.Drawing.Point(963, 482);
+            this.textBox19.MaxLength = 300;
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(173, 22);
+            this.textBox19.Size = new System.Drawing.Size(151, 22);
             this.textBox19.TabIndex = 28;
             // 
             // textBox22
             // 
-            this.textBox22.Location = new System.Drawing.Point(941, 527);
+            this.textBox22.Location = new System.Drawing.Point(141, 567);
+            this.textBox22.MaxLength = 300;
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(173, 22);
             this.textBox22.TabIndex = 31;
             // 
             // textBox25
             // 
-            this.textBox25.Location = new System.Drawing.Point(940, 572);
+            this.textBox25.Location = new System.Drawing.Point(140, 605);
+            this.textBox25.MaxLength = 300;
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(174, 22);
             this.textBox25.TabIndex = 34;
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(543, 612);
+            this.textBox27.Location = new System.Drawing.Point(879, 605);
+            this.textBox27.MaxLength = 50;
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(100, 22);
             this.textBox27.TabIndex = 36;
             // 
             // textBox29
             // 
-            this.textBox29.Location = new System.Drawing.Point(481, 653);
+            this.textBox29.Location = new System.Drawing.Point(879, 641);
+            this.textBox29.MaxLength = 50;
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(179, 22);
             this.textBox29.TabIndex = 40;
             // 
             // textBox28
             // 
-            this.textBox28.Location = new System.Drawing.Point(137, 653);
+            this.textBox28.Location = new System.Drawing.Point(539, 641);
+            this.textBox28.MaxLength = 50;
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(171, 22);
             this.textBox28.TabIndex = 39;
             // 
             // textBox26
             // 
-            this.textBox26.Location = new System.Drawing.Point(214, 612);
+            this.textBox26.Location = new System.Drawing.Point(529, 605);
+            this.textBox26.MaxLength = 300;
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(152, 22);
             this.textBox26.TabIndex = 35;
             // 
             // textBox24
             // 
-            this.textBox24.Location = new System.Drawing.Point(701, 572);
+            this.textBox24.Location = new System.Drawing.Point(1006, 567);
+            this.textBox24.MaxLength = 300;
             this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(118, 22);
+            this.textBox24.Size = new System.Drawing.Size(106, 22);
             this.textBox24.TabIndex = 33;
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(701, 527);
+            this.textBox21.Location = new System.Drawing.Point(993, 527);
+            this.textBox21.MaxLength = 300;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(118, 22);
             this.textBox21.TabIndex = 30;
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(571, 482);
+            this.textBox18.Location = new System.Drawing.Point(593, 482);
+            this.textBox18.MaxLength = 300;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(148, 22);
             this.textBox18.TabIndex = 27;
             // 
             // textBox23
             // 
-            this.textBox23.Location = new System.Drawing.Point(195, 572);
+            this.textBox23.Location = new System.Drawing.Point(509, 567);
+            this.textBox23.MaxLength = 300;
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(361, 22);
             this.textBox23.TabIndex = 32;
             // 
+            // textBox30
+            // 
+            this.textBox30.Location = new System.Drawing.Point(647, 527);
+            this.textBox30.MaxLength = 300;
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(212, 22);
+            this.textBox30.TabIndex = 29;
+            // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(314, 527);
+            this.textBox20.Location = new System.Drawing.Point(213, 527);
+            this.textBox20.MaxLength = 300;
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(280, 22);
+            this.textBox20.Size = new System.Drawing.Size(212, 22);
             this.textBox20.TabIndex = 29;
             // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(190, 482);
+            this.textBox17.Location = new System.Drawing.Point(203, 482);
+            this.textBox17.MaxLength = 300;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(176, 22);
             this.textBox17.TabIndex = 26;
             // 
             // textBox16
             // 
-            this.textBox16.Location = new System.Drawing.Point(259, 437);
+            this.textBox16.Location = new System.Drawing.Point(268, 437);
+            this.textBox16.MaxLength = 300;
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(285, 22);
             this.textBox16.TabIndex = 23;
@@ -995,6 +1017,7 @@ namespace QLDV
             // textBox15
             // 
             this.textBox15.Location = new System.Drawing.Point(561, 393);
+            this.textBox15.MaxLength = 300;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(255, 22);
             this.textBox15.TabIndex = 21;
@@ -1002,6 +1025,7 @@ namespace QLDV
             // textBox14
             // 
             this.textBox14.Location = new System.Drawing.Point(812, 350);
+            this.textBox14.MaxLength = 300;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(302, 22);
             this.textBox14.TabIndex = 19;
@@ -1009,6 +1033,7 @@ namespace QLDV
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(812, 307);
+            this.textBox13.MaxLength = 300;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(302, 22);
             this.textBox13.TabIndex = 16;
@@ -1016,6 +1041,7 @@ namespace QLDV
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(812, 268);
+            this.textBox12.MaxLength = 300;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(302, 22);
             this.textBox12.TabIndex = 15;
@@ -1023,6 +1049,7 @@ namespace QLDV
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(812, 230);
+            this.textBox11.MaxLength = 300;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(302, 22);
             this.textBox11.TabIndex = 14;
@@ -1030,6 +1057,7 @@ namespace QLDV
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(812, 191);
+            this.textBox10.MaxLength = 300;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(302, 22);
             this.textBox10.TabIndex = 13;
@@ -1037,6 +1065,7 @@ namespace QLDV
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(415, 191);
+            this.textBox9.MaxLength = 300;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(179, 22);
             this.textBox9.TabIndex = 12;
@@ -1044,9 +1073,20 @@ namespace QLDV
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(640, 145);
+            this.textBox7.MaxLength = 300;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(120, 22);
             this.textBox7.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(431, 530);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "17.4 Giáo dục sau Đại học:";
             // 
             // label21
             // 
@@ -1058,6 +1098,26 @@ namespace QLDV
             this.label21.TabIndex = 0;
             this.label21.Text = "12.6 Ngày cấp có thẩm quyền:";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(153, 643);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(71, 21);
+            this.checkBox1.TabIndex = 37;
+            this.checkBox1.Text = "Liệt sỹ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(230, 643);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(179, 21);
+            this.checkBox2.TabIndex = 38;
+            this.checkBox2.Text = "Có công với Cách Mạng";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // ucTTCBDangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1065,6 +1125,7 @@ namespace QLDV
             this.Controls.Add(this.panel1);
             this.Name = "ucTTCBDangVien";
             this.Size = new System.Drawing.Size(1168, 785);
+            this.Load += new System.EventHandler(this.ucTTCBDangVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -1072,17 +1133,6 @@ namespace QLDV
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label14;
@@ -1126,41 +1176,53 @@ namespace QLDV
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker9;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox28;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.DateTimePicker dateTimePicker4;
+        public System.Windows.Forms.DateTimePicker dateTimePicker7;
+        public System.Windows.Forms.DateTimePicker dateTimePicker8;
+        public System.Windows.Forms.DateTimePicker dateTimePicker6;
+        public System.Windows.Forms.DateTimePicker dateTimePicker5;
+        public System.Windows.Forms.DateTimePicker dateTimePicker3;
+        public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.TextBox textBox19;
+        public System.Windows.Forms.TextBox textBox22;
+        public System.Windows.Forms.TextBox textBox25;
+        public System.Windows.Forms.TextBox textBox27;
+        public System.Windows.Forms.TextBox textBox26;
+        public System.Windows.Forms.TextBox textBox24;
+        public System.Windows.Forms.TextBox textBox21;
+        public System.Windows.Forms.TextBox textBox18;
+        public System.Windows.Forms.TextBox textBox23;
+        public System.Windows.Forms.TextBox textBox20;
+        public System.Windows.Forms.TextBox textBox17;
+        public System.Windows.Forms.TextBox textBox16;
+        public System.Windows.Forms.TextBox textBox15;
+        public System.Windows.Forms.TextBox textBox14;
+        public System.Windows.Forms.TextBox textBox13;
+        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.TextBox textBox11;
+        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.DateTimePicker dateTimePicker9;
+        public System.Windows.Forms.TextBox textBox29;
+        public System.Windows.Forms.TextBox textBox28;
+        public System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.CheckBox checkBox2;
     }
 }

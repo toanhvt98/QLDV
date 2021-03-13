@@ -30,6 +30,7 @@ namespace QLDV
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
@@ -62,6 +63,7 @@ namespace QLDV
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -82,8 +84,6 @@ namespace QLDV
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +137,14 @@ namespace QLDV
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đặc điểm lịch sử";
             // 
+            // richTextBox5
+            // 
+            this.richTextBox5.Location = new System.Drawing.Point(513, 292);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(466, 52);
+            this.richTextBox5.TabIndex = 17;
+            this.richTextBox5.Text = "";
+            // 
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(513, 350);
@@ -152,14 +160,16 @@ namespace QLDV
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker6.TabIndex = 18;
+            this.dateTimePicker6.ValueChanged += new System.EventHandler(this.dateTimePicker6_ValueChanged);
             // 
             // dateTimePicker5
             // 
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker5.Location = new System.Drawing.Point(223, 290);
+            this.dateTimePicker5.Location = new System.Drawing.Point(244, 290);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker5.TabIndex = 16;
+            this.dateTimePicker5.ValueChanged += new System.EventHandler(this.dateTimePicker5_ValueChanged);
             // 
             // dateTimePicker4
             // 
@@ -168,6 +178,7 @@ namespace QLDV
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker4.TabIndex = 14;
+            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // dateTimePicker3
             // 
@@ -176,6 +187,7 @@ namespace QLDV
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker3.TabIndex = 12;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // dateTimePicker2
             // 
@@ -184,6 +196,7 @@ namespace QLDV
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(102, 22);
             this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
@@ -192,6 +205,7 @@ namespace QLDV
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(102, 22);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox10
             // 
@@ -407,6 +421,16 @@ namespace QLDV
             this.label5.TabIndex = 0;
             this.label5.Text = "Ngày vào Đảng lần 2:";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(365, 295);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(122, 17);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Thêm thông tin:";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -557,6 +581,7 @@ namespace QLDV
             this.dateTimePicker8.Name = "dateTimePicker8";
             this.dateTimePicker8.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker8.TabIndex = 1;
+            this.dateTimePicker8.ValueChanged += new System.EventHandler(this.dateTimePicker8_ValueChanged);
             // 
             // dateTimePicker7
             // 
@@ -565,6 +590,7 @@ namespace QLDV
             this.dateTimePicker7.Name = "dateTimePicker7";
             this.dateTimePicker7.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker7.TabIndex = 0;
+            this.dateTimePicker7.ValueChanged += new System.EventHandler(this.dateTimePicker7_ValueChanged);
             // 
             // label18
             // 
@@ -609,25 +635,7 @@ namespace QLDV
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(365, 295);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(122, 17);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Thêm thông tin:";
-            // 
-            // richTextBox5
-            // 
-            this.richTextBox5.Location = new System.Drawing.Point(513, 292);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(466, 52);
-            this.richTextBox5.TabIndex = 17;
-            this.richTextBox5.Text = "";
-            // 
-            // ucDdlsVaQhng
+            // ucDdlsVaQhng4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -637,7 +645,7 @@ namespace QLDV
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ucDdlsVaQhng";
+            this.Name = "ucDdlsVaQhng4";
             this.Size = new System.Drawing.Size(1168, 781);
             this.Load += new System.EventHandler(this.ucDdlsVaQhng_Load);
             this.groupBox1.ResumeLayout(false);
@@ -651,27 +659,10 @@ namespace QLDV
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label16;
@@ -686,24 +677,41 @@ namespace QLDV
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DateTimePicker dateTimePicker8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker7;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox5;
         private System.Windows.Forms.Label label25;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.DateTimePicker dateTimePicker5;
+        public System.Windows.Forms.DateTimePicker dateTimePicker4;
+        public System.Windows.Forms.DateTimePicker dateTimePicker3;
+        public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.TextBox textBox11;
+        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.RichTextBox richTextBox2;
+        public System.Windows.Forms.DateTimePicker dateTimePicker6;
+        public System.Windows.Forms.RichTextBox richTextBox4;
+        public System.Windows.Forms.RichTextBox richTextBox3;
+        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.DateTimePicker dateTimePicker8;
+        public System.Windows.Forms.DateTimePicker dateTimePicker7;
+        public System.Windows.Forms.RichTextBox richTextBox5;
     }
 }

@@ -12,6 +12,8 @@ namespace QLDV
 {
     public partial class ucQuaTrinhHoatDongVaCongTac2 : UserControl
     {
+        public bool dt1 = false;
+        public bool dt2 = false;
         public ucQuaTrinhHoatDongVaCongTac2()
         {
             InitializeComponent();
@@ -30,7 +32,10 @@ namespace QLDV
         }
         private void ucQuaTrinhHoatDongVaCongTac_Load(object sender, EventArgs e)
         {
-
+            dateTimePicker1.ValueChanged += new EventHandler(dateTimePicker1_ValueChanged);
+            dateTimePicker2.ValueChanged += new EventHandler(dateTimePicker2_ValueChanged);
+            dateTimePicker1.MaxDate = DateTime.Now;
+            dateTimePicker2.MaxDate = DateTime.Now;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -63,6 +68,16 @@ namespace QLDV
             dtvttdv.panel1.Controls.Add(UCDaoTaoChung3.Instance);
             UCDaoTaoChung3.Instance.Dock = DockStyle.Fill;
             UCDaoTaoChung3.Instance.BringToFront();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dt1 = true;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            dt2 = true;
         }
     }
 }

@@ -116,7 +116,6 @@ namespace QLDV
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(138, 22);
             this.textBox1.TabIndex = 3;
-
             // 
             // textBox2
             // 
@@ -177,17 +176,16 @@ namespace QLDV
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }

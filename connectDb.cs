@@ -175,7 +175,7 @@ namespace QLDV
 
         // phuong thuc quan ly dang vien
 
-        public bool checkSllVaSt(string opt)
+        public bool checkSllVaSt(string opt,string text)
         {
             con.Open();
             using (SqlCommand cmd = new SqlCommand("select "+opt+" from dangvien",con))
@@ -185,7 +185,7 @@ namespace QLDV
                 {
                     while (read.Read())
                     {
-                        if(read.GetString(0) == opt)
+                        if(read.GetString(0) == text)
                         {
                             con.Close();
                             return false;
@@ -196,12 +196,13 @@ namespace QLDV
             con.Close();
             return true;
         }
-        public void addSllVaSt(byte[] img,string sll, string st)
+        public void addSllVaSt(byte[] img,string ten,string sll, string st)
         {
-            using (SqlCommand cmd = new SqlCommand("insert into dangvien (anhdangvien,solylich,sothe) values (@img,@sll,@st)", con))
+            using (SqlCommand cmd = new SqlCommand("insert into dangvien (anhdangvien,tendangvien,solylich,sothe) values (@img,@ten,@sll,@st)", con))
             {
                 cmd.Parameters.AddWithValue("@img", SqlDbType.Image).Value = img;
                 cmd.Parameters.AddWithValue("@sll", SqlDbType.NVarChar).Value = sll;
+                cmd.Parameters.AddWithValue("@ten", SqlDbType.NVarChar).Value = ten;
                 cmd.Parameters.AddWithValue("@st", SqlDbType.NVarChar).Value = st;
                 con.Open();
                 cmd.ExecuteNonQuery();

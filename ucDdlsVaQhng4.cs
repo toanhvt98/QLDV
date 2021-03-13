@@ -12,6 +12,14 @@ namespace QLDV
 {
     public partial class ucDdlsVaQhng4 : UserControl
     {
+        public bool dt1 = false;
+        public bool dt2 = false;
+        public bool dt3 = false;
+        public bool dt4 = false;
+        public bool dt5 = false;
+        public bool dt6 = false;
+        public bool dt7 = false;
+        public bool dt8 = false;
         public ucDdlsVaQhng4()
         {
             InitializeComponent();
@@ -30,7 +38,22 @@ namespace QLDV
         }
         private void ucDdlsVaQhng_Load(object sender, EventArgs e)
         {
-
+            dateTimePicker1.ValueChanged += new EventHandler(dateTimePicker1_ValueChanged);
+            dateTimePicker2.ValueChanged += new EventHandler(dateTimePicker2_ValueChanged);
+            dateTimePicker3.ValueChanged += new EventHandler(dateTimePicker3_ValueChanged);
+            dateTimePicker4.ValueChanged += new EventHandler(dateTimePicker4_ValueChanged);
+            dateTimePicker5.ValueChanged += new EventHandler(dateTimePicker5_ValueChanged);
+            dateTimePicker6.ValueChanged += new EventHandler(dateTimePicker6_ValueChanged);
+            dateTimePicker7.ValueChanged += new EventHandler(dateTimePicker7_ValueChanged);
+            dateTimePicker8.ValueChanged += new EventHandler(dateTimePicker8_ValueChanged);
+            dateTimePicker1.MaxDate = DateTime.Now;
+            dateTimePicker2.MaxDate = DateTime.Now;
+            dateTimePicker3.MaxDate = DateTime.Now;
+            dateTimePicker4.MaxDate = DateTime.Now;
+            dateTimePicker5.MaxDate = DateTime.Now;
+            dateTimePicker6.MaxDate = DateTime.Now;
+            dateTimePicker7.MaxDate = DateTime.Now;
+            dateTimePicker8.MaxDate = DateTime.Now;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,6 +86,46 @@ namespace QLDV
             dtvttdv.panel1.Controls.Add(ucQuanHeGD5.Instance);
             ucQuanHeGD5.Instance.Dock = DockStyle.Fill;
             ucQuanHeGD5.Instance.BringToFront();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dt1 = true;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            dt2 = true;
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            dt3 = true;
+        }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+            dt4 = true;
+        }
+
+        private void dateTimePicker5_ValueChanged(object sender, EventArgs e)
+        {
+            dt5 = true;
+        }
+
+        private void dateTimePicker6_ValueChanged(object sender, EventArgs e)
+        {
+            dt6 = true;
+        }
+
+        private void dateTimePicker7_ValueChanged(object sender, EventArgs e)
+        {
+            dt7 = true;
+        }
+
+        private void dateTimePicker8_ValueChanged(object sender, EventArgs e)
+        {
+            dt8 = true;
         }
     }
 }
