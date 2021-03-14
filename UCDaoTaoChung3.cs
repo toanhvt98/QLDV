@@ -111,7 +111,7 @@ namespace QLDV
             dtvttdv.panel1.Controls.Add(ucDdlsVaQhng4.Instance);
             ucDdlsVaQhng4.Instance.Dock = DockStyle.Fill;
             ucDdlsVaQhng4.Instance.BringToFront();
-            MessageBox.Show(richTextBox1.Text);
+            
         }
     }
 }

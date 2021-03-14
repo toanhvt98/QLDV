@@ -82,9 +82,11 @@ namespace QLDV
         private DateTime? ngayvao;
         private string vaochibo;
         private string vaonguoigt1;
-        private string vaochucvudonvi1;
+        private string vaochucvu1;
+        private string vaodonvi1;
         private string vaonguoigt2;
-        private string vaochucvudonvi2;
+        private string vaochucvu2;
+        private string vaodonvi2;
         private DateTime? ngaychinhthuc2;
         private string vaochibo2;
         private DateTime? ngaykhoiphucdangtich;
@@ -94,6 +96,27 @@ namespace QLDV
         private DateTime? ngaylamviecchedocu;
         private string thongtinchedocu;
 
+        private DateTime? dinuocngoaitu;
+        private DateTime? dinuocngoaiden;
+        private string thongtindinuocngoai;
+        private string thamgiatochucnuocngoai;
+        private string nguoithannuocngoai;
+
+        //hoan canh kinh te 6
+
+        private string tongthunhap;
+        private string binhquandaunguoi;
+        private string nhaoduoccap;
+        private string dientichnhaoduoccap;
+        private string nhaotumua;
+        private string dientichnhaotumua;
+        private string datoduoccap;
+        private string datotumua;
+        private string hdkinhte;
+        private string dientichtrangtrai;
+        private string soldthue;
+        private string taisancogiatricao;
+        private string giatri;
 
 
         private static ucHoanCanhGiaDinh6 _instance;
@@ -110,12 +133,24 @@ namespace QLDV
         }
         private void ucHoanCanhGiaDinh6_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e) // insert sql
         {
-            
+            setInfor();
+            connectDb con = new connectDb();       
+            con.addSllVaSt(anh, tendangdung, solylich, sothedangvien);
+            con.TTCBDangVien("insert",solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
+             quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
+             nghenghiephiennay, ngayvaodang, taichibo, nguoigt1, chucvudonvi1,
+             nguoigt2, chucvudonvi2, ngaycap, ngaychinhthuc, taichibo2,
+             ngayduoctuyendung, coquantuyendung, ngayvaodoan, thamgiatochucxh,
+             ngaynhapngu, ngayxuatngu, trinhdohiennay, gdphothong, gdNgheNghiep,
+             gddaihoc, gdsaudaihoc, hocvi, hocham, lyluanct, ngoaingu, tinhoc,
+             tinhtrangsuckhoe, thuongbinhloai, giadinh, cmnd, cancuoccdan, mienCtac);
+
+            con.DaoTaoChung2("insert",solylich, sothedangvien, khenthuong, huyhieudang, danhhieu, kyluat);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -291,24 +326,143 @@ namespace QLDV
 
 
             //// dac dien lich su va quan he nuoc ngoai 4
-            //bixoaten;
-            //thoigian;
-            //xoataichibo;
-            //ketnaplai;
-            //ngayvao;
-            //vaochibo;
-            //vaonguoigt1;
-            //vaochucvudonvi1;
-            //vaonguoigt2;
-            //vaochucvudonvi2;
-            //ngaychinhthuc2;
-            //vaochibo2;
-            //ngaykhoiphucdangtich;
-            //vaochibo3;
-            //ngaybikyluat;
-            //thongtinkyluat;
-            //ngaylamviecchedocu;
-            //thongtinchedocu;
+            ///
+            ucDdlsVaQhng4 lsqh = new ucDdlsVaQhng4();
+            bixoaten = lsqh.textBox1.Text;
+            if (lsqh.dt1 == true)
+            {
+                thoigian = lsqh.dateTimePicker1.Value;
+            }
+            else
+            {
+                thoigian = null;
+            }               
+
+            xoataichibo = lsqh.textBox2.Text;
+            ketnaplai = lsqh.textBox3.Text;
+
+            if (lsqh.dt2 == true)
+            {
+                ngayvao = lsqh.dateTimePicker2.Value;
+            }
+            else
+            {
+                ngayvao = null;
+            }
+
+
+            vaochibo = lsqh.textBox4.Text;
+            vaonguoigt1 = lsqh.textBox5.Text;
+            vaochucvu1 = lsqh.textBox6.Text;
+            vaochucvu1 = lsqh.textBox7.Text;
+            vaonguoigt2 = lsqh.textBox8.Text;
+            vaochucvu2 = lsqh.textBox10.Text;
+            vaochucvu2 = lsqh.textBox9.Text;
+
+            if (lsqh.dt3 == true)
+            {
+                ngaychinhthuc2 = lsqh.dateTimePicker3.Value;
+            }
+            else
+            {
+                ngaychinhthuc2 = null;
+            }
+
+
+            vaochibo2 = lsqh.textBox11.Text;
+
+            if (lsqh.dt4 == true)
+            {
+                ngaykhoiphucdangtich = lsqh.dateTimePicker4.Value;
+            }
+            else
+            {
+                ngaykhoiphucdangtich = null;
+            }
+
+            vaochibo3 = lsqh.textBox12.Text;
+
+            if (lsqh.dt5 == true)
+            {
+                ngaybikyluat = lsqh.dateTimePicker5.Value;
+            }
+            else
+            {
+                ngaybikyluat = null;
+            }
+
+            thongtinkyluat = lsqh.richTextBox5.Text;
+
+            if (lsqh.dt6 == true)
+            {
+                ngaylamviecchedocu = lsqh.dateTimePicker6.Value;
+            }
+            else
+            {
+                ngaylamviecchedocu = null;
+            }
+
+            thongtinchedocu = lsqh.richTextBox2.Text;
+
+            if(lsqh.dt7 == true)
+            {
+                dinuocngoaitu = lsqh.dateTimePicker7.Value;
+            }
+            else
+            {
+                dinuocngoaitu = null;
+            }
+
+            if (lsqh.dt8 == true)
+            {
+                dinuocngoaiden = lsqh.dateTimePicker8.Value;
+            }
+            else
+            {
+                dinuocngoaiden = null;
+            }
+
+            thongtindinuocngoai = lsqh.richTextBox1.Text;
+            thamgiatochucnuocngoai = lsqh.richTextBox3.Text;
+            nguoithannuocngoai = lsqh.richTextBox4.Text;
+
+            // hoan canh gia dinh 6
+            tongthunhap = this.textBox1.Text + " Đồng";
+            binhquandaunguoi = this.textBox2.Text + " Đồng";
+            nhaoduoccap = this.textBox3.Text;
+            dientichnhaoduoccap = this.textBox4.Text + " m2";
+            nhaotumua = this.textBox5.Text;
+            dientichnhaotumua = this.textBox6.Text + " m2";
+            datoduoccap = this.textBox7.Text + " m2";
+            datotumua = this.textBox8.Text + " m2";
+            hdkinhte = this.textBox9.Text;
+            dientichtrangtrai = this.textBox10.Text + " ha";
+            soldthue = this.textBox11.Text;
+            taisancogiatricao = this.richTextBox1.Text;
+            giatri = this.textBox12.Text +" Đồng";
+    }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
         }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&  (e.KeyChar != ',') && (e.KeyChar != (char)Keys.Back) )
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == ',') &&  ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1)))
+            {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

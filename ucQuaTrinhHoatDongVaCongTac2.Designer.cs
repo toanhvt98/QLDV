@@ -152,6 +152,7 @@ namespace QLDV
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(167, 172);
+            this.textBox3.MaxLength = 300;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(350, 22);
             this.textBox3.TabIndex = 2;
@@ -159,6 +160,7 @@ namespace QLDV
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(167, 131);
+            this.textBox2.MaxLength = 100;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(350, 22);
             this.textBox2.TabIndex = 1;
@@ -166,6 +168,7 @@ namespace QLDV
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(167, 91);
+            this.textBox1.MaxLength = 100;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(350, 22);
             this.textBox1.TabIndex = 0;
