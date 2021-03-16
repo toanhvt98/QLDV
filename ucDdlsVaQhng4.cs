@@ -12,6 +12,9 @@ namespace QLDV
 {
     public partial class ucDdlsVaQhng4 : UserControl
     {
+
+        public static bool check = false;
+
         public bool dt1 = false;
         public bool dt2 = false;
         public bool dt3 = false;
@@ -24,6 +27,9 @@ namespace QLDV
         {
             InitializeComponent();
         }
+
+
+
         private static ucDdlsVaQhng4 _instance;
         public static ucDdlsVaQhng4 Instance
         {
@@ -54,6 +60,63 @@ namespace QLDV
             dateTimePicker6.MaxDate = DateTime.Now;
             dateTimePicker7.MaxDate = DateTime.Now;
             dateTimePicker8.MaxDate = DateTime.Now;
+            connectDb con = new connectDb();
+            con.themChiBoCombo(comboBox1);
+            con.themChiBoCombo(comboBox2);
+            con.themChiBoCombo(comboBox3);
+            con.themChiBoCombo(comboBox4);
+
+            enableGrb(checkBox1, groupBox1);
+            enableGrb(checkBox2, groupBox2);
+
+            if(check == true)
+            {
+                foreach (Control c in this.Controls)
+                {
+                    if (c is CheckBox)
+                    {
+                        ((CheckBox)c).Checked = false;
+                    }
+                }
+
+                foreach(Control c in groupBox1.Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        ((TextBox)(c)).Text = "";
+                    }
+                    else if (c is ComboBox)
+                    {
+                        ((ComboBox)c).SelectedIndex = 0;
+                    }
+                    else if (c is DateTimePicker)
+                    {
+                        ((DateTimePicker)c).Value = DateTime.Today;
+                    }
+                    else if( c is RichTextBox)
+                    {
+                        ((RichTextBox)c).Text = "";
+                    }
+                }
+
+                foreach(Control c in groupBox2.Controls)
+                {
+                    if (c is DateTimePicker)
+                    {
+                        ((DateTimePicker)c).Value = DateTime.Today;
+                    }
+                    else if (c is RichTextBox)
+                    {
+                        ((RichTextBox)c).Text = "";
+                    }
+                }
+
+            }
+        }
+
+        private void enableGrb(CheckBox cb, GroupBox grb)
+        {
+            grb.Enabled = cb.Checked;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,6 +149,7 @@ namespace QLDV
             dtvttdv.panel1.Controls.Add(ucQuanHeGD5.Instance);
             ucQuanHeGD5.Instance.Dock = DockStyle.Fill;
             ucQuanHeGD5.Instance.BringToFront();
+            setInfor();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -126,6 +190,117 @@ namespace QLDV
         private void dateTimePicker8_ValueChanged(object sender, EventArgs e)
         {
             dt8 = true;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            enableGrb(checkBox1, groupBox1);
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            enableGrb(checkBox2, groupBox2);
+        }
+
+        private void setInfor()
+        {
+            dangvien.bixoaten = textBox1.Text;
+            if (dt1 == true)
+            {
+                dangvien.thoigian = dateTimePicker1.Value;
+            }
+            else
+            {
+                dangvien.thoigian = null;
+            }
+
+            dangvien.xoataichibo = comboBox1.SelectedText.ToString();
+            dangvien.ketnaplai = textBox3.Text;
+
+            if (dt2 == true)
+            {
+                dangvien.ngayvao = dateTimePicker2.Value;
+            }
+            else
+            {
+                dangvien.ngayvao = null;
+            }
+
+
+            dangvien.vaochibo = comboBox2.SelectedText.ToString();
+            dangvien.vaonguoigt1 = textBox5.Text;
+            dangvien.vaochucvu1 = textBox6.Text;
+            dangvien.vaodonvi1 = textBox7.Text;
+            dangvien.vaonguoigt2 = textBox8.Text;
+            dangvien.vaochucvu2 = textBox10.Text;
+            dangvien.vaodonvi2 = textBox9.Text;
+
+            if (dt3 == true)
+            {
+                dangvien.ngaychinhthuc2 = dateTimePicker3.Value;
+            }
+            else
+            {
+                dangvien.ngaychinhthuc2 = null;
+            }
+
+
+            dangvien.vaochibo2 = comboBox3.SelectedText.ToString();
+
+            if (dt4 == true)
+            {
+                dangvien.ngaykhoiphucdangtich = dateTimePicker4.Value;
+            }
+            else
+            {
+                dangvien.ngaykhoiphucdangtich = null;
+            }
+
+            dangvien.vaochibo3 = comboBox4.SelectedText.ToString();
+
+            if (dt5 == true)
+            {
+                dangvien.ngaybikyluat = dateTimePicker5.Value;
+            }
+            else
+            {
+                dangvien.ngaybikyluat = null;
+            }
+
+            dangvien.thongtinkyluat = richTextBox5.Text;
+
+            if (dt6 == true)
+            {
+                dangvien.ngaylamviecchedocu = dateTimePicker6.Value;
+            }
+            else
+            {
+                dangvien.ngaylamviecchedocu = null;
+            }
+
+            dangvien.thongtinchedocu = richTextBox2.Text;
+
+            if (dt7 == true)
+            {
+                dangvien.dinuocngoaitu = dateTimePicker7.Value;
+            }
+            else
+            {
+                dangvien.dinuocngoaitu = null;
+            }
+
+            if (dt8 == true)
+            {
+                dangvien.dinuocngoaiden = dateTimePicker8.Value;
+            }
+            else
+            {
+                dangvien.dinuocngoaiden = null;
+            }
+
+            dangvien.thongtindinuocngoai = richTextBox1.Text;
+            dangvien.thamgiatochucnuocngoai = richTextBox3.Text;
+            dangvien.nguoithannuocngoai = richTextBox4.Text;
         }
     }
 }

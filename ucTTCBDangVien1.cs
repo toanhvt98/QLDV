@@ -13,7 +13,11 @@ namespace QLDV
 {
     public partial class ucTTCBDangVien : UserControl
     {
+
+
         public List<string> l = new List<string>();
+
+        public static bool check = false;
 
         public bool dt1 = false;
         public bool dt2 = false;
@@ -29,6 +33,9 @@ namespace QLDV
         {
             InitializeComponent();
         }
+
+
+
         private static ucTTCBDangVien _instance;
         public static ucTTCBDangVien Instance
         {
@@ -62,6 +69,38 @@ namespace QLDV
             dateTimePicker7.MaxDate = DateTime.Now;
             dateTimePicker8.MaxDate = DateTime.Now;
             dateTimePicker9.MaxDate = DateTime.Now;
+
+            connectDb con = new connectDb();
+            con.themChiBoCombo(comboBox3);
+            con.themChiBoCombo(comboBox4);
+
+
+            //important
+            if(check == true)
+            {
+                foreach (Control c in panel1.Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        ((TextBox)(c)).Text = "";
+                    }
+                    else if(c is CheckBox)
+                    {
+                        ((CheckBox)c).Checked = false;
+                    }
+                    else if(c is ComboBox)
+                    {
+                        ((ComboBox)c).SelectedIndex = 0;
+                    }
+                    else if(c is DateTimePicker)
+                    {
+                        ((DateTimePicker)c).Value = DateTime.Today;
+                    }
+
+                }
+            }
+            
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -75,6 +114,7 @@ namespace QLDV
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
 
             List<string> l = new List<string>();
 
@@ -95,6 +135,7 @@ namespace QLDV
             ucQuaTrinhHoatDongVaCongTac2.Instance.Dock = DockStyle.Fill;
             ucQuaTrinhHoatDongVaCongTac2.Instance.BringToFront();
 
+            setInfor();
             
         }
 
@@ -143,5 +184,141 @@ namespace QLDV
         {
             dt9 = true;
         }
+
+
+        private void setInfor()
+        {
+            dangvien.tendangdung = textBox1.Text;
+            if (radioButton1.Checked)
+            {
+                dangvien.gioitinh = radioButton1.Text;
+            }
+            else
+                dangvien.gioitinh = radioButton2.Text;
+
+            dangvien.tenkhaisinh = textBox2.Text;
+
+            dangvien.ngaysinh = dateTimePicker1.Value;
+
+
+            dangvien.noisinh = textBox3.Text;
+            dangvien.quequan = textBox4.Text;
+            dangvien.noithuongtru = textBox5.Text;
+            dangvien.noitamtru = textBox6.Text;
+            dangvien.dantoc = comboBox2.Text;
+            dangvien.tongiao = comboBox1.Text;
+            dangvien.thanhphangd = textBox7.Text;
+            dangvien.nghenghiephiennay = textBox8.Text;
+
+            if (dt2 == true)
+            {
+                dangvien.ngayvaodang = dateTimePicker2.Value;
+            }
+            else
+            {
+                dangvien.ngayvaodang = null;
+            }
+
+            dangvien.taichibo = comboBox3.SelectedText.ToString();
+            dangvien.nguoigt1 = textBox10.Text;
+            dangvien.chucvudonvi1 = textBox11.Text;
+            dangvien.nguoigt2 = textBox12.Text;
+            dangvien.chucvudonvi2 = textBox13.Text;
+
+            if (dt3 == true)
+            {
+                dangvien.ngaycap = dateTimePicker3.Value;
+            }
+            else
+            {
+                dangvien.ngaycap = null;
+            }
+
+            if (dt4 == true)
+            {
+                dangvien.ngaychinhthuc = dateTimePicker4.Value;
+            }
+            else
+            {
+                dangvien.ngaychinhthuc = null;
+            }
+
+            dangvien.taichibo2 = comboBox4.SelectedText.ToString();
+
+            if (dt5 == true)
+            {
+                dangvien.ngayduoctuyendung = dateTimePicker5.Value;
+            }
+            else
+            {
+                dangvien.ngayduoctuyendung = null;
+            }
+
+            dangvien.coquantuyendung = textBox15.Text;
+
+            if (dt6 == true)
+            {
+                dangvien.ngayvaodoan = dateTimePicker6.Value;
+            }
+            else
+            {
+                dangvien.ngayvaodoan = null;
+            }
+
+
+            dangvien.thamgiatochucxh = textBox16.Text;
+
+            if (dt7 == true)
+            {
+                dangvien.ngaynhapngu = dateTimePicker7.Value;
+            }
+            else
+            {
+                dangvien.ngaynhapngu = null;
+            }
+
+            if (dt8 == true)
+            {
+                dangvien.ngayxuatngu = dateTimePicker8.Value;
+            }
+            else
+            {
+                dangvien.ngayxuatngu = null;
+            }
+
+            dangvien.trinhdohiennay = textBox17.Text;
+            dangvien.gdphothong = textBox18.Text;
+            dangvien.gdNgheNghiep = textBox19.Text;
+            dangvien.gddaihoc = textBox20.Text;
+            dangvien.gdsaudaihoc = textBox30.Text;
+            dangvien.hocvi = textBox21.Text;
+            dangvien.hocham = textBox22.Text;
+            dangvien.lyluanct = textBox23.Text;
+            dangvien.ngoaingu = textBox24.Text;
+            dangvien.tinhoc = textBox25.Text;
+            dangvien.tinhtrangsuckhoe = textBox26.Text;
+            dangvien.thuongbinhloai = textBox27.Text;
+
+            dangvien.giadinh = string.Join(", ", l.ToArray());
+
+
+            dangvien.cmnd = textBox28.Text; ;
+            dangvien.cancuoccdan = textBox29.Text;
+
+            if (dt9 == true)
+            {
+                dangvien.mienCtac = dateTimePicker9.Value;
+            }
+            else
+            {
+                dangvien.mienCtac = null;
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+
     }
 }

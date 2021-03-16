@@ -12,12 +12,17 @@ namespace QLDV
 {
     public partial class ucQuaTrinhHoatDongVaCongTac2 : UserControl
     {
+
+        public static bool check = false;
+
         public bool dt1 = false;
         public bool dt2 = false;
         public ucQuaTrinhHoatDongVaCongTac2()
         {
             InitializeComponent();
         }
+
+        
         private static ucQuaTrinhHoatDongVaCongTac2 _instance;
         public static ucQuaTrinhHoatDongVaCongTac2 Instance
         {
@@ -36,6 +41,31 @@ namespace QLDV
             dateTimePicker2.ValueChanged += new EventHandler(dateTimePicker2_ValueChanged);
             dateTimePicker1.MaxDate = DateTime.Now;
             dateTimePicker2.MaxDate = DateTime.Now;
+
+           
+
+            if (check == true)
+            {
+                foreach (Control c in groupBox1.Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        ((TextBox)(c)).Text = "";
+                    }
+                    else if (c is DateTimePicker)
+                    {
+                        ((DateTimePicker)c).Value = DateTime.Today;
+                    }
+
+                }
+                foreach (Control c in this.Controls)
+                {
+                    if (c is DataGridView)
+                    {
+                        ((DataGridView)c).DataSource = null;
+                    }
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

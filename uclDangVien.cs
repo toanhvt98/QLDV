@@ -12,10 +12,12 @@ namespace QLDV
 {
     public partial class uclDangVien : UserControl
     {
+
         public uclDangVien()
         {
             InitializeComponent();
         }
+
 
         private static uclDangVien _instance;
         
@@ -53,6 +55,7 @@ namespace QLDV
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             if (textBox1.Text != "")
             {
                 if (textBox2.Text != "")
@@ -62,13 +65,23 @@ namespace QLDV
                     {
                         if (con.checkSllVaSt("sothe",textBox2.Text))
                         {
+                            setInfor();
                             formThemVaThongTinDangVien ftvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
+
+                            ucTTCBDangVien.check = true;
+                            ucQuaTrinhHoatDongVaCongTac2.check = true;
+                            UCDaoTaoChung3.check = true;
+                            ucDdlsVaQhng4.check = true;
+                            ucQuanHeGD5.check = true;
+                            ucHoanCanhGiaDinh6.check = true;
                             if (ftvttdv == null)
                             {
                                 ftvttdv = new formThemVaThongTinDangVien();
                                 ftvttdv.AutoScroll = true;
+
                             }
                             ftvttdv.ShowDialog();
+
                         }
                         else
                             MessageBox.Show("Mã số thẻ Đảng viên: " + textBox2.Text + " đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,6 +96,13 @@ namespace QLDV
                 MessageBox.Show("Mã số lý lịch không được bỏ trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void setInfor()
+        {
+            dangvien.solylich = textBox1.Text;
+            dangvien.sothedangvien = textBox2.Text;
+            ImageConverter converter = new ImageConverter();
+            dangvien.anh = (byte[])converter.ConvertTo(pictureBox1.Image, typeof(byte[]));
+        }
 
     }
 }

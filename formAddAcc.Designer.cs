@@ -29,21 +29,15 @@ namespace QLDV
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAddAcc));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.chiboBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.chiboDataSet = new QLDV.chiboDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.chiboTableAdapter = new QLDV.chiboDataSetTableAdapters.chiboTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.chiboBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chiboDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,25 +78,12 @@ namespace QLDV
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.chiboBindingSource;
-            this.comboBox1.DisplayMember = "ten";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(152, 123);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(216, 24);
             this.comboBox1.TabIndex = 2;
-            this.comboBox1.ValueMember = "ma";
-            // 
-            // chiboBindingSource
-            // 
-            this.chiboBindingSource.DataMember = "chibo";
-            this.chiboBindingSource.DataSource = this.chiboDataSet;
-            // 
-            // chiboDataSet
-            // 
-            this.chiboDataSet.DataSetName = "chiboDataSet";
-            this.chiboDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -134,10 +115,6 @@ namespace QLDV
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // chiboTableAdapter
-            // 
-            this.chiboTableAdapter.ClearBeforeFill = true;
-            // 
             // formAddAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -157,8 +134,6 @@ namespace QLDV
             this.Name = "formAddAcc";
             this.Text = "Thêm tài khoản";
             this.Load += new System.EventHandler(this.formAddAcc_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chiboBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chiboDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,8 +149,5 @@ namespace QLDV
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private chiboDataSet chiboDataSet;
-        private System.Windows.Forms.BindingSource chiboBindingSource;
-        private chiboDataSetTableAdapters.chiboTableAdapter chiboTableAdapter;
     }
 }

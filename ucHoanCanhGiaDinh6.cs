@@ -12,10 +12,16 @@ namespace QLDV
 {
     public partial class ucHoanCanhGiaDinh6 : UserControl
     {
+
+
+
         public ucHoanCanhGiaDinh6()
         {
             InitializeComponent();
+  
         }
+
+        public static bool check = false;
 
         //thong tin can thiet 0
         private string solylich;
@@ -26,7 +32,7 @@ namespace QLDV
         private string tendangdung;
         private string gioitinh;
         private string tenkhaisinh;
-        private DateTime? ngaysinh;
+        private DateTime ngaysinh;
         private string noisinh;
         private string quequan;
         private string noithuongtru;
@@ -131,26 +137,71 @@ namespace QLDV
                 return _instance;
             }
         }
+        
         private void ucHoanCanhGiaDinh6_Load(object sender, EventArgs e)
         {
-            
+            if(check == true)
+            {
+                foreach(Control c in groupBox1.Controls)
+                {
+                    if(c is TextBox)
+                    {
+                        ((TextBox)c).Text = "";
+                    }
+                    else if(c is RichTextBox)
+                    {
+                        ((RichTextBox)c).Text = "";
+                    }
+                }
+            }
         }
 
+        public static formThemVaThongTinDangVien d = new formThemVaThongTinDangVien();
         private void button1_Click(object sender, EventArgs e) // insert sql
         {
-            setInfor();
-            connectDb con = new connectDb();       
-            con.addSllVaSt(anh, tendangdung, solylich, sothedangvien);
-            con.TTCBDangVien("insert",solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
-             quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
-             nghenghiephiennay, ngayvaodang, taichibo, nguoigt1, chucvudonvi1,
-             nguoigt2, chucvudonvi2, ngaycap, ngaychinhthuc, taichibo2,
-             ngayduoctuyendung, coquantuyendung, ngayvaodoan, thamgiatochucxh,
-             ngaynhapngu, ngayxuatngu, trinhdohiennay, gdphothong, gdNgheNghiep,
-             gddaihoc, gdsaudaihoc, hocvi, hocham, lyluanct, ngoaingu, tinhoc,
-             tinhtrangsuckhoe, thuongbinhloai, giadinh, cmnd, cancuoccdan, mienCtac);
+            setAllInfor();
+            connectDb con = new connectDb();
+            DialogResult dr = MessageBox.Show("Bạn có muốn thêm người này vào danh sách Đảng viên không?\n Tên Đảng viên:  "+ tendangdung +"\n" +
+                "Số lý lịch: "+solylich+"\n" +
+                "Số thẻ Đảng viên: "+sothedangvien,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                con.addSllVaSt(anh, tendangdung, solylich, sothedangvien);
+                con.TTCBDangVien("insert", solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
+                 quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
+                 nghenghiephiennay, ngayvaodang, taichibo, nguoigt1, chucvudonvi1,
+                 nguoigt2, chucvudonvi2, ngaycap, ngaychinhthuc, taichibo2,
+                 ngayduoctuyendung, coquantuyendung, ngayvaodoan, thamgiatochucxh,
+                 ngaynhapngu, ngayxuatngu, trinhdohiennay, gdphothong, gdNgheNghiep,
+                 gddaihoc, gdsaudaihoc, hocvi, hocham, lyluanct, ngoaingu, tinhoc,
+                 tinhtrangsuckhoe, thuongbinhloai, giadinh, cmnd, cancuoccdan, mienCtac);
 
-            con.DaoTaoChung2("insert",solylich, sothedangvien, khenthuong, huyhieudang, danhhieu, kyluat);
+                con.DaoTaoChung2("insert", solylich, sothedangvien, khenthuong, huyhieudang, danhhieu, kyluat);
+                con.Ddls("insert", solylich, sothedangvien, bixoaten, thoigian,
+                                xoataichibo, ketnaplai, ngayvao, vaochibo,
+                                vaonguoigt1, vaochucvu1, vaodonvi1, vaonguoigt2, vaochucvu2, vaodonvi2,
+                                ngaychinhthuc2, vaochibo2, ngaykhoiphucdangtich, vaochibo3, ngaybikyluat,
+                                thongtinkyluat, ngaylamviecchedocu, thongtinchedocu);
+                con.Qhng("insert", solylich, sothedangvien, dinuocngoaitu,
+                    dinuocngoaiden, thongtindinuocngoai, thamgiatochucnuocngoai, nguoithannuocngoai);
+
+                con.hoancanhgd("insert", solylich, sothedangvien, tongthunhap, binhquandaunguoi,
+                               nhaoduoccap, dientichnhaoduoccap, nhaotumua, dientichnhaotumua,
+                                datoduoccap, datotumua, hdkinhte, dientichtrangtrai, soldthue,
+                                taisancogiatricao, giatri);
+                MessageBox.Show("Thêm đảng viên thành công.\n" +
+                    "Tên Đảng viên: " + tendangdung + "\n" +
+                    "Số lý lịch: " + solylich + "\n" +
+                    "Số thẻ Đảng viên: " + sothedangvien,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+
+                formThemVaThongTinDangVien f = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
+                
+                f.Close();
+                
+
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -174,272 +225,161 @@ namespace QLDV
             }
         }
 
-        public void setInfor()
+        public void setAllInfor()
         {
-            uclDangVien dv = new uclDangVien();
-            solylich = dv.textBox1.Text;
-            sothedangvien = dv.textBox2.Text;
-            ImageConverter converter = new ImageConverter();
-            anh = (byte[])converter.ConvertTo(dv.pictureBox1.Image,typeof(byte[]));
+
+            
+            solylich = dangvien.solylich;
+            sothedangvien = dangvien.sothedangvien;
+            anh = dangvien.anh;
 
             // thong tin co ban 1
-            ucTTCBDangVien ttcb = new ucTTCBDangVien();
-            tendangdung = ttcb.textBox1.Text;
-            if (ttcb.radioButton1.Checked)
-            {
-                gioitinh = ttcb.radioButton1.Text;
-            }
-            else
-                gioitinh = ttcb.radioButton2.Text;
+            tendangdung = dangvien.tendangdung;
+            gioitinh = dangvien.gioitinh;
             
-            tenkhaisinh = ttcb.textBox2.Text;
-
-            if (ttcb.dt1 == true)
-            {
-                ngaysinh = ttcb.dateTimePicker1.Value;
-            }
-            else
-            {
-                ngaysinh = null;
-            }
+            tenkhaisinh = dangvien.tenkhaisinh;
+            ngaysinh = dangvien.ngaysinh;
                 
-            noisinh = ttcb.textBox3.Text;
-            quequan = ttcb.textBox4.Text;
-            noithuongtru = ttcb.textBox5.Text;
-            noitamtru = ttcb.textBox6.Text;
-            dantoc = ttcb.comboBox2.Text;
-            tongiao = ttcb.comboBox1.Text;
-            thanhphangd = ttcb.textBox7.Text;
-            nghenghiephiennay = ttcb.textBox8.Text;
+            noisinh = dangvien.noisinh;
+            quequan = dangvien.quequan;
+            noithuongtru = dangvien.noithuongtru;
+            noitamtru = dangvien.noitamtru;
+            dantoc = dangvien.dantoc;
+            tongiao = dangvien.danhhieu;
+            thanhphangd = dangvien.thanhphangd;
+            nghenghiephiennay = dangvien.nghenghiephiennay;
 
-            if (ttcb.dt2 == true)
-            {
-                ngayvaodang = ttcb.dateTimePicker2.Value;
-            }
-            else
-            {
-                ngayvaodang = null;
-            }
+            ngayvaodang = dangvien.ngayvaodang;
+
+
+            taichibo = dangvien.taichibo;
+            nguoigt1 = dangvien.nguoigt1;
+            chucvudonvi1 = dangvien.chucvudonvi1;
+            nguoigt2 = dangvien.nguoigt2;
+            chucvudonvi2 = dangvien.chucvudonvi2;
+
+            ngaycap = dangvien.ngaycap;
+            ngaychinhthuc = dangvien.ngaychinhthuc;
+
+
+            taichibo2 = dangvien.taichibo2;
+
+            ngayduoctuyendung = dangvien.ngayduoctuyendung;
+
             
-            taichibo = ttcb.textBox9.Text;
-            nguoigt1 = ttcb.textBox10.Text;
-            chucvudonvi1 = ttcb.textBox11.Text;
-            nguoigt2 = ttcb.textBox12.Text;
-            chucvudonvi2 = ttcb.textBox13.Text;
+            coquantuyendung = dangvien.coquantuyendung;
+            ngayvaodoan = dangvien.ngayvaodoan;
 
-            if (ttcb.dt3 == true)
-            {
-                ngaycap = ttcb.dateTimePicker3.Value;
-            }
-            else
-            {
-                ngaycap = null;
-            }
-
-            if (ttcb.dt4 == true)
-            {
-                ngaychinhthuc = ttcb.dateTimePicker4.Value;
-            }
-            else
-            {
-                ngaychinhthuc = null;
-            }
-            
-            taichibo2 = ttcb.textBox14.Text;
-
-            if (ttcb.dt5 == true)
-            {
-                ngayduoctuyendung = ttcb.dateTimePicker5.Value;
-            }
-            else
-            {
-                ngayduoctuyendung = null;
-            }
-            
-            coquantuyendung = ttcb.textBox15.Text;
-
-            if (ttcb.dt6 == true)
-            {
-                ngayvaodoan = ttcb.dateTimePicker6.Value;
-            }
-            else
-            {
-                ngayvaodoan = null;
-            }
             
 
-            thamgiatochucxh = ttcb.textBox16.Text;
+            thamgiatochucxh = dangvien.thamgiatochucxh;
 
-            if (ttcb.dt7 == true)
-            {
-                ngaynhapngu = ttcb.dateTimePicker7.Value;
-            }
-            else
-            {
-                ngaynhapngu = null;
-            }
+            ngaynhapngu = dangvien.ngaynhapngu;
+ 
+            ngayxuatngu = dangvien.ngayxuatngu;
 
-            if (ttcb.dt8 == true)
-            {
-                ngayxuatngu = ttcb.dateTimePicker8.Value;
-            }
-            else
-            {
-                ngayxuatngu = null;
-            }
 
-            trinhdohiennay = ttcb.textBox17.Text;
-            gdphothong = ttcb.textBox18.Text;
-            gdNgheNghiep = ttcb.textBox19.Text;
-            gddaihoc = ttcb.textBox20.Text;
-            gdsaudaihoc = ttcb.textBox30.Text;
-            hocvi = ttcb.textBox21.Text;
-            hocham = ttcb.textBox22.Text;
-            lyluanct = ttcb.textBox23.Text;
-            ngoaingu = ttcb.textBox24.Text;
-            tinhoc = ttcb.textBox25.Text;
-            tinhtrangsuckhoe = ttcb.textBox26.Text;
-            thuongbinhloai = ttcb.textBox27.Text;
+            trinhdohiennay = dangvien.trinhdohiennay;
+            gdphothong = dangvien.gdphothong;
+            gdNgheNghiep = dangvien.gdNgheNghiep;
+            gddaihoc = dangvien.gddaihoc;
+            gdsaudaihoc = dangvien.gdsaudaihoc;
+            hocvi = dangvien.hocvi;
+            hocham = dangvien.hocham;
+            lyluanct = dangvien.lyluanct;
+            ngoaingu = dangvien.ngoaingu;
+            tinhoc = dangvien.tinhoc;
+            tinhtrangsuckhoe = dangvien.tinhtrangsuckhoe;
+            thuongbinhloai = dangvien.thuongbinhloai;
 
-            giadinh = string.Join(", ",ttcb.l.ToArray());
+            giadinh = dangvien.giadinh;
             
 
-            cmnd = ttcb.textBox28.Text; ;
-            cancuoccdan = ttcb.textBox29.Text;
+            cmnd = dangvien.cmnd ;
+            cancuoccdan = dangvien.cancuoccdan;
 
-            if (ttcb.dt9 == true)
-            {
-                mienCtac = ttcb.dateTimePicker9.Value;
-            }
-            else
-            {
-                mienCtac = null;
-            }
+            mienCtac = dangvien.mienCtac;
+
 
             //// dao tao chung 3
-            UCDaoTaoChung3 dtc = new UCDaoTaoChung3();
-            khenthuong = dtc.richTextBox1.Text;
-            huyhieudang = string.Join(", ",dtc.l.ToArray());
             
-            danhhieu = dtc.richTextBox2.Text;
-            kyluat = dtc.richTextBox3.Text;
+            khenthuong = dangvien.khenthuong;
+            huyhieudang = dangvien.huyhieudang;
+            
+            danhhieu = dangvien.danhhieu;
+            kyluat = dangvien.kyluat;
 
 
             //// dac dien lich su va quan he nuoc ngoai 4
             ///
-            ucDdlsVaQhng4 lsqh = new ucDdlsVaQhng4();
-            bixoaten = lsqh.textBox1.Text;
-            if (lsqh.dt1 == true)
-            {
-                thoigian = lsqh.dateTimePicker1.Value;
-            }
-            else
-            {
-                thoigian = null;
-            }               
+            
+            bixoaten = dangvien.bixoaten;
+            thoigian = dangvien.thoigian;
+              
 
-            xoataichibo = lsqh.textBox2.Text;
-            ketnaplai = lsqh.textBox3.Text;
-
-            if (lsqh.dt2 == true)
-            {
-                ngayvao = lsqh.dateTimePicker2.Value;
-            }
-            else
-            {
-                ngayvao = null;
-            }
+            xoataichibo = dangvien.xoataichibo;
+            ketnaplai = dangvien.ketnaplai;
+            ngayvao = dangvien.ngayvao;
 
 
-            vaochibo = lsqh.textBox4.Text;
-            vaonguoigt1 = lsqh.textBox5.Text;
-            vaochucvu1 = lsqh.textBox6.Text;
-            vaochucvu1 = lsqh.textBox7.Text;
-            vaonguoigt2 = lsqh.textBox8.Text;
-            vaochucvu2 = lsqh.textBox10.Text;
-            vaochucvu2 = lsqh.textBox9.Text;
 
-            if (lsqh.dt3 == true)
-            {
-                ngaychinhthuc2 = lsqh.dateTimePicker3.Value;
-            }
-            else
-            {
-                ngaychinhthuc2 = null;
-            }
+            vaochibo = dangvien.vaochibo;
+            vaonguoigt1 = dangvien.vaonguoigt1;
+            vaochucvu1 = dangvien.vaochucvu1;
+            vaodonvi1 = dangvien.vaodonvi1;
+            vaonguoigt2 = dangvien.vaonguoigt2;
+            vaochucvu2 = dangvien.vaochucvu2;
+            vaodonvi2 = dangvien.vaodonvi2;
 
 
-            vaochibo2 = lsqh.textBox11.Text;
+            ngaychinhthuc2 = dangvien.ngaychinhthuc2;
 
-            if (lsqh.dt4 == true)
-            {
-                ngaykhoiphucdangtich = lsqh.dateTimePicker4.Value;
-            }
-            else
-            {
-                ngaykhoiphucdangtich = null;
-            }
 
-            vaochibo3 = lsqh.textBox12.Text;
 
-            if (lsqh.dt5 == true)
-            {
-                ngaybikyluat = lsqh.dateTimePicker5.Value;
-            }
-            else
-            {
-                ngaybikyluat = null;
-            }
+            vaochibo2 = dangvien.vaochibo2;
 
-            thongtinkyluat = lsqh.richTextBox5.Text;
 
-            if (lsqh.dt6 == true)
-            {
-                ngaylamviecchedocu = lsqh.dateTimePicker6.Value;
-            }
-            else
-            {
-                ngaylamviecchedocu = null;
-            }
+            ngaykhoiphucdangtich = dangvien.ngaykhoiphucdangtich;
 
-            thongtinchedocu = lsqh.richTextBox2.Text;
 
-            if(lsqh.dt7 == true)
-            {
-                dinuocngoaitu = lsqh.dateTimePicker7.Value;
-            }
-            else
-            {
-                dinuocngoaitu = null;
-            }
+            vaochibo3 = dangvien.vaochibo3;
 
-            if (lsqh.dt8 == true)
-            {
-                dinuocngoaiden = lsqh.dateTimePicker8.Value;
-            }
-            else
-            {
-                dinuocngoaiden = null;
-            }
+            ngaybikyluat = dangvien.ngaybikyluat;
 
-            thongtindinuocngoai = lsqh.richTextBox1.Text;
-            thamgiatochucnuocngoai = lsqh.richTextBox3.Text;
-            nguoithannuocngoai = lsqh.richTextBox4.Text;
+
+            thongtinkyluat = dangvien.thongtinkyluat;
+
+            ngaylamviecchedocu = dangvien.ngaylamviecchedocu;
+
+
+            thongtinchedocu = dangvien.thongtinchedocu;
+
+            dinuocngoaitu = dangvien.dinuocngoaitu;
+
+
+            dinuocngoaiden = dangvien.dinuocngoaiden;
+
+
+            thongtindinuocngoai = dangvien.thongtindinuocngoai;
+            thamgiatochucnuocngoai = dangvien.thamgiatochucnuocngoai;
+            nguoithannuocngoai = dangvien.nguoithannuocngoai;
+
+            setInfor();
 
             // hoan canh gia dinh 6
-            tongthunhap = this.textBox1.Text + " Đồng";
-            binhquandaunguoi = this.textBox2.Text + " Đồng";
-            nhaoduoccap = this.textBox3.Text;
-            dientichnhaoduoccap = this.textBox4.Text + " m2";
-            nhaotumua = this.textBox5.Text;
-            dientichnhaotumua = this.textBox6.Text + " m2";
-            datoduoccap = this.textBox7.Text + " m2";
-            datotumua = this.textBox8.Text + " m2";
-            hdkinhte = this.textBox9.Text;
-            dientichtrangtrai = this.textBox10.Text + " ha";
-            soldthue = this.textBox11.Text;
-            taisancogiatricao = this.richTextBox1.Text;
-            giatri = this.textBox12.Text +" Đồng";
+            tongthunhap = dangvien.tongthunhap;
+            binhquandaunguoi = dangvien.binhquandaunguoi;
+            nhaoduoccap = dangvien.nhaoduoccap;
+            dientichnhaoduoccap = dangvien.dientichnhaoduoccap;
+            nhaotumua = dangvien.nhaotumua;
+            dientichnhaotumua = dangvien.dientichnhaotumua;
+            datoduoccap = dangvien.datoduoccap;
+            datotumua = dangvien.datotumua;
+            hdkinhte = dangvien.hdkinhte;
+            dientichtrangtrai = dangvien.dientichtrangtrai;
+            soldthue = dangvien.soldthue;
+            taisancogiatricao = dangvien.taisancogiatricao;
+            giatri = dangvien.giatri;
     }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -463,6 +403,24 @@ namespace QLDV
             }
         }
 
+        private void setInfor()
+        {
+            dangvien.tongthunhap = this.textBox1.Text;
+            dangvien.binhquandaunguoi = this.textBox2.Text;
+            dangvien.nhaoduoccap = this.textBox3.Text;
+            dangvien.dientichnhaoduoccap = this.textBox4.Text;
+            dangvien.nhaotumua = this.textBox5.Text;
+            dangvien.dientichnhaotumua = this.textBox6.Text;
+            dangvien.datoduoccap = this.textBox7.Text;
+            dangvien.datotumua = this.textBox8.Text;
+            dangvien.hdkinhte = this.textBox9.Text;
+            dangvien.dientichtrangtrai = this.textBox10.Text;
+            dangvien.soldthue = this.textBox11.Text;
+            dangvien.taisancogiatricao = this.richTextBox1.Text;
+            dangvien.giatri = this.textBox12.Text;
+        }
 
+
+        
     }
 }

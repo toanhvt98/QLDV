@@ -366,6 +366,7 @@ namespace QLDV
             this.Controls.Add(this.dataGridView1);
             this.Name = "UCDaoTaoChung3";
             this.Size = new System.Drawing.Size(1168, 781);
+            this.Load += new System.EventHandler(this.UCDaoTaoChung3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -63,6 +63,29 @@ namespace QLDV
         }
 
 
+        // phuong thuc them chibo vao comboxbox
+
+        public void themChiBoCombo(ComboBox cb)
+        {
+            con.Open();
+            Dictionary<string, string> test = new Dictionary<string, string>();
+            using (SqlDataAdapter ada = new SqlDataAdapter("select ten,ma from chibo", con))
+            {
+                DataTable dtb = new DataTable();
+                ada.Fill(dtb);
+                
+                foreach (DataRow dr in dtb.Rows)
+                {
+                    test.Add(dr[1].ToString(), dr[0].ToString());
+                    
+                }
+            }
+            cb.DataSource = new BindingSource(test, null);
+            cb.DisplayMember = "Value";
+            cb.ValueMember = "Key";
+            con.Close();
+        }
+
         // phuong thuc su dung quan ly tai khoan
         public bool checkAccAlready(string acc)
         {
@@ -212,7 +235,7 @@ namespace QLDV
 
         // form uclTTCBDangVien
         public void TTCBDangVien(string optionQuerry,string solylich, string sothedangvien, string tendangdung,string gioitinh,
-            string tenkhaisinh,DateTime? ngaysinh,string noisinh,
+            string tenkhaisinh,DateTime ngaysinh,string noisinh,
             string quequan,string noithuongtru,string noitamtru,string dantoc,string tongiao,string thanhphangd,
             string nghenghiephiennay,DateTime? ngayvaodang,string taichibo,string nguoigt1,string chucvudonvi1,
             string nguoigt2,string chucvudonvi2,DateTime? ngaycap,DateTime? ngaychinhthuc,string taichibo2,
@@ -230,14 +253,17 @@ namespace QLDV
                 "thamgiatochucxh, ngaynhapngu, ngayxuatngu,trinhdohientai, gdphothong, gdnghenghiep, gddaihoc, " +
                 "gdsaudaihoc, hocvi, hocham, lyluanct,ngoaingu, tinhoc, tinhtrangsuckhoe, thuongbinh, giadinh, cmnd, " +
                 "cancuoc, miencongtac) values(@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22,@23,@24,@25," +
-                "@26,@27,@28,@29,@30,@31,@32,@33,@34,@35,@36,@37,@38,@39,@40,@41,@42,@43,@44,@45,)", con))
+                "@26,@27,@28,@29,@30,@31,@32,@33,@34,@35,@36,@37,@38,@39,@40,@41,@42,@43,@44,@45)", con))
                 {
                     cmd.Parameters.AddWithValue("@1", SqlDbType.NVarChar).Value = solylich;
                     cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = sothedangvien;
                     cmd.Parameters.AddWithValue("@3", SqlDbType.NVarChar).Value = tendangdung;
                     cmd.Parameters.AddWithValue("@4", SqlDbType.NVarChar).Value = gioitinh;
                     cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = tenkhaisinh;
+
                     cmd.Parameters.AddWithValue("@6", SqlDbType.Date).Value = ngaysinh;
+
+                    
                     cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = noisinh;
                     cmd.Parameters.AddWithValue("@8", SqlDbType.NVarChar).Value = quequan;
                     cmd.Parameters.AddWithValue("@9", SqlDbType.NVarChar).Value = noithuongtru;
@@ -246,21 +272,84 @@ namespace QLDV
                     cmd.Parameters.AddWithValue("@12", SqlDbType.NVarChar).Value = tongiao;
                     cmd.Parameters.AddWithValue("@13", SqlDbType.NVarChar).Value = thanhphangd;
                     cmd.Parameters.AddWithValue("@14", SqlDbType.NVarChar).Value = nghenghiephiennay;
-                    cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = ngayvaodang;
+
+                    if (ngayvaodang != null)
+                    {
+                        cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = ngayvaodang;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
                     cmd.Parameters.AddWithValue("@16", SqlDbType.NVarChar).Value = taichibo;
                     cmd.Parameters.AddWithValue("@17", SqlDbType.NVarChar).Value = nguoigt1;
                     cmd.Parameters.AddWithValue("@18", SqlDbType.NVarChar).Value = chucvudonvi1;
                     cmd.Parameters.AddWithValue("@19", SqlDbType.NVarChar).Value = nguoigt2;
                     cmd.Parameters.AddWithValue("@20", SqlDbType.NVarChar).Value = chucvudonvi2;
-                    cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = ngaycap;
-                    cmd.Parameters.AddWithValue("@22", SqlDbType.Date).Value = ngaychinhthuc;
+
+                    if (ngaycap != null)
+                    {
+                        cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = ngaycap;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+                    if (ngaychinhthuc != null)
+                    {
+                        cmd.Parameters.AddWithValue("@22", SqlDbType.Date).Value = ngaychinhthuc;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@22", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+                    
                     cmd.Parameters.AddWithValue("@23", SqlDbType.NVarChar).Value = taichibo2;
-                    cmd.Parameters.AddWithValue("@24", SqlDbType.Date).Value = ngayduoctuyendung;
+
+                    if (ngayduoctuyendung != null)
+                    {
+                        cmd.Parameters.AddWithValue("@24", SqlDbType.Date).Value = ngayduoctuyendung;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@24", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
                     cmd.Parameters.AddWithValue("@25", SqlDbType.NVarChar).Value = coquantuyendung;
-                    cmd.Parameters.AddWithValue("@26", SqlDbType.Date).Value = ngayvaodoan;
+
+                    if (ngayvaodoan != null)
+                    {
+                        cmd.Parameters.AddWithValue("@26", SqlDbType.Date).Value = ngayvaodoan;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@26", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+                    
                     cmd.Parameters.AddWithValue("@27", SqlDbType.NVarChar).Value = thamgiatochucxh;
-                    cmd.Parameters.AddWithValue("@28", SqlDbType.Date).Value = ngaynhapngu;
-                    cmd.Parameters.AddWithValue("@29", SqlDbType.Date).Value = ngayxuatngu;
+
+                    if(ngaynhapngu != null)
+                    {
+                        cmd.Parameters.AddWithValue("@28", SqlDbType.Date).Value = ngaynhapngu;
+                    } 
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@28", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+                    if(ngayxuatngu != null)
+                    {
+                        cmd.Parameters.AddWithValue("@29", SqlDbType.Date).Value = ngayxuatngu;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@29", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
                     cmd.Parameters.AddWithValue("@30", SqlDbType.NVarChar).Value = trinhdohiennay;
                     cmd.Parameters.AddWithValue("@31", SqlDbType.NVarChar).Value = gdphothong;
                     cmd.Parameters.AddWithValue("@32", SqlDbType.NVarChar).Value = gdNgheNghiep;
@@ -276,7 +365,16 @@ namespace QLDV
                     cmd.Parameters.AddWithValue("@42", SqlDbType.NVarChar).Value = giadinh;
                     cmd.Parameters.AddWithValue("@43", SqlDbType.NVarChar).Value = cmnd;
                     cmd.Parameters.AddWithValue("@44", SqlDbType.NVarChar).Value = cancuoccdan;
-                    cmd.Parameters.AddWithValue("@45", SqlDbType.Date).Value = mienCtac;
+
+                    if (mienCtac != null)
+                    {
+                        cmd.Parameters.AddWithValue("@45", SqlDbType.Date).Value = mienCtac;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@45", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -307,21 +405,78 @@ namespace QLDV
                     cmd.Parameters.AddWithValue("@12", SqlDbType.NVarChar).Value = tongiao;
                     cmd.Parameters.AddWithValue("@13", SqlDbType.NVarChar).Value = thanhphangd;
                     cmd.Parameters.AddWithValue("@14", SqlDbType.NVarChar).Value = nghenghiephiennay;
-                    cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = ngayvaodang;
+                    if (ngayvaodang != null)
+                    {
+                        cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = ngayvaodang;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = DBNull.Value;
+                    }
                     cmd.Parameters.AddWithValue("@16", SqlDbType.NVarChar).Value = taichibo;
                     cmd.Parameters.AddWithValue("@17", SqlDbType.NVarChar).Value = nguoigt1;
                     cmd.Parameters.AddWithValue("@18", SqlDbType.NVarChar).Value = chucvudonvi1;
                     cmd.Parameters.AddWithValue("@19", SqlDbType.NVarChar).Value = nguoigt2;
                     cmd.Parameters.AddWithValue("@20", SqlDbType.NVarChar).Value = chucvudonvi2;
-                    cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = ngaycap;
-                    cmd.Parameters.AddWithValue("@22", SqlDbType.Date).Value = ngaychinhthuc;
+                    if (ngaycap != null)
+                    {
+                        cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = ngaycap;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+                    if (ngaychinhthuc != null)
+                    {
+                        cmd.Parameters.AddWithValue("@22", SqlDbType.Date).Value = ngaychinhthuc;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@22", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+
                     cmd.Parameters.AddWithValue("@23", SqlDbType.NVarChar).Value = taichibo2;
-                    cmd.Parameters.AddWithValue("@24", SqlDbType.Date).Value = ngayduoctuyendung;
+
+                    if (ngayduoctuyendung != null)
+                    {
+                        cmd.Parameters.AddWithValue("@24", SqlDbType.Date).Value = ngayduoctuyendung;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@24", SqlDbType.Date).Value = DBNull.Value;
+                    }
                     cmd.Parameters.AddWithValue("@25", SqlDbType.NVarChar).Value = coquantuyendung;
-                    cmd.Parameters.AddWithValue("@26", SqlDbType.Date).Value = ngayvaodoan;
+                    if (ngayvaodoan != null)
+                    {
+                        cmd.Parameters.AddWithValue("@26", SqlDbType.Date).Value = ngayvaodoan;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@26", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+
                     cmd.Parameters.AddWithValue("@27", SqlDbType.NVarChar).Value = thamgiatochucxh;
-                    cmd.Parameters.AddWithValue("@28", SqlDbType.Date).Value = ngaynhapngu;
-                    cmd.Parameters.AddWithValue("@29", SqlDbType.Date).Value = ngayxuatngu;
+
+                    if (ngaynhapngu != null)
+                    {
+                        cmd.Parameters.AddWithValue("@28", SqlDbType.Date).Value = ngaynhapngu;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@28", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+                    if (ngayxuatngu != null)
+                    {
+                        cmd.Parameters.AddWithValue("@29", SqlDbType.Date).Value = ngayxuatngu;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@29", SqlDbType.Date).Value = DBNull.Value;
+                    }
                     cmd.Parameters.AddWithValue("@30", SqlDbType.NVarChar).Value = trinhdohiennay;
                     cmd.Parameters.AddWithValue("@31", SqlDbType.NVarChar).Value = gdphothong;
                     cmd.Parameters.AddWithValue("@32", SqlDbType.NVarChar).Value = gdNgheNghiep;
@@ -337,7 +492,14 @@ namespace QLDV
                     cmd.Parameters.AddWithValue("@42", SqlDbType.NVarChar).Value = giadinh;
                     cmd.Parameters.AddWithValue("@43", SqlDbType.NVarChar).Value = cmnd;
                     cmd.Parameters.AddWithValue("@44", SqlDbType.NVarChar).Value = cancuoccdan;
-                    cmd.Parameters.AddWithValue("@45", SqlDbType.Date).Value = mienCtac;
+                    if (mienCtac != null)
+                    {
+                        cmd.Parameters.AddWithValue("@45", SqlDbType.Date).Value = mienCtac;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@45", SqlDbType.Date).Value = DBNull.Value;
+                    }
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -544,15 +706,436 @@ namespace QLDV
 
         // form DdlsVaQhng4
 
-        public void addDdls()
+        public void Ddls(string optionQuerry,string solylich,string sothe,string bixoaten, DateTime? thoigian, 
+                            string xoataichibo, string ketnaplai, DateTime? ngayvao, string vaochibo,
+                            string vaonguoigt1, string vaochucvu1, string vaodonvi1, string vaonguoigt2, string vaochucvu2, string vaodonvi2,
+                            DateTime? ngaychinhthuc2, string vaochibo2, DateTime? ngaykhoiphucdangtich, string vaochibo3, DateTime? ngaybikyluat,
+                            string thongtinkyluat, DateTime? ngaylamviecchedocu, string thongtinchedocu)
+        {
+            if(optionQuerry == "insert")
+            {
+                using (SqlCommand cmd = new SqlCommand("insert into dacdiemlichsu (solylich,sothe,xoadanhsach,thoigian," +
+                    "taichibo,ketnaplai,ngayvaolan2,taichibo2,nguoigt1,chucvu1,donvi1,nguoigt2,chucvu2, donvi2, " +
+                    "ngaychinhthuc2, taichibo3, ngaykhoiphuc, taichibo4, ngayxulyphapluat, thongtinxulyphapluat, " +
+                    "ngaylamchedocu,thongtinchedocu) values (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20,@21,@22)", con))
+                {
+                    cmd.Parameters.AddWithValue("@1", SqlDbType.NVarChar).Value = solylich;
+                    cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = sothe;
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.NVarChar).Value = bixoaten;
+                    if (thoigian != null)
+                    {
+                        cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = thoigian;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = xoataichibo;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NVarChar).Value = ketnaplai;
+                    if(ngayvao != null)
+                    {
+                        cmd.Parameters.AddWithValue("@7", SqlDbType.Date).Value = ngayvao;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@7", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
+                    cmd.Parameters.AddWithValue("@8", SqlDbType.NVarChar).Value = vaochibo;
+                    cmd.Parameters.AddWithValue("@9", SqlDbType.NVarChar).Value = vaonguoigt1;
+                    cmd.Parameters.AddWithValue("@10", SqlDbType.NVarChar).Value = vaochucvu1;
+                    cmd.Parameters.AddWithValue("@11", SqlDbType.NVarChar).Value = vaodonvi1;
+                    cmd.Parameters.AddWithValue("@12", SqlDbType.NVarChar).Value = vaonguoigt2;
+                    cmd.Parameters.AddWithValue("@13", SqlDbType.NVarChar).Value = vaochucvu2;
+                    cmd.Parameters.AddWithValue("@14", SqlDbType.NVarChar).Value = vaodonvi2;
+                    if(ngaychinhthuc2 != null)
+                    {
+                        cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = ngaychinhthuc2;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
+                    cmd.Parameters.AddWithValue("@16", SqlDbType.NVarChar).Value = vaochibo2;
+                    if(ngaykhoiphucdangtich != null)
+                    {
+                        cmd.Parameters.AddWithValue("@17", SqlDbType.Date).Value = ngaykhoiphucdangtich;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@17", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
+                    cmd.Parameters.AddWithValue("@18", SqlDbType.NVarChar).Value = vaochibo3;
+                    if(ngaybikyluat != null)
+                    {
+                        cmd.Parameters.AddWithValue("@19", SqlDbType.Date).Value = ngaybikyluat;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@19", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
+                    cmd.Parameters.AddWithValue("@20", SqlDbType.NText).Value = thongtinkyluat;
+                    if(ngaylamviecchedocu != null)
+                    {
+                        cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = ngaylamviecchedocu;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
+                    cmd.Parameters.AddWithValue("@22", SqlDbType.NText).Value = thongtinchedocu;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionQuerry == "update")
+            {
+                using (SqlCommand cmd = new SqlCommand("update dacdiemlichsu set xoadanhsach=@3,thoigian=@4," +
+                    "taichibo=@5,ketnaplai=@6,ngayvaolan2=@7,taichibo2=@8,nguoigt1=@9,chucvu1=@10,donvi1=@11,nguoigt2=@12,chucvu2=@13, donvi2=@14, " +
+                    "ngaychinhthuc2=@15, taichibo3=@16, ngaykhoiphuc=@17, taichibo4=@18, ngayxulyphapluat=@19, thongtinxulyphapluat=@20, " +
+                    "ngaylamchedocu=@21,thongtinchedocu=@22 where solylich='"+solylich+"' or sothe='"+sothe+"'",con))
+                {
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.NVarChar).Value = bixoaten;
+                    if (thoigian != null)
+                    {
+                        cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = thoigian;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = xoataichibo;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NVarChar).Value = ketnaplai;
+                    if (ngayvao != null)
+                    {
+                        cmd.Parameters.AddWithValue("@7", SqlDbType.Date).Value = ngayvao;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@7", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    cmd.Parameters.AddWithValue("@8", SqlDbType.NVarChar).Value = vaochibo;
+                    cmd.Parameters.AddWithValue("@9", SqlDbType.NVarChar).Value = vaonguoigt1;
+                    cmd.Parameters.AddWithValue("@10", SqlDbType.NVarChar).Value = vaochucvu1;
+                    cmd.Parameters.AddWithValue("@11", SqlDbType.NVarChar).Value = vaodonvi1;
+                    cmd.Parameters.AddWithValue("@12", SqlDbType.NVarChar).Value = vaonguoigt2;
+                    cmd.Parameters.AddWithValue("@13", SqlDbType.NVarChar).Value = vaochucvu2;
+                    cmd.Parameters.AddWithValue("@14", SqlDbType.NVarChar).Value = vaodonvi2;
+                    if (ngaychinhthuc2 != null)
+                    {
+                        cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = ngaychinhthuc2;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@15", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    cmd.Parameters.AddWithValue("@16", SqlDbType.NVarChar).Value = vaochibo2;
+                    if (ngaykhoiphucdangtich != null)
+                    {
+                        cmd.Parameters.AddWithValue("@17", SqlDbType.Date).Value = ngaykhoiphucdangtich;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@17", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    cmd.Parameters.AddWithValue("@18", SqlDbType.NVarChar).Value = vaochibo3;
+                    if (ngaybikyluat != null)
+                    {
+                        cmd.Parameters.AddWithValue("@19", SqlDbType.Date).Value = ngaybikyluat;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@19", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    cmd.Parameters.AddWithValue("@20", SqlDbType.NText).Value = thongtinkyluat;
+                    if (ngaylamviecchedocu != null)
+                    {
+                        cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = ngaylamviecchedocu;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@21", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    cmd.Parameters.AddWithValue("@22", SqlDbType.NText).Value = thongtinchedocu;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionQuerry == "select")
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select * from dacdiemlichsu where solylich='"+solylich+"' or sothe='" + sothe + "'", con))
+                {
+                    using (SqlDataReader read = cmd.ExecuteReader())
+                    {
+                        bixoaten = read.GetString(2);
+
+                        if(read.GetDateTime(3) != null)
+                        {
+                            thoigian = read.GetDateTime(3);
+                        }
+                        else
+                        {
+                            thoigian = DateTime.Now;
+                        }
+
+                        xoataichibo = read.GetString(4);
+                        ketnaplai = read.GetString(5);
+
+                        if(read.GetDateTime(6) != null)
+                        {
+                            ngayvao = read.GetDateTime(6);
+                        }
+                        else
+                        {
+                            ngayvao = DateTime.Now;
+                        }
+
+                        vaochibo = read.GetString(7);
+                        vaonguoigt1 = read.GetString(8);
+                        vaochucvu1 = read.GetString(9);
+                        vaodonvi1 = read.GetString(10);
+                        vaonguoigt2 = read.GetString(11);
+                        vaochucvu2 = read.GetString(12);
+                        vaodonvi2 = read.GetString(13);
+
+                        if (read.GetDateTime(14) != null)
+                        {
+                            ngaychinhthuc2 = read.GetDateTime(14);
+                        }
+                        else
+                        {
+                            ngaychinhthuc2 = DateTime.Now;
+                        }
+
+                        vaochibo2 = read.GetString(15);
+
+                        if (read.GetDateTime(16) != null)
+                        {
+                            ngaykhoiphucdangtich = read.GetDateTime(14);
+                        }
+                        else
+                        {
+                            ngaykhoiphucdangtich = DateTime.Now;
+                        }
+
+                        vaochibo3 = read.GetString(15);
+
+                        if (read.GetDateTime(16) != null)
+                        {
+                            ngaybikyluat = read.GetDateTime(16);
+                        }
+                        else
+                        {
+                            ngaybikyluat = DateTime.Now;
+                        }
+
+                        thongtinkyluat = read.GetString(17);
+
+                        if(read.GetDateTime(18) != null)
+                        {
+                            ngaylamviecchedocu = read.GetDateTime(18);
+                        }
+                        else
+                        {
+                            ngaylamviecchedocu = DateTime.Now;
+                        }
+
+                        thongtinchedocu = read.GetString(19);
+                    }
+                }
+                con.Close();
+            }
+        }
+
+        public void Qhng(string optionQuerry, string solylich, string sothe, DateTime? dinuocngoaitu,
+         DateTime? dinuocngoaiden,string thongtindinuocngoai,string thamgiatochucnuocngoai,string nguoithannuocngoai)
+        {
+            if(optionQuerry == "insert")
+            {
+                using (SqlCommand cmd = new SqlCommand("insert into qhnuocngoai (solylich,sothe,tungay,denngay," +
+                    "thongtinthem,thongtinquanhe,thongtinnguoithan) values (@1,@2,@3,@4,@5,@6,@7)", con))
+                {
+                    cmd.Parameters.AddWithValue("@1",SqlDbType.NVarChar).Value = solylich;
+                    cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = sothe;
+                    if(dinuocngoaitu != null)
+                    {
+                        cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = dinuocngoaitu;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = DBNull.Value;
+                    }
+
+                    if(dinuocngoaiden != null)
+                    {
+                        cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = dinuocngoaiden;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    
+                    
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NText).Value = thongtindinuocngoai;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NText).Value = thamgiatochucnuocngoai;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NText).Value = nguoithannuocngoai;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionQuerry == "update")
+            {
+                using (SqlCommand cmd = new SqlCommand("update qhnuocngoai set tungay=@3,denngay=@4," +
+                    "thongtinthem=@5,thongtinquanhe=@6,thongtinnguoithan=@7" +
+                    " where solylich='"+solylich+"' or sothe='"+sothe+"'", con))
+                {
+                    
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = dinuocngoaitu;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = dinuocngoaiden;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NText).Value = thongtindinuocngoai;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NText).Value = thamgiatochucnuocngoai;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NText).Value = nguoithannuocngoai;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionQuerry == "select")
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select * from qhnuocngoai where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+                {
+                    using (SqlDataReader read = cmd.ExecuteReader())
+                    {
+                        if (read.GetDateTime(2) != null)
+                        {
+                            dinuocngoaitu = read.GetDateTime(2);
+                        }
+                        else
+                        {
+                            dinuocngoaitu = DateTime.Now;
+                        }
+
+                        if (read.GetDateTime(3) != null)
+                        {
+                            dinuocngoaiden = read.GetDateTime(3);
+                        }
+                        else
+                        {
+                            dinuocngoaiden = DateTime.Now;
+                        }
+
+                        thongtindinuocngoai = read.GetString(4);
+                        thamgiatochucnuocngoai = read.GetString(5);
+                        nguoithannuocngoai = read.GetString(6);
+                    }
+                }
+                con.Close();
+            }
+        }
+
+        //form QuanHeGD5
+        public void quanheGD()
         {
 
         }
 
-        public void addQhng()
+        // form HoanCanhGiaDinh 6
+        public void hoancanhgd(string optionQuerry, string solylich,string sothe,string tongthunhap,string binhquandaunguoi,
+         string nhaoduoccap,string dientichnhaoduoccap,string nhaotumua,string dientichnhaotumua,
+         string datoduoccap,string datotumua,string hdkinhte,string dientichtrangtrai,string soldthue,
+         string taisancogiatricao,string giatri)
         {
+            if(optionQuerry == "insert")
+            {
+                using (SqlCommand cmd = new SqlCommand("insert into hcgiadinh (solylich,sothe,tongthunhapgd,binhquan," +
+                    "nhaoduoccap,dientichnhao,nhatumua,dientichnhatumua,datoduoccap," +
+                    "dattumua,hoatdongkinhte,dientichdatkinhdoanh,solaodongthue,taisan,giatri) values" +
+                    " (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15)", con))
+                {
+                    cmd.Parameters.AddWithValue("@1", SqlDbType.NVarChar).Value = solylich;
+                    cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = sothe;
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.VarChar).Value = tongthunhap;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.VarChar).Value = binhquandaunguoi;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = nhaoduoccap;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.VarChar).Value = dientichnhaoduoccap;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = nhaotumua;
+                    cmd.Parameters.AddWithValue("@8", SqlDbType.VarChar).Value = dientichnhaotumua;
+                    cmd.Parameters.AddWithValue("@9", SqlDbType.VarChar).Value = datoduoccap;
+                    cmd.Parameters.AddWithValue("@10", SqlDbType.VarChar).Value = datotumua;
+                    cmd.Parameters.AddWithValue("@11", SqlDbType.NVarChar).Value = hdkinhte;
+                    cmd.Parameters.AddWithValue("@12", SqlDbType.VarChar).Value = dientichtrangtrai;
+                    cmd.Parameters.AddWithValue("@13", SqlDbType.VarChar).Value = soldthue;
+                    cmd.Parameters.AddWithValue("@14", SqlDbType.NText).Value = taisancogiatricao;
+                    cmd.Parameters.AddWithValue("@15", SqlDbType.VarChar).Value = giatri;
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionQuerry == "update")
+            {
+                using (SqlCommand cmd = new SqlCommand("update hcgiadinh set tongthunhapgd=@3,binhquan=@4," +
+                    "nhaoduoccap=@5,dientichnhao=@6,nhatumua=@7,dientichnhatumua=@8,datoduoccap=@9," +
+                    "dattu=@10,muahoatdongkinhte=@11,dientichdatkinhdoanh=@12,solaodongthue=@13,taisan=@14,giatri=@15" +
+                    " where solylich='"+solylich+"' or sothe="+sothe+"'", con))
+                {
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.VarChar).Value = tongthunhap;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.VarChar).Value = binhquandaunguoi;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = nhaoduoccap;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.VarChar).Value = dientichnhaoduoccap;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = nhaotumua;
+                    cmd.Parameters.AddWithValue("@8", SqlDbType.VarChar).Value = dientichnhaotumua;
+                    cmd.Parameters.AddWithValue("@9", SqlDbType.VarChar).Value = datoduoccap;
+                    cmd.Parameters.AddWithValue("@10", SqlDbType.VarChar).Value = datotumua;
+                    cmd.Parameters.AddWithValue("@11", SqlDbType.NVarChar).Value = hdkinhte;
+                    cmd.Parameters.AddWithValue("@12", SqlDbType.VarChar).Value = dientichtrangtrai;
+                    cmd.Parameters.AddWithValue("@13", SqlDbType.VarChar).Value = soldthue;
+                    cmd.Parameters.AddWithValue("@14", SqlDbType.NText).Value = taisancogiatricao;
+                    cmd.Parameters.AddWithValue("@15", SqlDbType.VarChar).Value = giatri;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionQuerry == "select")
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select * from hcgiadinh where solylich='" + solylich + "' or sothe=" + sothe + "'", con))
+                {
+                    using (SqlDataReader read = cmd.ExecuteReader())
+                    {
+                        tongthunhap = read.GetString(2);
+                        binhquandaunguoi = read.GetString(3);
+                        nhaoduoccap = read.GetString(4);
+                        dientichnhaoduoccap = read.GetString(5);
+                        nhaotumua = read.GetString(6);
+                        dientichnhaotumua = read.GetString(7);
+                        datoduoccap = read.GetString(8);
+                        datotumua = read.GetString(9);
+                        hdkinhte = read.GetString(10);
+                        dientichtrangtrai = read.GetString(11);
+                        soldthue = read.GetString(12);
+                        taisancogiatricao = read.GetString(13);
+                        giatri = read.GetString(14);
+                    }
+                }
+                con.Close();
+            }
         }
-
     }
 }

@@ -12,12 +12,15 @@ namespace QLDV
 {
     public partial class UCDaoTaoChung3 : UserControl
     {
-
         public List<string> l = new List<string>();
+
+        public static bool check = false;
         public UCDaoTaoChung3()
         {
             InitializeComponent();
         }
+
+
 
         private static UCDaoTaoChung3 _instance;
         public static UCDaoTaoChung3 Instance
@@ -41,6 +44,7 @@ namespace QLDV
             dtvttdv.panel1.Controls.Add(ucQuaTrinhHoatDongVaCongTac2.Instance);
             ucQuaTrinhHoatDongVaCongTac2.Instance.Dock = DockStyle.Fill;
             ucQuaTrinhHoatDongVaCongTac2.Instance.BringToFront();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -55,6 +59,7 @@ namespace QLDV
 
         private void button1_Click(object sender, EventArgs e)
         {
+         
             if (checkBox1.Checked)
             {
                 l.Add(checkBox1.Text);
@@ -111,7 +116,38 @@ namespace QLDV
             dtvttdv.panel1.Controls.Add(ucDdlsVaQhng4.Instance);
             ucDdlsVaQhng4.Instance.Dock = DockStyle.Fill;
             ucDdlsVaQhng4.Instance.BringToFront();
-            
+            setInfor();
+        }
+
+        private void UCDaoTaoChung3_Load(object sender, EventArgs e)
+        {
+            if(check == true)
+            {
+                foreach (Control c in this.Controls)
+                {
+                    if (c is RichTextBox)
+                    {
+                        ((RichTextBox)(c)).Text = "";
+                    }
+                    else if (c is DataGridView)
+                    {
+                        ((DataGridView)c).DataSource = null;
+                    }
+                    else if(c is CheckBox)
+                    {
+                        ((CheckBox)c).Checked = false;
+                    }
+                }
+            }
+        }
+
+        private void setInfor()
+        {
+            dangvien.khenthuong = richTextBox1.Text;
+            dangvien.huyhieudang = string.Join(", ",l.ToArray());
+
+            dangvien.danhhieu = richTextBox2.Text;
+            dangvien.kyluat = richTextBox3.Text;
         }
     }
 }

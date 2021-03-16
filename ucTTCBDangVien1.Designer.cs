@@ -83,6 +83,8 @@ namespace QLDV
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -111,12 +113,10 @@ namespace QLDV
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -701,6 +701,8 @@ namespace QLDV
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.comboBox4);
+            this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.comboBox1);
@@ -737,12 +739,10 @@ namespace QLDV
             this.panel1.Controls.Add(this.textBox17);
             this.panel1.Controls.Add(this.textBox16);
             this.panel1.Controls.Add(this.textBox15);
-            this.panel1.Controls.Add(this.textBox14);
             this.panel1.Controls.Add(this.textBox13);
             this.panel1.Controls.Add(this.textBox12);
             this.panel1.Controls.Add(this.textBox11);
             this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.textBox9);
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
@@ -795,6 +795,23 @@ namespace QLDV
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1168, 781);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(812, 350);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(302, 24);
+            this.comboBox4.TabIndex = 44;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(432, 191);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(162, 24);
+            this.comboBox3.TabIndex = 44;
             // 
             // checkBox1
             // 
@@ -1042,14 +1059,6 @@ namespace QLDV
             this.textBox15.Size = new System.Drawing.Size(255, 22);
             this.textBox15.TabIndex = 21;
             // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(812, 350);
-            this.textBox14.MaxLength = 300;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(302, 22);
-            this.textBox14.TabIndex = 19;
-            // 
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(812, 307);
@@ -1081,14 +1090,6 @@ namespace QLDV
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(302, 22);
             this.textBox10.TabIndex = 13;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(415, 191);
-            this.textBox9.MaxLength = 300;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(179, 22);
-            this.textBox9.TabIndex = 12;
             // 
             // textBox7
             // 
@@ -1210,12 +1211,10 @@ namespace QLDV
         public System.Windows.Forms.TextBox textBox17;
         public System.Windows.Forms.TextBox textBox16;
         public System.Windows.Forms.TextBox textBox15;
-        public System.Windows.Forms.TextBox textBox14;
         public System.Windows.Forms.TextBox textBox13;
         public System.Windows.Forms.TextBox textBox12;
         public System.Windows.Forms.TextBox textBox11;
         public System.Windows.Forms.TextBox textBox10;
-        public System.Windows.Forms.TextBox textBox9;
         public System.Windows.Forms.TextBox textBox7;
         public System.Windows.Forms.DateTimePicker dateTimePicker9;
         public System.Windows.Forms.TextBox textBox29;
@@ -1224,5 +1223,7 @@ namespace QLDV
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.CheckBox checkBox2;
+        public System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.ComboBox comboBox3;
     }
 }

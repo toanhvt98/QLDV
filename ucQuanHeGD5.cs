@@ -12,6 +12,8 @@ namespace QLDV
 {
     public partial class ucQuanHeGD5 : UserControl
     {
+
+        public static bool check = false;
         public ucQuanHeGD5()
         {
             InitializeComponent();
@@ -37,6 +39,33 @@ namespace QLDV
                 i--;
             }
             comboBox1.SelectedIndex = 0;
+
+            if(check == true)
+            {
+                foreach(Control c in groupBox1.Controls)
+                {
+                    if (c is TextBox)
+                    {
+                        ((TextBox)c).Text = "";
+                    }
+                    else if (c is ComboBox)
+                    {
+                        ((ComboBox)c).SelectedIndex = 0;
+                    }
+                    else if (c is RichTextBox)
+                    {
+                        ((RichTextBox)c).Text = "";
+                    }
+                }
+
+                foreach(Control c in this.Controls)
+                {
+                    if(c is DataGridView)
+                    {
+                        ((DataGridView)c).DataSource = null;
+                    }
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

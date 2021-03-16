@@ -23,8 +23,9 @@ namespace QLDV
 
         private void formAddAcc_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'chiboDataSet.chibo' table. You can move, or remove it, as needed.
-            this.chiboTableAdapter.Fill(this.chiboDataSet.chibo);
+            
+            connectDb con = new connectDb();
+            con.themChiBoCombo(comboBox1);
             comboBox1.SelectedIndex = 0;
         }
 
