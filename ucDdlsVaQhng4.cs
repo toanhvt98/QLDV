@@ -119,15 +119,6 @@ namespace QLDV
             grb.Enabled = cb.Checked;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            DialogResult dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                dtvttdv.Close();
-            }
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {

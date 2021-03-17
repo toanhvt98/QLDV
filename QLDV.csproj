@@ -33,10 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +70,12 @@
     </Compile>
     <Compile Include="formAddChiBo.Designer.cs">
       <DependentUpon>formAddChiBo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDaoTaoChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDaoTaoChung.Designer.cs">
+      <DependentUpon>formDaoTaoChung.cs</DependentUpon>
     </Compile>
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
@@ -94,6 +109,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLDVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDVDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UCDaoTaoChung3.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +162,12 @@
     <Compile Include="ucQuaTrinhHoatDongVaCongTac2.Designer.cs">
       <DependentUpon>ucQuaTrinhHoatDongVaCongTac2.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCThongTin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThongTin.Designer.cs">
+      <DependentUpon>UCThongTin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucTTCBDangVien1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formAddChiBo.resx">
       <DependentUpon>formAddChiBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDaoTaoChung.resx">
+      <DependentUpon>formDaoTaoChung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
@@ -202,6 +231,9 @@
     <EmbeddedResource Include="ucQuaTrinhHoatDongVaCongTac2.resx">
       <DependentUpon>ucQuaTrinhHoatDongVaCongTac2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCThongTin.resx">
+      <DependentUpon>UCThongTin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucTTCBDangVien1.resx">
       <DependentUpon>ucTTCBDangVien1.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +247,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLDVDataSet.xsc">
+      <DependentUpon>QLDVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLDVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDVDataSet.xss">
+      <DependentUpon>QLDVDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

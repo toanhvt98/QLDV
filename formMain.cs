@@ -43,5 +43,12 @@ namespace QLDV
             uclDangVien.Instance.Dock = DockStyle.Fill;
             uclDangVien.Instance.BringToFront();
         }
+
+        private void thôngTinĐảngViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Add(UCThongTin.Instance);
+            UCThongTin.Instance.Dock = DockStyle.Fill;
+            UCThongTin.Instance.BringToFront();
+        }
     }
 }

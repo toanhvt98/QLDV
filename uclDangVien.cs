@@ -66,6 +66,11 @@ namespace QLDV
                         if (con.checkSllVaSt("sothe",textBox2.Text))
                         {
                             setInfor();
+
+                            byte[] anh;
+                            ImageConverter converter = new ImageConverter();
+                            anh = (byte[])converter.ConvertTo(pictureBox1.Image, typeof(byte[]));
+                            con.addSllVaSt(anh, textBox1.Text, textBox2.Text);
                             formThemVaThongTinDangVien ftvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
 
                             ucTTCBDangVien.check = true;
@@ -81,7 +86,9 @@ namespace QLDV
 
                             }
                             ftvttdv.ShowDialog();
-
+                            textBox1.Text = "";
+                            textBox2.Text = "";
+                            pictureBox1.BackgroundImage = null;
                         }
                         else
                             MessageBox.Show("Mã số thẻ Đảng viên: " + textBox2.Text + " đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -100,8 +107,7 @@ namespace QLDV
         {
             dangvien.solylich = textBox1.Text;
             dangvien.sothedangvien = textBox2.Text;
-            ImageConverter converter = new ImageConverter();
-            dangvien.anh = (byte[])converter.ConvertTo(pictureBox1.Image, typeof(byte[]));
+            
         }
 
     }

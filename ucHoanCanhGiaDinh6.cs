@@ -26,7 +26,7 @@ namespace QLDV
         //thong tin can thiet 0
         private string solylich;
         private string sothedangvien;
-        private byte[] anh;
+
 
         // thong tin co ban 1
         private string tendangdung;
@@ -156,7 +156,7 @@ namespace QLDV
             }
         }
 
-        public static formThemVaThongTinDangVien d = new formThemVaThongTinDangVien();
+
         private void button1_Click(object sender, EventArgs e) // insert sql
         {
             setAllInfor();
@@ -166,7 +166,7 @@ namespace QLDV
                 "Số thẻ Đảng viên: "+sothedangvien,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if(dr == DialogResult.Yes)
             {
-                con.addSllVaSt(anh, tendangdung, solylich, sothedangvien);
+                con.updateDangvien(tendangdung, solylich, sothedangvien);
                 con.TTCBDangVien("insert", solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
                  quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
                  nghenghiephiennay, ngayvaodang, taichibo, nguoigt1, chucvudonvi1,
@@ -194,12 +194,9 @@ namespace QLDV
                     "Số lý lịch: " + solylich + "\n" +
                     "Số thẻ Đảng viên: " + sothedangvien,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
-
-                formThemVaThongTinDangVien f = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
                 
+                formThemVaThongTinDangVien f = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];               
                 f.Close();
-                
-
             }
             
         }
@@ -218,7 +215,7 @@ namespace QLDV
         private void button2_Click(object sender, EventArgs e)
         {
             formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            DialogResult dr = MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Thông tin bạn vừa nhập sẽ mất hết. Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 dtvttdv.Close();
@@ -231,7 +228,7 @@ namespace QLDV
             
             solylich = dangvien.solylich;
             sothedangvien = dangvien.sothedangvien;
-            anh = dangvien.anh;
+
 
             // thong tin co ban 1
             tendangdung = dangvien.tendangdung;

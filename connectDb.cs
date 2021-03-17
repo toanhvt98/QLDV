@@ -13,7 +13,7 @@ namespace QLDV
 {
     class connectDb
     {
-        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlStr.ToString());
+        public SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlStr.ToString());
         
         public bool checkLogin(string tentk, string matkhau, string quyentruycap)
         {
@@ -47,6 +47,35 @@ namespace QLDV
                 }
             }
         }
+
+        public void selectDangVien(DataGridView dtg)
+        {
+            DataTable dt = new DataTable();
+            con.Open();
+            
+            using (SqlCommand cmd = new SqlCommand("select * from dangvien", con))
+            {
+                dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+            }
+            con.Close();
+            dtg.DataSource = dt;
+            
+        }
+
+        public void rfGridFormThemVaThongTin(DataGridView dtg, string tbl,string solylich, string sothe)
+        {
+            using (con)
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter("select * from " + tbl + " where solylich='"+solylich+"' or sothe='"+sothe+"'", con))
+                {
+                    DataTable dtb = new DataTable();
+                    sda.Fill(dtb);
+                    dtg.DataSource = dtb;
+                }
+            }
+        }
+
 
         public void dtgFilter(DataGridView dtg,string col,string text, string tbl)
         {
@@ -219,19 +248,31 @@ namespace QLDV
             con.Close();
             return true;
         }
-        public void addSllVaSt(byte[] img,string ten,string solylich, string sothe)
+        public void addSllVaSt(byte[] img,string solylich, string sothe)
         {
-            using (SqlCommand cmd = new SqlCommand("insert into dangvien (anhdangvien,tendangvien,solylich,sothe) values (@img,@ten,@sll,@st)", con))
+            using (SqlCommand cmd = new SqlCommand("insert into dangvien (anhdangvien,solylich,sothe) values (@img,@sll,@st)", con))
             {
-                cmd.Parameters.AddWithValue("@img", SqlDbType.Image).Value = img;
+                cmd.Parameters.AddWithValue("@img", img);
                 cmd.Parameters.AddWithValue("@sll", SqlDbType.NVarChar).Value = solylich;
-                cmd.Parameters.AddWithValue("@ten", SqlDbType.NVarChar).Value = ten;
                 cmd.Parameters.AddWithValue("@st", SqlDbType.NVarChar).Value = sothe;
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
         }
+
+        public void updateDangvien(string ten, string solylich, string sothe)
+        {
+            using (SqlCommand cmd = new SqlCommand("update dangvien set tendangvien=@ten where solylich='"+solylich+"' or sothe='"+sothe+"'", con))
+            {
+
+                cmd.Parameters.AddWithValue("@ten", SqlDbType.NVarChar).Value = ten;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
 
         // form uclTTCBDangVien
         public void TTCBDangVien(string optionQuerry,string solylich, string sothedangvien, string tendangdung,string gioitinh,
@@ -645,16 +686,89 @@ namespace QLDV
 
         // form quatrinhhoatdong2
 
-        public void quatrinhhoatdong()
+        public void quatrinhhoatdong(string optionQuerry,int id, string solylich, string sothe, DateTime tungay, DateTime denngay, string lamgi, string chucvu,string donvi)
         {
+            if(optionQuerry == "insert")
+            {
+                using (SqlCommand cmd = new SqlCommand("insert into quatrinhhoatdong (solylich,sothe,tungay,denngay,lamgi,chucvu,dvcongtac)" +
+                    " values (@1,@2,@3,@4,@5,@6,@7)", con))
+                {
+                    cmd.Parameters.AddWithValue("@1", SqlDbType.NVarChar).Value = solylich;
+                    cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = sothe;
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = tungay;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = denngay;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = lamgi;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NVarChar).Value = chucvu;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = donvi;
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionQuerry == "update")
+            {
+                using (SqlCommand cmd = new SqlCommand("update quatrinhhoatdong set tungay=@3,denngay=@4,lamgi=@5,chucvu=@6,dvcongtac=@7" +
+                    " where id="+id, con))
+                {
+                    
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = tungay;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = denngay;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = lamgi;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NVarChar).Value = chucvu;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = donvi;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
         }
 
         // form UCDaoTaoCHung3
 
-        public void DaoTaoChung1()
+        public void DaoTaoChung1(string optionQuerry,int id, string solylich, string sothe,string tentruong,string tennganh, DateTime tungay, DateTime denngay,string hinhthuc,string vanbang,string chungchi,string trinhdo)
         {
-            
+            if(optionQuerry == "insert")
+            {
+                using (SqlCommand cmd = new SqlCommand("insert into daotaochuyenmon (solylich,sothe,tentruong,nganhhoc,tungay,denngay," +
+                    "hinhthuchoc,vanbang,chungchi,trinhdo) values (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10)",con))
+                {
+                    cmd.Parameters.AddWithValue("@1",SqlDbType.NVarChar).Value = solylich;
+                    cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = sothe;
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.NVarChar).Value = tentruong;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.NVarChar).Value = tennganh;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.Date).Value = tungay;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.Date).Value = denngay;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = hinhthuc;
+                    cmd.Parameters.AddWithValue("@8", SqlDbType.NVarChar).Value = vanbang;
+                    cmd.Parameters.AddWithValue("@9", SqlDbType.NVarChar).Value = chungchi;
+                    cmd.Parameters.AddWithValue("@10", SqlDbType.NVarChar).Value = trinhdo;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionQuerry == "update")
+            {
+                using (SqlCommand cmd = new SqlCommand("update daotaochuyenmon set tentruong=@3,nganhhoc=@4,tungay=@5,denngay=@6," +
+                    "hinhthuchoc=@7,vanbang=@8,chungchi=@9,trinhdo=@10 where id="+id, con))
+                {
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.NVarChar).Value = tentruong;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.NVarChar).Value = tennganh;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.Date).Value = tungay;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.Date).Value = denngay;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = hinhthuc;
+                    cmd.Parameters.AddWithValue("@8", SqlDbType.NVarChar).Value = vanbang;
+                    cmd.Parameters.AddWithValue("@9", SqlDbType.NVarChar).Value = chungchi;
+                    cmd.Parameters.AddWithValue("@10", SqlDbType.NVarChar).Value = trinhdo;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
         }
         public void DaoTaoChung2(string optionQuerry,string solylich, string sothedangvien, string khenthuong, string huyhieudang ,string danhhieu, string kyluat)
         {
@@ -1047,9 +1161,39 @@ namespace QLDV
         }
 
         //form QuanHeGD5
-        public void quanheGD()
+        public void quanheGD(string optionquerry,int id,string solylich,string sothe,string quanhe,string hoten,int namsinh,string thongtin)
         {
+            if(optionquerry == "insert")
+            {
+                using (SqlCommand cmd = new SqlCommand("insert in to qhgiadinh (solylich,sothe,quanhe,hoten,namsinh,thongtin) values (@1,@2,@3,@4,@5,@6)",con))
+                {
+                    cmd.Parameters.AddWithValue("@1", SqlDbType.NVarChar).Value = solylich;
+                    cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = sothe;
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.NVarChar).Value = quanhe;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.NVarChar).Value = hoten;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = namsinh;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NVarChar).Value = thongtin;
 
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            else if(optionquerry == "update")
+            {
+                using (SqlCommand cmd = new SqlCommand("update qhgiadinh set quanhe=@3,hoten=@4,namsinh=@5,thongtin=@6 where id="+id, con))
+                {
+                    
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.NVarChar).Value = quanhe;
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.NVarChar).Value = hoten;
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = namsinh;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NVarChar).Value = thongtin;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
         }
 
         // form HoanCanhGiaDinh 6
@@ -1136,6 +1280,38 @@ namespace QLDV
                 }
                 con.Close();
             }
+        }
+
+
+        // phuong thuc them dattagrid view
+        public void addDtgForm2(DataGridView dtg)
+        {
+            con.Open();
+
+            for (int i = 0; i < dtg.Rows.Count; i++)
+                {
+                using (SqlCommand cmd = new SqlCommand("insert into quatrinhhoatdong (solylich,sothe,tungay,denngay,lamgi,chucvu,dvcongtac)" +
+                    " values (@1,@2,@3,@4,@5,@6,@7)", con))
+                {
+                    cmd.Parameters.AddWithValue("@1", SqlDbType.NVarChar).Value = dtg.Rows[i].Cells[1].Value;
+                    cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = dtg.Rows[i].Cells[2];
+                    cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = Convert.ToDateTime(dtg.Rows[i].Cells[3].Value);
+                    cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = Convert.ToDateTime(dtg.Rows[i].Cells[4].Value);
+                    cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = dtg.Rows[i].Cells[5].Value;
+                    cmd.Parameters.AddWithValue("@6", SqlDbType.NVarChar).Value = dtg.Rows[i].Cells[6].Value;
+                    cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = dtg.Rows[i].Cells[7].Value;
+
+                    
+                    cmd.ExecuteNonQuery();
+                    
+                }
+                    
+
+                }
+            con.Close();
+
+
+
         }
     }
 }

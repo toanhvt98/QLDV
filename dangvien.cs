@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace QLDV
 {
-    public class dangvien
-    {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
 
+    public partial class dangvien
+    {
         public static string solylich;
         public static string sothedangvien;
-        public static byte[] anh;
+
 
         // thong tin co ban 1
         public static string tendangdung;
@@ -108,8 +107,5 @@ namespace QLDV
         public static string soldthue;
         public static string taisancogiatricao;
         public static string giatri;
-
     }
-
-
 }

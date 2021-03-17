@@ -107,6 +107,7 @@ namespace QLDV
             this.thôngTinĐảngViênToolStripMenuItem.Name = "thôngTinĐảngViênToolStripMenuItem";
             this.thôngTinĐảngViênToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.thôngTinĐảngViênToolStripMenuItem.Text = "Thông tin Đảng viên";
+            this.thôngTinĐảngViênToolStripMenuItem.Click += new System.EventHandler(this.thôngTinĐảngViênToolStripMenuItem_Click);
             // 
             // thốngKêToolStripMenuItem
             // 

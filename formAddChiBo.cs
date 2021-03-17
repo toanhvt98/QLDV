@@ -58,5 +58,10 @@ namespace QLDV
                 MessageBox.Show("Mã chi bộ không được bỏ trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             qlcb.loaddata();
         }
+
+        private void formAddChiBo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -110,6 +110,7 @@ namespace QLDV
             this.MaximizeBox = false;
             this.Name = "formAddChiBo";
             this.Text = "Thêm chi bộ";
+            this.Load += new System.EventHandler(this.formAddChiBo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

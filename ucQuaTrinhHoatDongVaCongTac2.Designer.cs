@@ -33,7 +33,6 @@ namespace QLDV
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -58,6 +57,7 @@ namespace QLDV
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(185, 42);
             this.dataGridView1.Name = "dataGridView1";
@@ -66,6 +66,7 @@ namespace QLDV
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(831, 319);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button4
             // 
@@ -93,17 +94,6 @@ namespace QLDV
             this.button7.TabIndex = 1;
             this.button7.Text = "button1";
             this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(798, 708);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 42);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -144,17 +134,17 @@ namespace QLDV
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Location = new System.Drawing.Point(167, 398);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(867, 271);
+            this.groupBox1.Size = new System.Drawing.Size(867, 234);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tác vụ";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(167, 172);
+            this.textBox3.Location = new System.Drawing.Point(167, 179);
             this.textBox3.MaxLength = 300;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(350, 22);
+            this.textBox3.Size = new System.Drawing.Size(363, 22);
             this.textBox3.TabIndex = 2;
             // 
             // textBox2
@@ -162,7 +152,7 @@ namespace QLDV
             this.textBox2.Location = new System.Drawing.Point(167, 131);
             this.textBox2.MaxLength = 100;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(350, 22);
+            this.textBox2.Size = new System.Drawing.Size(363, 22);
             this.textBox2.TabIndex = 1;
             // 
             // textBox1
@@ -170,7 +160,7 @@ namespace QLDV
             this.textBox1.Location = new System.Drawing.Point(167, 91);
             this.textBox1.MaxLength = 100;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(350, 22);
+            this.textBox1.Size = new System.Drawing.Size(363, 22);
             this.textBox1.TabIndex = 0;
             // 
             // dateTimePicker2
@@ -178,7 +168,7 @@ namespace QLDV
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(422, 45);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(93, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker2.TabIndex = 1;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
@@ -187,7 +177,7 @@ namespace QLDV
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(167, 45);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker1.TabIndex = 0;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -205,7 +195,7 @@ namespace QLDV
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 172);
+            this.label5.Location = new System.Drawing.Point(16, 182);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 17);
             this.label5.TabIndex = 12;
@@ -244,22 +234,24 @@ namespace QLDV
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(749, 189);
+            this.button9.Location = new System.Drawing.Point(748, 159);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(101, 42);
             this.button9.TabIndex = 5;
             this.button9.Text = "Xóa";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(749, 118);
+            this.button8.Location = new System.Drawing.Point(749, 104);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(101, 42);
             this.button8.TabIndex = 4;
             this.button8.Text = "Sửa";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button5
             // 
@@ -270,6 +262,7 @@ namespace QLDV
             this.button5.TabIndex = 3;
             this.button5.Text = "Thêm";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // ucQuaTrinhHoatDongVaCongTac2
             // 
@@ -278,7 +271,6 @@ namespace QLDV
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -295,12 +287,9 @@ namespace QLDV
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
@@ -317,5 +306,6 @@ namespace QLDV
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.DateTimePicker dateTimePicker2;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
