@@ -260,7 +260,17 @@ namespace QLDV
                 con.Close();
             }
         }
+        public void updateAnh(byte[] img, string solylich, string sothe)
+        {
+            using (SqlCommand cmd = new SqlCommand("update dangvien set anhdangvien=@anh where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
 
+                cmd.Parameters.AddWithValue("@anh", img);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
         public void updateDangvien(string ten, string solylich, string sothe)
         {
             using (SqlCommand cmd = new SqlCommand("update dangvien set tendangvien=@ten where solylich='"+solylich+"' or sothe='"+sothe+"'", con))
@@ -547,140 +557,7 @@ namespace QLDV
                     con.Close();
                 }
             }
-            else if(optionQuerry == "select")
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("select * from ttcbDv where solylich='"+solylich+"' or sothe='"+sothedangvien+"'", con))
-                {
-                    using (SqlDataReader read = cmd.ExecuteReader())
-                    {
-                        tendangdung = read.GetString(2);
-                        gioitinh = read.GetString(3);
-                        tenkhaisinh = read.GetString(4);
 
-                        if (read.GetDateTime(5) != null)
-                        {
-                            ngaysinh = read.GetDateTime(5);
-                        }
-                        else
-                        {
-                            ngaysinh = DateTime.Now;
-                        }
-                        noisinh = read.GetString(6);
-                        quequan = read.GetString(7);
-                        noithuongtru = read.GetString(8);
-                        noitamtru = read.GetString(9);
-                        dantoc = read.GetString(10);
-                        tongiao = read.GetString(11);
-                        thanhphangd = read.GetString(12);
-                        nghenghiephiennay = read.GetString(13);
-
-                        if(read.GetDateTime(14) != null)
-                        {
-                            ngayvaodang = read.GetDateTime(14);
-                        }
-                        else
-                        {
-                            ngayvaodang = DateTime.Now;
-                        }
-
-                        taichibo = read.GetString(15);
-                        nguoigt1 = read.GetString(16);
-                        chucvudonvi1 = read.GetString(17);
-                        nguoigt2 = read.GetString(18);
-                        chucvudonvi2 = read.GetString(19);
-
-                        if(read.GetDateTime(20) != null)
-                        {
-                            ngaycap = read.GetDateTime(20);
-                        }
-                        else
-                        {
-                            ngaycap = DateTime.Now;
-                        }
-
-                        if (read.GetDateTime(21) != null)
-                        {
-                            ngaychinhthuc = read.GetDateTime(21);
-                        }
-                        else
-                        {
-                            ngaychinhthuc = DateTime.Now;
-                        }
-
-
-                        taichibo2 = read.GetString(22);
-                        
-                        if(read.GetDateTime(23) != null)
-                        {
-                            ngayduoctuyendung = read.GetDateTime(23);
-                        }
-                        else
-                        {
-                            ngayduoctuyendung = DateTime.Now;
-                        }
-
-                        coquantuyendung = read.GetString(24);
-
-                        if (read.GetDateTime(25) != null)
-                        {
-                            ngayvaodoan = read.GetDateTime(25);
-                        }
-                        else
-                        {
-                            ngayvaodoan = DateTime.Now;
-                        }
-
-                        thamgiatochucxh = read.GetString(26);
-
-                        if (read.GetDateTime(27) != null)
-                        {
-                            ngaynhapngu = read.GetDateTime(27);
-                        }
-                        else
-                        {
-                            ngaynhapngu = DateTime.Now;
-                        }
-
-                        if (read.GetDateTime(28) != null)
-                        {
-                            ngayxuatngu = read.GetDateTime(28);
-                        }
-                        else
-                        {
-                            ngayxuatngu = DateTime.Now;
-                        }
-
-
-                        trinhdohiennay = read.GetString(29);
-                        gdphothong = read.GetString(30);
-                        gdNgheNghiep = read.GetString(31);
-                        gddaihoc = read.GetString(32);
-                        gdsaudaihoc = read.GetString(33);
-                        hocvi = read.GetString(34);
-                        hocham = read.GetString(35);
-                        lyluanct = read.GetString(36);
-                        ngoaingu = read.GetString(37);
-                        tinhoc = read.GetString(38);
-                        tinhtrangsuckhoe = read.GetString(39);
-                        thuongbinhloai = read.GetString(40);
-                        giadinh = read.GetString(41);
-                        cmnd = read.GetString(42);
-                        cancuoccdan = read.GetString(43);
-                        
-                        if(read.GetDateTime(44) != null)
-                        {
-                            mienCtac = read.GetDateTime(44);
-                        }
-                        else
-                        {
-                            mienCtac = DateTime.Now;
-                        }
-                        
-                    }
-                }
-                con.Close();
-            }
             
         }
 
@@ -800,21 +677,7 @@ namespace QLDV
                     con.Close();
                 }
             }
-            else if(optionQuerry == "select")
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("select * from daotaochuyenmon2 where solylich='" + solylich + "' or sothe='" + sothedangvien + "'", con))
-                {
-                    using (SqlDataReader read = cmd.ExecuteReader())
-                    {
-                        khenthuong = read.GetString(2);
-                        huyhieudang = read.GetString(3);
-                        danhhieu = read.GetString(4);
-                        kyluat = read.GetString(5);
-                    }
-                }
-                con.Close();
-            }
+
             
         }
 
@@ -983,91 +846,7 @@ namespace QLDV
                     con.Close();
                 }
             }
-            else if(optionQuerry == "select")
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("select * from dacdiemlichsu where solylich='"+solylich+"' or sothe='" + sothe + "'", con))
-                {
-                    using (SqlDataReader read = cmd.ExecuteReader())
-                    {
-                        bixoaten = read.GetString(2);
 
-                        if(read.GetDateTime(3) != null)
-                        {
-                            thoigian = read.GetDateTime(3);
-                        }
-                        else
-                        {
-                            thoigian = DateTime.Now;
-                        }
-
-                        xoataichibo = read.GetString(4);
-                        ketnaplai = read.GetString(5);
-
-                        if(read.GetDateTime(6) != null)
-                        {
-                            ngayvao = read.GetDateTime(6);
-                        }
-                        else
-                        {
-                            ngayvao = DateTime.Now;
-                        }
-
-                        vaochibo = read.GetString(7);
-                        vaonguoigt1 = read.GetString(8);
-                        vaochucvu1 = read.GetString(9);
-                        vaodonvi1 = read.GetString(10);
-                        vaonguoigt2 = read.GetString(11);
-                        vaochucvu2 = read.GetString(12);
-                        vaodonvi2 = read.GetString(13);
-
-                        if (read.GetDateTime(14) != null)
-                        {
-                            ngaychinhthuc2 = read.GetDateTime(14);
-                        }
-                        else
-                        {
-                            ngaychinhthuc2 = DateTime.Now;
-                        }
-
-                        vaochibo2 = read.GetString(15);
-
-                        if (read.GetDateTime(16) != null)
-                        {
-                            ngaykhoiphucdangtich = read.GetDateTime(14);
-                        }
-                        else
-                        {
-                            ngaykhoiphucdangtich = DateTime.Now;
-                        }
-
-                        vaochibo3 = read.GetString(15);
-
-                        if (read.GetDateTime(16) != null)
-                        {
-                            ngaybikyluat = read.GetDateTime(16);
-                        }
-                        else
-                        {
-                            ngaybikyluat = DateTime.Now;
-                        }
-
-                        thongtinkyluat = read.GetString(17);
-
-                        if(read.GetDateTime(18) != null)
-                        {
-                            ngaylamviecchedocu = read.GetDateTime(18);
-                        }
-                        else
-                        {
-                            ngaylamviecchedocu = DateTime.Now;
-                        }
-
-                        thongtinchedocu = read.GetString(19);
-                    }
-                }
-                con.Close();
-            }
         }
 
         public void Qhng(string optionQuerry, string solylich, string sothe, DateTime? dinuocngoaitu,
@@ -1126,38 +905,7 @@ namespace QLDV
                     con.Close();
                 }
             }
-            else if(optionQuerry == "select")
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("select * from qhnuocngoai where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
-                {
-                    using (SqlDataReader read = cmd.ExecuteReader())
-                    {
-                        if (read.GetDateTime(2) != null)
-                        {
-                            dinuocngoaitu = read.GetDateTime(2);
-                        }
-                        else
-                        {
-                            dinuocngoaitu = DateTime.Now;
-                        }
-
-                        if (read.GetDateTime(3) != null)
-                        {
-                            dinuocngoaiden = read.GetDateTime(3);
-                        }
-                        else
-                        {
-                            dinuocngoaiden = DateTime.Now;
-                        }
-
-                        thongtindinuocngoai = read.GetString(4);
-                        thamgiatochucnuocngoai = read.GetString(5);
-                        nguoithannuocngoai = read.GetString(6);
-                    }
-                }
-                con.Close();
-            }
+            
         }
 
         //form QuanHeGD5
@@ -1165,7 +913,7 @@ namespace QLDV
         {
             if(optionquerry == "insert")
             {
-                using (SqlCommand cmd = new SqlCommand("insert in to qhgiadinh (solylich,sothe,quanhe,hoten,namsinh,thongtin) values (@1,@2,@3,@4,@5,@6)",con))
+                using (SqlCommand cmd = new SqlCommand("insert into qhgiadinh (solylich,sothe,quanhe,hoten,namsinh,thongtin) values (@1,@2,@3,@4,@5,@6)",con))
                 {
                     cmd.Parameters.AddWithValue("@1", SqlDbType.NVarChar).Value = solylich;
                     cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = sothe;
@@ -1234,8 +982,8 @@ namespace QLDV
             {
                 using (SqlCommand cmd = new SqlCommand("update hcgiadinh set tongthunhapgd=@3,binhquan=@4," +
                     "nhaoduoccap=@5,dientichnhao=@6,nhatumua=@7,dientichnhatumua=@8,datoduoccap=@9," +
-                    "dattu=@10,muahoatdongkinhte=@11,dientichdatkinhdoanh=@12,solaodongthue=@13,taisan=@14,giatri=@15" +
-                    " where solylich='"+solylich+"' or sothe="+sothe+"'", con))
+                    "dattumua=@10,hoatdongkinhte=@11,dientichdatkinhdoanh=@12,solaodongthue=@13,taisan=@14,giatri=@15" +
+                    " where solylich='"+solylich+"'", con))
                 {
                     cmd.Parameters.AddWithValue("@3", SqlDbType.VarChar).Value = tongthunhap;
                     cmd.Parameters.AddWithValue("@4", SqlDbType.VarChar).Value = binhquandaunguoi;
@@ -1256,30 +1004,7 @@ namespace QLDV
                     con.Close();
                 }
             }
-            else if(optionQuerry == "select")
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("select * from hcgiadinh where solylich='" + solylich + "' or sothe=" + sothe + "'", con))
-                {
-                    using (SqlDataReader read = cmd.ExecuteReader())
-                    {
-                        tongthunhap = read.GetString(2);
-                        binhquandaunguoi = read.GetString(3);
-                        nhaoduoccap = read.GetString(4);
-                        dientichnhaoduoccap = read.GetString(5);
-                        nhaotumua = read.GetString(6);
-                        dientichnhaotumua = read.GetString(7);
-                        datoduoccap = read.GetString(8);
-                        datotumua = read.GetString(9);
-                        hdkinhte = read.GetString(10);
-                        dientichtrangtrai = read.GetString(11);
-                        soldthue = read.GetString(12);
-                        taisancogiatricao = read.GetString(13);
-                        giatri = read.GetString(14);
-                    }
-                }
-                con.Close();
-            }
+
         }
 
 

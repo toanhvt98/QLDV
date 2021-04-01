@@ -59,7 +59,7 @@ namespace QLDV
             this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(849, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1124, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,14 +137,14 @@ namespace QLDV
             // 
             this.panel1.Location = new System.Drawing.Point(12, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 409);
+            this.panel1.Size = new System.Drawing.Size(1100, 591);
             this.panel1.TabIndex = 1;
             // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 470);
+            this.ClientSize = new System.Drawing.Size(1124, 652);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -152,6 +152,7 @@ namespace QLDV
             this.MaximizeBox = false;
             this.Name = "formMain";
             this.Text = "Phần mềm đảng viên";
+            this.Load += new System.EventHandler(this.formMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -172,6 +173,6 @@ namespace QLDV
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tàiKhoảnCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel1;
     }
 }

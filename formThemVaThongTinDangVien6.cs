@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,23 +11,11 @@ using System.Windows.Forms;
 
 namespace QLDV
 {
-    public partial class ucHoanCanhGiaDinh6 : UserControl
+    public partial class formThemVaThongTinDangVien6 : Form
     {
-
-
-
-        public ucHoanCanhGiaDinh6()
-        {
-            InitializeComponent();
-  
-        }
-
-        public static bool check = false;
-
-        //thong tin can thiet 0
         private string solylich;
         private string sothedangvien;
-
+        public static bool check = false;
 
         // thong tin co ban 1
         private string tendangdung;
@@ -123,51 +112,71 @@ namespace QLDV
         private string soldthue;
         private string taisancogiatricao;
         private string giatri;
-
-
-        private static ucHoanCanhGiaDinh6 _instance;
-        public static ucHoanCanhGiaDinh6 Instance
+        public formThemVaThongTinDangVien6()
         {
-            get
-            {
-                if(_instance == null)
-                {
-                    _instance = new ucHoanCanhGiaDinh6();
-                }
-                return _instance;
-            }
+            InitializeComponent();
         }
-        
-        private void ucHoanCanhGiaDinh6_Load(object sender, EventArgs e)
+
+        private void formThemVaThongTinDangVien6_Load(object sender, EventArgs e)
         {
             if(check == true)
             {
-                foreach(Control c in groupBox1.Controls)
-                {
-                    if(c is TextBox)
-                    {
-                        ((TextBox)c).Text = "";
-                    }
-                    else if(c is RichTextBox)
-                    {
-                        ((RichTextBox)c).Text = "";
-                    }
-                }
+                getInfor();
             }
         }
-
-
         private void button1_Click(object sender, EventArgs e) // insert sql
         {
             setAllInfor();
             connectDb con = new connectDb();
-            DialogResult dr = MessageBox.Show("Bạn có muốn thêm người này vào danh sách Đảng viên không?\n Tên Đảng viên:  "+ tendangdung +"\n" +
-                "Số lý lịch: "+solylich+"\n" +
-                "Số thẻ Đảng viên: "+sothedangvien,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if(dr == DialogResult.Yes)
+            if(check == false) {
+            DialogResult dr = MessageBox.Show("Bạn có muốn thêm người này vào danh sách Đảng viên không?\n Tên Đảng viên:  " + tendangdung + "\n" +
+                "Số lý lịch: " + solylich + "\n" +
+                "Số thẻ Đảng viên: " + sothedangvien, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    con.addSllVaSt(dangvien.anh, dangvien.solylich, dangvien.sothedangvien);
+                    con.updateDangvien(tendangdung, solylich, sothedangvien);
+                    con.TTCBDangVien("insert", solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
+                     quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
+                     nghenghiephiennay, ngayvaodang, taichibo, nguoigt1, chucvudonvi1,
+                     nguoigt2, chucvudonvi2, ngaycap, ngaychinhthuc, taichibo2,
+                     ngayduoctuyendung, coquantuyendung, ngayvaodoan, thamgiatochucxh,
+                     ngaynhapngu, ngayxuatngu, trinhdohiennay, gdphothong, gdNgheNghiep,
+                     gddaihoc, gdsaudaihoc, hocvi, hocham, lyluanct, ngoaingu, tinhoc,
+                     tinhtrangsuckhoe, thuongbinhloai, giadinh, cmnd, cancuoccdan, mienCtac);
+
+                    con.DaoTaoChung2("insert", solylich, sothedangvien, khenthuong, huyhieudang, danhhieu, kyluat);
+
+                    con.Ddls("insert", solylich, sothedangvien, bixoaten, thoigian,
+                                    xoataichibo, ketnaplai, ngayvao, vaochibo,
+                                    vaonguoigt1, vaochucvu1, vaodonvi1, vaonguoigt2, vaochucvu2, vaodonvi2,
+                                    ngaychinhthuc2, vaochibo2, ngaykhoiphucdangtich, vaochibo3, ngaybikyluat,
+                                    thongtinkyluat, ngaylamviecchedocu, thongtinchedocu);
+                    con.Qhng("insert", solylich, sothedangvien, dinuocngoaitu,
+                        dinuocngoaiden, thongtindinuocngoai, thamgiatochucnuocngoai, nguoithannuocngoai);
+
+                    con.hoancanhgd("insert", solylich, sothedangvien, tongthunhap, binhquandaunguoi,
+                                   nhaoduoccap, dientichnhaoduoccap, nhaotumua, dientichnhaotumua,
+                                    datoduoccap, datotumua, hdkinhte, dientichtrangtrai, soldthue,
+                                    taisancogiatricao, giatri);
+                    MessageBox.Show("Thêm đảng viên thành công.\n" +
+                        "Tên Đảng viên: " + tendangdung + "\n" +
+                        "Số lý lịch: " + solylich + "\n" +
+                        "Số thẻ Đảng viên: " + sothedangvien, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    uclDangVien uc = new uclDangVien();
+                    uc.textBox1.Text = "";
+                    uc.textBox2.Text = "";
+                    uc.pictureBox1.Image = uc.pictureBox1.InitialImage;
+
+                    this.Close();
+                }
+            }
+            else if(check == true)
             {
+                con.addSllVaSt(dangvien.anh, dangvien.solylich, dangvien.sothedangvien);
                 con.updateDangvien(tendangdung, solylich, sothedangvien);
-                con.TTCBDangVien("insert", solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
+                con.TTCBDangVien("update", solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
                  quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
                  nghenghiephiennay, ngayvaodang, taichibo, nguoigt1, chucvudonvi1,
                  nguoigt2, chucvudonvi2, ngaycap, ngaychinhthuc, taichibo2,
@@ -176,56 +185,49 @@ namespace QLDV
                  gddaihoc, gdsaudaihoc, hocvi, hocham, lyluanct, ngoaingu, tinhoc,
                  tinhtrangsuckhoe, thuongbinhloai, giadinh, cmnd, cancuoccdan, mienCtac);
 
-                con.DaoTaoChung2("insert", solylich, sothedangvien, khenthuong, huyhieudang, danhhieu, kyluat);
-                con.Ddls("insert", solylich, sothedangvien, bixoaten, thoigian,
+                con.DaoTaoChung2("update", solylich, sothedangvien, khenthuong, huyhieudang, danhhieu, kyluat);
+
+                con.Ddls("update", solylich, sothedangvien, bixoaten, thoigian,
                                 xoataichibo, ketnaplai, ngayvao, vaochibo,
                                 vaonguoigt1, vaochucvu1, vaodonvi1, vaonguoigt2, vaochucvu2, vaodonvi2,
                                 ngaychinhthuc2, vaochibo2, ngaykhoiphucdangtich, vaochibo3, ngaybikyluat,
                                 thongtinkyluat, ngaylamviecchedocu, thongtinchedocu);
-                con.Qhng("insert", solylich, sothedangvien, dinuocngoaitu,
+                con.Qhng("update", solylich, sothedangvien, dinuocngoaitu,
                     dinuocngoaiden, thongtindinuocngoai, thamgiatochucnuocngoai, nguoithannuocngoai);
 
-                con.hoancanhgd("insert", solylich, sothedangvien, tongthunhap, binhquandaunguoi,
+                con.hoancanhgd("update", solylich, sothedangvien, tongthunhap, binhquandaunguoi,
                                nhaoduoccap, dientichnhaoduoccap, nhaotumua, dientichnhaotumua,
                                 datoduoccap, datotumua, hdkinhte, dientichtrangtrai, soldthue,
                                 taisancogiatricao, giatri);
-                MessageBox.Show("Thêm đảng viên thành công.\n" +
+                MessageBox.Show("Cập nhật đảng viên thành công.\n" +
                     "Tên Đảng viên: " + tendangdung + "\n" +
                     "Số lý lịch: " + solylich + "\n" +
-                    "Số thẻ Đảng viên: " + sothedangvien,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    "Số thẻ Đảng viên: " + sothedangvien, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                
-                formThemVaThongTinDangVien f = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];               
-                f.Close();
+                uclDangVien uc = new uclDangVien();
+                uc.textBox1.Text = "";
+                uc.textBox2.Text = "";
+                uc.pictureBox1.Image = uc.pictureBox1.InitialImage;
+
+                this.Close();
             }
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            dtvttdv.label1.Text = "V. QUAN HỆ GIA ĐÌNH";
-            int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
-            dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
-            dtvttdv.panel1.Controls.Add(ucQuanHeGD5.Instance);
-            ucQuanHeGD5.Instance.Dock = DockStyle.Fill;
-            ucQuanHeGD5.Instance.BringToFront();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            DialogResult dr = MessageBox.Show("Thông tin bạn vừa nhập sẽ mất hết. Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                dtvttdv.Close();
-            }
+
         }
 
         public void setAllInfor()
         {
 
-            
+
             solylich = dangvien.solylich;
             sothedangvien = dangvien.sothedangvien;
 
@@ -233,16 +235,16 @@ namespace QLDV
             // thong tin co ban 1
             tendangdung = dangvien.tendangdung;
             gioitinh = dangvien.gioitinh;
-            
+
             tenkhaisinh = dangvien.tenkhaisinh;
             ngaysinh = dangvien.ngaysinh;
-                
+
             noisinh = dangvien.noisinh;
             quequan = dangvien.quequan;
             noithuongtru = dangvien.noithuongtru;
             noitamtru = dangvien.noitamtru;
             dantoc = dangvien.dantoc;
-            tongiao = dangvien.danhhieu;
+            tongiao = dangvien.tongiao;
             thanhphangd = dangvien.thanhphangd;
             nghenghiephiennay = dangvien.nghenghiephiennay;
 
@@ -263,16 +265,16 @@ namespace QLDV
 
             ngayduoctuyendung = dangvien.ngayduoctuyendung;
 
-            
+
             coquantuyendung = dangvien.coquantuyendung;
             ngayvaodoan = dangvien.ngayvaodoan;
 
-            
+
 
             thamgiatochucxh = dangvien.thamgiatochucxh;
 
             ngaynhapngu = dangvien.ngaynhapngu;
- 
+
             ngayxuatngu = dangvien.ngayxuatngu;
 
 
@@ -290,29 +292,29 @@ namespace QLDV
             thuongbinhloai = dangvien.thuongbinhloai;
 
             giadinh = dangvien.giadinh;
-            
 
-            cmnd = dangvien.cmnd ;
+
+            cmnd = dangvien.cmnd;
             cancuoccdan = dangvien.cancuoccdan;
 
             mienCtac = dangvien.mienCtac;
 
 
             //// dao tao chung 3
-            
+
             khenthuong = dangvien.khenthuong;
             huyhieudang = dangvien.huyhieudang;
-            
+
             danhhieu = dangvien.danhhieu;
             kyluat = dangvien.kyluat;
 
 
             //// dac dien lich su va quan he nuoc ngoai 4
             ///
-            
+
             bixoaten = dangvien.bixoaten;
             thoigian = dangvien.thoigian;
-              
+
 
             xoataichibo = dangvien.xoataichibo;
             ketnaplai = dangvien.ketnaplai;
@@ -377,7 +379,7 @@ namespace QLDV
             soldthue = dangvien.soldthue;
             taisancogiatricao = dangvien.taisancogiatricao;
             giatri = dangvien.giatri;
-    }
+        }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -389,12 +391,12 @@ namespace QLDV
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) &&  (e.KeyChar != ',') && (e.KeyChar != (char)Keys.Back) )
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != ',') && (e.KeyChar != (char)Keys.Back))
             {
                 e.Handled = true;
             }
 
-            if ((e.KeyChar == ',') &&  ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1)))
+            if ((e.KeyChar == ',') && ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1)))
             {
                 e.Handled = true;
             }
@@ -417,7 +419,91 @@ namespace QLDV
             dangvien.giatri = this.textBox12.Text;
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            formThemVaThongTinDangVien5 f = (formThemVaThongTinDangVien5)Application.OpenForms["formThemVaThongTinDangVien5"];
+            if (f == null)
+            {
+                f = new formThemVaThongTinDangVien5();
+                f.AutoScroll = true;
+            }
+            f.Show();
+            this.Hide();
+        }
+
+        private void formThemVaThongTinDangVien6_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formThemVaThongTinDangVien f1 = new formThemVaThongTinDangVien();
+            if(f1 != null)
+            {
+                f1.Close();
+            }
+            formThemVaThongTinDangVien2 f2 = new formThemVaThongTinDangVien2();
+            if (f2 != null)
+            {
+                f2.Close();
+            }
+
+            formThemVaThongTinDangVien3 f3 = new formThemVaThongTinDangVien3();
+            if (f3 != null)
+            {
+                f3.Close();
+            }
+            formThemVaThongTinDangVien4 f4 = new formThemVaThongTinDangVien4();
+            if (f4 != null)
+            {
+                f4.Close();
+            }
+            formThemVaThongTinDangVien5 f5 = new formThemVaThongTinDangVien5(); ;
+            if (f5 != null)
+            {
+                f5.Close();
+            }
+            formThemVaThongTinDangVien5 f6 = new formThemVaThongTinDangVien5(); ;
+            if (f6 != null)
+            {
+                f6.Close();
+            }
+
+        }
+
+        private void getInfor()
+        {
+            connectDb con = new connectDb();
+            con.con.Open();
+            using (SqlCommand cmd = new SqlCommand("select * from hcgiadinh where solylich='" + dangvien.solylich + "'", con.con))
+            {
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        textBox1.Text = read.GetString(2);
+                        textBox2.Text = read.GetString(3);
+                        textBox3.Text = read.GetString(4);
+                        textBox4.Text = read.GetString(5);
+                        textBox5.Text = read.GetString(6);
+                        textBox6.Text = read.GetString(7);
+                        textBox7.Text = read.GetString(8);
+                        textBox8.Text = read.GetString(9);
+                        textBox9.Text = read.GetString(10);
+                        textBox10.Text = read.GetString(11);
+                        textBox11.Text = read.GetString(12);
+                        richTextBox1.Text = read.GetString(13);
+                        textBox12.Text = read.GetString(14);
+                    }
+                }
+            }
+            con.con.Close();
+        }
     }
 }

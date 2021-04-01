@@ -32,7 +32,24 @@ namespace QLDV
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            formMain fm = (formMain)Application.OpenForms["formMain"];
+            fm.panel1.Controls.Add(uclDangVien.Instance);
+            uclDangVien.Instance.Dock = DockStyle.Fill;
+            uclDangVien.Instance.button3.Visible = false;
+            uclDangVien.Instance.button4.Visible = true;
+            uclDangVien.Instance.button5.Visible = true;
+            var data = (Byte[])(dataGridView1.CurrentRow.Cells[1].Value);
+            var stream = new MemoryStream(data);
+            uclDangVien.Instance.pictureBox1.Image = Image.FromStream(stream);
+            uclDangVien.Instance.pictureBox1.BackgroundImage = null;
 
+            uclDangVien.Instance.textBox1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            uclDangVien.Instance.textBox2.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            uclDangVien.Instance.textBox1.ReadOnly = true;
+            uclDangVien.Instance.textBox2.ReadOnly = true;
+            uclDangVien.Instance.button1.Text = "Đổi ảnh";
+            uclDangVien.Instance.BringToFront();
+            
         }
 
         private void setviewDTG()

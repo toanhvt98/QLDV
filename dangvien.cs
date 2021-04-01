@@ -10,7 +10,7 @@ namespace QLDV
     {
         public static string solylich;
         public static string sothedangvien;
-
+        public static byte[] anh;
 
         // thong tin co ban 1
         public static string tendangdung;

@@ -12,12 +12,12 @@ namespace QLDV
 {
     public partial class formDaoTaoChung : Form
     {
-        private readonly UCDaoTaoChung3 ucDTC3;
+        private readonly formThemVaThongTinDangVien3 ucDTC3;
 
         public static bool dt1 = false;
         public static bool dt2 = false;
 
-        public formDaoTaoChung(UCDaoTaoChung3 ucDTC3)
+        public formDaoTaoChung(formThemVaThongTinDangVien3 ucDTC3)
         {
             InitializeComponent();
             this.ucDTC3 = ucDTC3;
@@ -25,6 +25,14 @@ namespace QLDV
             dateTimePicker2.MaxDate = DateTime.Now;
             dateTimePicker1.Value = DateTime.Today.AddDays(-1);
             dateTimePicker2.Value = DateTime.Today;
+        }
+        public formDaoTaoChung()
+        {
+            InitializeComponent();
+
+            dateTimePicker1.MaxDate = DateTime.Now;
+            dateTimePicker2.MaxDate = DateTime.Now;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,13 +42,13 @@ namespace QLDV
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(label9.Text);
+            
             connectDb con = new connectDb();
             if(button1.Text == "Thêm")
             {
                 if (dt1 == true && dt2 == true)
                 {
-                    con.DaoTaoChung1("insert",id, dangvien.solylich, dangvien.sothedangvien, textBox1.Text
+                    con.DaoTaoChung1("insert",0, dangvien.solylich, dangvien.sothedangvien, textBox1.Text
                     , textBox2.Text, dateTimePicker1.Value, dateTimePicker2.Value, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
 
                     textBox1.Text = "";
@@ -49,7 +57,7 @@ namespace QLDV
                     textBox4.Text = "";
                     textBox5.Text = "";
                     textBox6.Text = "";
-                    dateTimePicker1.Value = DateTime.Today.AddDays(-1);
+                    dateTimePicker1.Value = DateTime.Today;
                     dateTimePicker2.Value = DateTime.Today;
 
                 }
@@ -61,6 +69,7 @@ namespace QLDV
             }
             else
             {
+                int id = Convert.ToInt32(label9.Text);
                 con.DaoTaoChung1("update",id, dangvien.solylich, dangvien.sothedangvien, textBox1.Text
                     , textBox2.Text, dateTimePicker1.Value, dateTimePicker2.Value, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
 

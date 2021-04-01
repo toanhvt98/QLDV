@@ -95,6 +95,36 @@
     <Compile Include="formThemVaThongTinDangVien.Designer.cs">
       <DependentUpon>formThemVaThongTinDangVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="formThemVaThongTinDangVien2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien2.Designer.cs">
+      <DependentUpon>formThemVaThongTinDangVien2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien3.Designer.cs">
+      <DependentUpon>formThemVaThongTinDangVien3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien4.Designer.cs">
+      <DependentUpon>formThemVaThongTinDangVien4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien5.Designer.cs">
+      <DependentUpon>formThemVaThongTinDangVien5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formThemVaThongTinDangVien6.Designer.cs">
+      <DependentUpon>formThemVaThongTinDangVien6.cs</DependentUpon>
+    </Compile>
     <Compile Include="formUpdateAcc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,24 +144,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDVDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UCDaoTaoChung3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCDaoTaoChung3.Designer.cs">
-      <DependentUpon>UCDaoTaoChung3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucDdlsVaQhng4.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucDdlsVaQhng4.Designer.cs">
-      <DependentUpon>ucDdlsVaQhng4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucHoanCanhGiaDinh6.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucHoanCanhGiaDinh6.Designer.cs">
-      <DependentUpon>ucHoanCanhGiaDinh6.cs</DependentUpon>
-    </Compile>
     <Compile Include="uclDangVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,30 +162,13 @@
     <Compile Include="ucQLTK.Designer.cs">
       <DependentUpon>ucQLTK.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucQuanHeGD5.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucQuanHeGD5.Designer.cs">
-      <DependentUpon>ucQuanHeGD5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucQuaTrinhHoatDongVaCongTac2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucQuaTrinhHoatDongVaCongTac2.Designer.cs">
-      <DependentUpon>ucQuaTrinhHoatDongVaCongTac2.cs</DependentUpon>
-    </Compile>
     <Compile Include="UCThongTin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCThongTin.Designer.cs">
       <DependentUpon>UCThongTin.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucTTCBDangVien1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucTTCBDangVien1.Designer.cs">
-      <DependentUpon>ucTTCBDangVien1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="usercontrolForm.cs" />
     <EmbeddedResource Include="formAddAcc.resx">
       <DependentUpon>formAddAcc.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +187,21 @@
     <EmbeddedResource Include="formThemVaThongTinDangVien.resx">
       <DependentUpon>formThemVaThongTinDangVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formThemVaThongTinDangVien2.resx">
+      <DependentUpon>formThemVaThongTinDangVien2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formThemVaThongTinDangVien3.resx">
+      <DependentUpon>formThemVaThongTinDangVien3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formThemVaThongTinDangVien4.resx">
+      <DependentUpon>formThemVaThongTinDangVien4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formThemVaThongTinDangVien5.resx">
+      <DependentUpon>formThemVaThongTinDangVien5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formThemVaThongTinDangVien6.resx">
+      <DependentUpon>formThemVaThongTinDangVien6.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formUpdateAcc.resx">
       <DependentUpon>formUpdateAcc.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,15 +217,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UCDaoTaoChung3.resx">
-      <DependentUpon>UCDaoTaoChung3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucDdlsVaQhng4.resx">
-      <DependentUpon>ucDdlsVaQhng4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucHoanCanhGiaDinh6.resx">
-      <DependentUpon>ucHoanCanhGiaDinh6.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="uclDangVien.resx">
       <DependentUpon>uclDangVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,21 +226,44 @@
     <EmbeddedResource Include="ucQLTK.resx">
       <DependentUpon>ucQLTK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucQuanHeGD5.resx">
-      <DependentUpon>ucQuanHeGD5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucQuaTrinhHoatDongVaCongTac2.resx">
-      <DependentUpon>ucQuaTrinhHoatDongVaCongTac2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UCThongTin.resx">
       <DependentUpon>UCThongTin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucTTCBDangVien1.resx">
-      <DependentUpon>ucTTCBDangVien1.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="bin\Debug\QLDV.exe.config" />
     <None Include="packages.config" />
+    <None Include="packages\EntityFramework.6.2.0\Content\net40\App.config.transform" />
+    <None Include="packages\EntityFramework.6.2.0\Content\net40\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.2.0\EntityFramework.6.2.0.nupkg" />
+    <None Include="packages\EntityFramework.6.2.0\tools\EntityFramework.psd1" />
+    <None Include="packages\EntityFramework.6.2.0\tools\EntityFramework.psm1" />
+    <None Include="packages\EntityFramework.6.2.0\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.2.0\tools\install.ps1" />
+    <None Include="packages\System.Collections.4.3.0\.signature.p7s" />
+    <None Include="packages\System.Collections.4.3.0\lib\MonoAndroid10\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\MonoTouch10\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\net45\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\portable-net45+win8+wp8+wpa81\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\win8\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\wp80\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\wpa81\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\xamarinios10\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\xamarinmac20\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\xamarintvos10\_._" />
+    <None Include="packages\System.Collections.4.3.0\lib\xamarinwatchos10\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\MonoAndroid10\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\MonoTouch10\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\net45\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\portable-net45+win8+wp8+wpa81\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\win8\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\wp80\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\wpa81\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\xamarinios10\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\xamarinmac20\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\xamarintvos10\_._" />
+    <None Include="packages\System.Collections.4.3.0\ref\xamarinwatchos10\_._" />
+    <None Include="packages\System.Collections.4.3.0\System.Collections.4.3.0.nupkg" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -258,9 +282,73 @@
     <None Include="QLDVDataSet.xss">
       <DependentUpon>QLDVDataSet.xsd</DependentUpon>
     </None>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\QLDV.exe" />
+    <Content Include="bin\Debug\QLDV.pdb" />
+    <Content Include="image\formImg.ico" />
+    <Content Include="image\formImg.png" />
+    <Content Include="image\imgPicDefault.png" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.2.0\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.2.0\tools\about_EntityFramework.help.txt" />
+    <Content Include="packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.Utility.dll" />
+    <Content Include="packages\EntityFramework.6.2.0\tools\migrate.exe" />
+    <Content Include="packages\System.Collections.4.3.0\dotnet_library_license.txt" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\de\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\es\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\fr\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\it\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\ja\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\ko\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\ru\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\System.Collections.dll" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\zh-hans\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netcore50\zh-hant\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\de\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\es\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\fr\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\it\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\ja\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\ko\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\ru\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\System.Collections.dll" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\zh-hans\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.0\zh-hant\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\de\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\es\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\fr\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\it\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\ja\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\ko\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\ru\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\System.Collections.dll" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\zh-hans\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\zh-hant\System.Collections.xml" />
+    <Content Include="packages\System.Collections.4.3.0\ThirdPartyNotices.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

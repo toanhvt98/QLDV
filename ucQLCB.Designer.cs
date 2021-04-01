@@ -44,7 +44,7 @@ namespace QLDV
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(568, 78);
+            this.radioButton2.Location = new System.Drawing.Point(541, 78);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(48, 21);
             this.radioButton2.TabIndex = 13;
@@ -55,7 +55,7 @@ namespace QLDV
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(508, 78);
+            this.radioButton1.Location = new System.Drawing.Point(481, 78);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(54, 21);
             this.radioButton1.TabIndex = 14;
@@ -66,7 +66,7 @@ namespace QLDV
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(220, 80);
+            this.label2.Location = new System.Drawing.Point(193, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 12;
@@ -74,7 +74,7 @@ namespace QLDV
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(294, 77);
+            this.textBox1.Location = new System.Drawing.Point(267, 77);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(172, 22);
             this.textBox1.TabIndex = 11;
@@ -128,12 +128,12 @@ namespace QLDV
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(84, 129);
+            this.dataGridView1.Location = new System.Drawing.Point(70, 129);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(583, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(622, 248);
             this.dataGridView1.TabIndex = 15;
             // 
             // ucQLCB
@@ -151,7 +151,7 @@ namespace QLDV
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Name = "ucQLCB";
-            this.Size = new System.Drawing.Size(825, 409);
+            this.Size = new System.Drawing.Size(1100, 591);
             this.Load += new System.EventHandler(this.ucQLCB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

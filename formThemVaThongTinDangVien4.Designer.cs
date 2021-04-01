@@ -1,14 +1,14 @@
 ﻿
 namespace QLDV
 {
-    partial class ucDdlsVaQhng4
+    partial class formThemVaThongTinDangVien4
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -21,14 +21,30 @@ namespace QLDV
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -58,7 +74,7 @@ namespace QLDV
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,27 +84,186 @@ namespace QLDV
             this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
-            this.label18 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.checkBox2);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(24, 89);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1168, 781);
+            this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(673, 18);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(192, 21);
+            this.checkBox1.TabIndex = 26;
+            this.checkBox1.Text = "Thêm đặc điểm lích sử";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(898, 18);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(219, 21);
+            this.checkBox2.TabIndex = 27;
+            this.checkBox2.Text = "Thêm quan hệ nước ngoài";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(909, 720);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 42);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Trở lại";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1016, 720);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 42);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Tiếp tục";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.richTextBox4);
+            this.groupBox2.Controls.Add(this.richTextBox3);
+            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.dateTimePicker8);
+            this.groupBox2.Controls.Add(this.dateTimePicker7);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Location = new System.Drawing.Point(31, 458);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1106, 256);
+            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Quan hệ với nước ngoài";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(313, 48);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(35, 17);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "đến";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(496, 191);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(585, 52);
+            this.richTextBox4.TabIndex = 4;
+            this.richTextBox4.Text = "";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(496, 114);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(585, 52);
+            this.richTextBox3.TabIndex = 3;
+            this.richTextBox3.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(632, 45);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(466, 52);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(21, 194);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(231, 17);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "c. Có người thân ở nước ngoài:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(21, 114);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(424, 17);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "b. Tham gia hoặc có quan hệ với các tổ chức nước ngoài:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(21, 48);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(174, 17);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "a. Đã đi nước ngoài từ:";
+            // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker8.Location = new System.Drawing.Point(354, 48);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.Size = new System.Drawing.Size(104, 22);
+            this.dateTimePicker8.TabIndex = 1;
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker7.Location = new System.Drawing.Point(201, 48);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(104, 22);
+            this.dateTimePicker7.TabIndex = 0;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(484, 48);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(122, 17);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Thêm thông tin:";
             // 
             // groupBox1
             // 
@@ -120,7 +295,7 @@ namespace QLDV
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label7);
@@ -130,12 +305,12 @@ namespace QLDV
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(33, 39);
+            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Location = new System.Drawing.Point(31, 35);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1106, 417);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đặc điểm lịch sử";
             // 
@@ -204,7 +379,6 @@ namespace QLDV
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker6.TabIndex = 18;
-            this.dateTimePicker6.ValueChanged += new System.EventHandler(this.dateTimePicker6_ValueChanged);
             // 
             // dateTimePicker5
             // 
@@ -213,7 +387,6 @@ namespace QLDV
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker5.TabIndex = 16;
-            this.dateTimePicker5.ValueChanged += new System.EventHandler(this.dateTimePicker5_ValueChanged);
             // 
             // dateTimePicker4
             // 
@@ -222,7 +395,6 @@ namespace QLDV
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker4.TabIndex = 14;
-            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // dateTimePicker3
             // 
@@ -231,7 +403,6 @@ namespace QLDV
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(104, 22);
             this.dateTimePicker3.TabIndex = 12;
-            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // dateTimePicker2
             // 
@@ -240,7 +411,6 @@ namespace QLDV
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(102, 22);
             this.dateTimePicker2.TabIndex = 4;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
@@ -249,7 +419,6 @@ namespace QLDV
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(102, 22);
             this.dateTimePicker1.TabIndex = 1;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox10
             // 
@@ -395,15 +564,15 @@ namespace QLDV
             this.label3.TabIndex = 0;
             this.label3.Text = "Tại chi bộ:";
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(555, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Thời gian:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(555, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Thời gian:";
             // 
             // label13
             // 
@@ -495,251 +664,117 @@ namespace QLDV
             this.label15.TabIndex = 0;
             this.label15.Text = "c. Ngày được khôi phục Đảng tịch:";
             // 
-            // label4
+            // label26
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 84);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(224, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "b. Được kết nạp lại vào Đảng:";
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(21, 84);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(224, 17);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "b. Được kết nạp lại vào Đảng:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(21, 49);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(305, 17);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "a. Bị xóa tên trong danh sách Đảng viên:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(353, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(548, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Lưu ý: Ngày được định dạng theo: Tháng/Ngày/Năm. Các trường (*) không thể bỏ qua";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1216, 49);
+            this.panel2.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 49);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(72, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(305, 17);
+            this.label1.Size = new System.Drawing.Size(281, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "a. Bị xóa tên trong danh sách Đảng viên:";
+            this.label1.Text = "I. THÔNG TIN CƠ BẢN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.richTextBox4);
-            this.groupBox2.Controls.Add(this.richTextBox3);
-            this.groupBox2.Controls.Add(this.richTextBox1);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.dateTimePicker8);
-            this.groupBox2.Controls.Add(this.dateTimePicker7);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Location = new System.Drawing.Point(33, 462);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1106, 256);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Quan hệ với nước ngoài";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(313, 48);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(35, 17);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "đến";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Location = new System.Drawing.Point(496, 191);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(585, 52);
-            this.richTextBox4.TabIndex = 4;
-            this.richTextBox4.Text = "";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(496, 114);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(585, 52);
-            this.richTextBox3.TabIndex = 3;
-            this.richTextBox3.Text = "";
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(632, 45);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(466, 52);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(21, 194);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(231, 17);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "c. Có người thân ở nước ngoài:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(21, 114);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(424, 17);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "b. Tham gia hoặc có quan hệ với các tổ chức nước ngoài:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(21, 48);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(174, 17);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "a. Đã đi nước ngoài từ:";
-            // 
-            // dateTimePicker8
-            // 
-            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker8.Location = new System.Drawing.Point(354, 48);
-            this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker8.TabIndex = 1;
-            this.dateTimePicker8.ValueChanged += new System.EventHandler(this.dateTimePicker8_ValueChanged);
-            // 
-            // dateTimePicker7
-            // 
-            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker7.Location = new System.Drawing.Point(201, 48);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(104, 22);
-            this.dateTimePicker7.TabIndex = 0;
-            this.dateTimePicker7.ValueChanged += new System.EventHandler(this.dateTimePicker7_ValueChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(484, 48);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(122, 17);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Thêm thông tin:";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(911, 724);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 42);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Trở lại";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(803, 724);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 42);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1018, 724);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Tiếp tục";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(675, 22);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(192, 21);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Thêm đặc điểm lích sử";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(900, 22);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(219, 21);
-            this.checkBox2.TabIndex = 21;
-            this.checkBox2.Text = "Thêm quan hệ nước ngoài";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // ucDdlsVaQhng4
+            // formThemVaThongTinDangVien4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "ucDdlsVaQhng4";
-            this.Size = new System.Drawing.Size(1168, 781);
-            this.Load += new System.EventHandler(this.ucDdlsVaQhng_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(1216, 875);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "formThemVaThongTinDangVien4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thêm thông tin Đảng viên";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formThemVaThongTinDangVien4_FormClosed);
+            this.Load += new System.EventHandler(this.formThemVaThongTinDangVien4_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
+
+        public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        public System.Windows.Forms.RichTextBox richTextBox4;
+        public System.Windows.Forms.RichTextBox richTextBox3;
+        public System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label20;
+        public System.Windows.Forms.DateTimePicker dateTimePicker8;
+        public System.Windows.Forms.DateTimePicker dateTimePicker7;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label25;
-        public System.Windows.Forms.DateTimePicker dateTimePicker1;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.ComboBox comboBox3;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.RichTextBox richTextBox5;
+        public System.Windows.Forms.RichTextBox richTextBox2;
+        public System.Windows.Forms.DateTimePicker dateTimePicker6;
         public System.Windows.Forms.DateTimePicker dateTimePicker5;
         public System.Windows.Forms.DateTimePicker dateTimePicker4;
         public System.Windows.Forms.DateTimePicker dateTimePicker3;
         public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.TextBox textBox10;
         public System.Windows.Forms.TextBox textBox6;
         public System.Windows.Forms.TextBox textBox9;
@@ -747,22 +782,26 @@ namespace QLDV
         public System.Windows.Forms.TextBox textBox8;
         public System.Windows.Forms.TextBox textBox5;
         public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.RichTextBox richTextBox2;
-        public System.Windows.Forms.DateTimePicker dateTimePicker6;
-        public System.Windows.Forms.RichTextBox richTextBox4;
-        public System.Windows.Forms.RichTextBox richTextBox3;
-        public System.Windows.Forms.RichTextBox richTextBox1;
-        public System.Windows.Forms.DateTimePicker dateTimePicker8;
-        public System.Windows.Forms.DateTimePicker dateTimePicker7;
-        public System.Windows.Forms.RichTextBox richTextBox5;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.ComboBox comboBox4;
-        public System.Windows.Forms.ComboBox comboBox2;
-        public System.Windows.Forms.ComboBox comboBox3;
-        public System.Windows.Forms.ComboBox comboBox1;
-        public System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
     }
 }

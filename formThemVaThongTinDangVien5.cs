@@ -10,28 +10,18 @@ using System.Windows.Forms;
 
 namespace QLDV
 {
-    public partial class ucQuanHeGD5 : UserControl
+    public partial class formThemVaThongTinDangVien5 : Form
     {
-
-        public static bool check = false;
-        public ucQuanHeGD5()
+        public formThemVaThongTinDangVien5()
         {
             InitializeComponent();
         }
-        private static ucQuanHeGD5 _instance;
-        public static ucQuanHeGD5 Instance
+
+        private void formThemVaThongTinDangVien5_Load(object sender, EventArgs e)
         {
-            get
-            {
-                if(_instance == null)
-                {
-                    _instance = new ucQuanHeGD5();
-                }
-                return _instance;
-            }
-        }
-        private void ucQuanHeGD5_Load(object sender, EventArgs e)
-        {
+            label1.Text = "V. QUAN HỆ GIA ĐÌNH";
+            int x = (panel2.Size.Width - label1.Size.Width) / 2;
+            label1.Location = new Point(x, label1.Location.Y);
             int i = Convert.ToInt32(DateTime.Now.Year.ToString());
             while (i >= 1900)
             {
@@ -39,37 +29,8 @@ namespace QLDV
                 i--;
             }
             comboBox1.SelectedIndex = 0;
-
-            if(check == true)
-            {
-                foreach(Control c in groupBox1.Controls)
-                {
-                    if (c is TextBox)
-                    {
-                        ((TextBox)c).Text = "";
-                    }
-                    else if (c is ComboBox)
-                    {
-                        ((ComboBox)c).SelectedIndex = 0;
-                    }
-                    else if (c is RichTextBox)
-                    {
-                        ((RichTextBox)c).Text = "";
-                    }
-                }
-
-                foreach(Control c in this.Controls)
-                {
-                    if(c is DataGridView)
-                    {
-                        ((DataGridView)c).DataSource = null;
-                    }
-                }
-            }
-
             loaddata();
             dataGridView1.Columns[6].Visible = false;
-
             foreach (DataGridViewColumn col in dataGridView1.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -80,26 +41,14 @@ namespace QLDV
 
         private void button3_Click(object sender, EventArgs e)
         {
-            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            dtvttdv.label1.Text = "IV. ĐẶC ĐIỂM LỊCH SỬ VÀ QUAN HỆ VỚI NƯỚC NGOÀI";
-            int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
-            dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
-            dtvttdv.panel1.Controls.Add(ucDdlsVaQhng4.Instance);
-            ucDdlsVaQhng4.Instance.Dock = DockStyle.Fill;
-            ucDdlsVaQhng4.Instance.BringToFront();
+
 
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            formThemVaThongTinDangVien dtvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            dtvttdv.label1.Text = "VI. HOÀN CẢNH GIA KINH TẾ CỦA BẢN THÂN VÀ GIA ĐÌNH";
-            int x = (dtvttdv.panel2.Size.Width - dtvttdv.label1.Size.Width) / 2;
-            dtvttdv.label1.Location = new Point(x, dtvttdv.label1.Location.Y);
-            dtvttdv.panel1.Controls.Add(ucHoanCanhGiaDinh6.Instance);
-            ucHoanCanhGiaDinh6.Instance.Dock = DockStyle.Fill;
-            ucHoanCanhGiaDinh6.Instance.BringToFront();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,9 +58,9 @@ namespace QLDV
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value);
+            
             connectDb con = new connectDb();
-            con.quanheGD("insert",id,dangvien.solylich,dangvien.sothedangvien,textBox1.Text,textBox2.Text,Convert.ToInt32(comboBox1.Text),richTextBox1.Text);
+            con.quanheGD("insert", 0, dangvien.solylich, dangvien.sothedangvien, textBox1.Text, textBox2.Text, Convert.ToInt32(comboBox1.Text), richTextBox1.Text);
             textBox1.Text = "";
             textBox2.Text = "";
             comboBox1.SelectedIndex = 0;
@@ -123,7 +72,7 @@ namespace QLDV
         {
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[6].Value);
             connectDb con = new connectDb();
-            con.quanheGD("update",id, dangvien.solylich, dangvien.sothedangvien, textBox1.Text, textBox2.Text, Convert.ToInt32(comboBox1.Text), richTextBox1.Text);
+            con.quanheGD("update", id, dangvien.solylich, dangvien.sothedangvien, textBox1.Text, textBox2.Text, Convert.ToInt32(comboBox1.Text), richTextBox1.Text);
             textBox1.Text = "";
             textBox2.Text = "";
             comboBox1.SelectedIndex = 0;
@@ -172,13 +121,73 @@ namespace QLDV
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex != -1){
+            if (e.RowIndex != -1)
+            {
                 textBox1.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 textBox2.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 comboBox1.SelectedItem = dataGridView1.CurrentRow.Cells[4].Value;
                 richTextBox1.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             }
-            
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            formThemVaThongTinDangVien4 f = (formThemVaThongTinDangVien4)Application.OpenForms["formThemVaThongTinDangVien4"];
+            if (f == null)
+            {
+                f = new formThemVaThongTinDangVien4();
+                f.AutoScroll = true;
+            }
+            f.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            formThemVaThongTinDangVien6 f = (formThemVaThongTinDangVien6)Application.OpenForms["formThemVaThongTinDangVien6"];
+            if (f == null)
+            {
+                f = new formThemVaThongTinDangVien6();
+                f.AutoScroll = true;
+            }
+            f.Show();
+            this.Hide();
+        }
+
+        private void formThemVaThongTinDangVien5_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formThemVaThongTinDangVien f1 = new formThemVaThongTinDangVien();
+            if (f1 != null)
+            {
+                f1.Close();
+            }
+            formThemVaThongTinDangVien2 f2 = new formThemVaThongTinDangVien2();
+            if (f2 != null)
+            {
+                f2.Close();
+            }
+
+            formThemVaThongTinDangVien3 f3 = new formThemVaThongTinDangVien3();
+            if (f3 != null)
+            {
+                f3.Close();
+            }
+            formThemVaThongTinDangVien4 f4 = new formThemVaThongTinDangVien4();
+            if (f4 != null)
+            {
+                f4.Close();
+            }
+            formThemVaThongTinDangVien5 f5 = new formThemVaThongTinDangVien5(); ;
+            if (f5 != null)
+            {
+                f5.Close();
+            }
+            formThemVaThongTinDangVien5 f6 = new formThemVaThongTinDangVien5(); ;
+            if (f6 != null)
+            {
+                f6.Close();
+            }
         }
     }
 }

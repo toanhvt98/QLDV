@@ -31,6 +31,13 @@ namespace QLDV
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anhdangvienDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.solylichDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sotheDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tendangvienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dangvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDVDataSet = new QLDV.QLDVDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,17 +45,10 @@ namespace QLDV
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.qLDVDataSet = new QLDV.QLDVDataSet();
-            this.dangvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dangvienTableAdapter = new QLDV.QLDVDataSetTableAdapters.dangvienTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anhdangvienDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.solylichDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sotheDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tendangvienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDVDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dangvienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDVDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -71,6 +71,61 @@ namespace QLDV
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(742, 209);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // anhdangvienDataGridViewImageColumn
+            // 
+            this.anhdangvienDataGridViewImageColumn.DataPropertyName = "anhdangvien";
+            this.anhdangvienDataGridViewImageColumn.HeaderText = "anhdangvien";
+            this.anhdangvienDataGridViewImageColumn.MinimumWidth = 6;
+            this.anhdangvienDataGridViewImageColumn.Name = "anhdangvienDataGridViewImageColumn";
+            this.anhdangvienDataGridViewImageColumn.ReadOnly = true;
+            this.anhdangvienDataGridViewImageColumn.Width = 200;
+            // 
+            // solylichDataGridViewTextBoxColumn
+            // 
+            this.solylichDataGridViewTextBoxColumn.DataPropertyName = "solylich";
+            this.solylichDataGridViewTextBoxColumn.HeaderText = "solylich";
+            this.solylichDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.solylichDataGridViewTextBoxColumn.Name = "solylichDataGridViewTextBoxColumn";
+            this.solylichDataGridViewTextBoxColumn.ReadOnly = true;
+            this.solylichDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sotheDataGridViewTextBoxColumn
+            // 
+            this.sotheDataGridViewTextBoxColumn.DataPropertyName = "sothe";
+            this.sotheDataGridViewTextBoxColumn.HeaderText = "sothe";
+            this.sotheDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sotheDataGridViewTextBoxColumn.Name = "sotheDataGridViewTextBoxColumn";
+            this.sotheDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sotheDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tendangvienDataGridViewTextBoxColumn
+            // 
+            this.tendangvienDataGridViewTextBoxColumn.DataPropertyName = "tendangvien";
+            this.tendangvienDataGridViewTextBoxColumn.HeaderText = "tendangvien";
+            this.tendangvienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tendangvienDataGridViewTextBoxColumn.Name = "tendangvienDataGridViewTextBoxColumn";
+            this.tendangvienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tendangvienDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dangvienBindingSource
+            // 
+            this.dangvienBindingSource.DataMember = "dangvien";
+            this.dangvienBindingSource.DataSource = this.qLDVDataSet;
+            // 
+            // qLDVDataSet
+            // 
+            this.qLDVDataSet.DataSetName = "QLDVDataSet";
+            this.qLDVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -143,64 +198,9 @@ namespace QLDV
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // qLDVDataSet
-            // 
-            this.qLDVDataSet.DataSetName = "QLDVDataSet";
-            this.qLDVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dangvienBindingSource
-            // 
-            this.dangvienBindingSource.DataMember = "dangvien";
-            this.dangvienBindingSource.DataSource = this.qLDVDataSet;
-            // 
             // dangvienTableAdapter
             // 
             this.dangvienTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // anhdangvienDataGridViewImageColumn
-            // 
-            this.anhdangvienDataGridViewImageColumn.DataPropertyName = "anhdangvien";
-            this.anhdangvienDataGridViewImageColumn.HeaderText = "anhdangvien";
-            this.anhdangvienDataGridViewImageColumn.MinimumWidth = 6;
-            this.anhdangvienDataGridViewImageColumn.Name = "anhdangvienDataGridViewImageColumn";
-            this.anhdangvienDataGridViewImageColumn.ReadOnly = true;
-            this.anhdangvienDataGridViewImageColumn.Width = 200;
-            // 
-            // solylichDataGridViewTextBoxColumn
-            // 
-            this.solylichDataGridViewTextBoxColumn.DataPropertyName = "solylich";
-            this.solylichDataGridViewTextBoxColumn.HeaderText = "solylich";
-            this.solylichDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.solylichDataGridViewTextBoxColumn.Name = "solylichDataGridViewTextBoxColumn";
-            this.solylichDataGridViewTextBoxColumn.ReadOnly = true;
-            this.solylichDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // sotheDataGridViewTextBoxColumn
-            // 
-            this.sotheDataGridViewTextBoxColumn.DataPropertyName = "sothe";
-            this.sotheDataGridViewTextBoxColumn.HeaderText = "sothe";
-            this.sotheDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sotheDataGridViewTextBoxColumn.Name = "sotheDataGridViewTextBoxColumn";
-            this.sotheDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sotheDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tendangvienDataGridViewTextBoxColumn
-            // 
-            this.tendangvienDataGridViewTextBoxColumn.DataPropertyName = "tendangvien";
-            this.tendangvienDataGridViewTextBoxColumn.HeaderText = "tendangvien";
-            this.tendangvienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tendangvienDataGridViewTextBoxColumn.Name = "tendangvienDataGridViewTextBoxColumn";
-            this.tendangvienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tendangvienDataGridViewTextBoxColumn.Width = 125;
             // 
             // UCThongTin
             // 
@@ -216,11 +216,11 @@ namespace QLDV
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UCThongTin";
-            this.Size = new System.Drawing.Size(825, 409);
+            this.Size = new System.Drawing.Size(1100, 591);
             this.Load += new System.EventHandler(this.UCThongTin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDVDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dangvienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDVDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

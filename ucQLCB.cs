@@ -41,6 +41,7 @@ namespace QLDV
         }
         private void ucQLCB_Load(object sender, EventArgs e)
         {
+            
             radioButton1.Checked = true;
             loaddata();
         }

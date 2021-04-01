@@ -16,7 +16,7 @@ namespace QLDV
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            panel1.Controls.Add(uclDangVien.Instance);
+            
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -26,29 +26,32 @@ namespace QLDV
 
         private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Add(ucQLTK.Instance);
-            ucQLTK.Instance.Dock = DockStyle.Fill;
-            ucQLTK.Instance.BringToFront();
+            ucQLTK uc = new ucQLTK();
+            usercontrolForm.showcontrol(uc, panel1);
         }
 
         private void chiBộToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Add(ucQLCB.Instance);
-            ucQLCB.Instance.Dock = DockStyle.Fill;
-            ucQLCB.Instance.BringToFront();
+            ucQLCB uc = new ucQLCB();
+            usercontrolForm.showcontrol(uc, panel1);
         }
 
         private void thêmĐảngViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            uclDangVien.Instance.Dock = DockStyle.Fill;
-            uclDangVien.Instance.BringToFront();
+            uclDangVien uc = new uclDangVien();
+            usercontrolForm.showcontrol(uc, panel1);
         }
 
         private void thôngTinĐảngViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Add(UCThongTin.Instance);
-            UCThongTin.Instance.Dock = DockStyle.Fill;
-            UCThongTin.Instance.BringToFront();
+            UCThongTin uc = new UCThongTin();
+            usercontrolForm.showcontrol(uc, panel1);
+        }
+
+        private void formMain_Load(object sender, EventArgs e)
+        {
+            uclDangVien uc = new uclDangVien();
+            usercontrolForm.showcontrol(uc, panel1);
         }
     }
 }

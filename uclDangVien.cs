@@ -35,7 +35,9 @@ namespace QLDV
 
         private void uclDangVien_Load(object sender, EventArgs e)
         {
-
+            button4.Visible = false;
+            button5.Visible = false;
+            pictureBox1.Image = pictureBox1.InitialImage;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,13 +46,14 @@ namespace QLDV
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
-                pictureBox1.BackgroundImage = null;
+                pictureBox1.BackgroundImage = BackgroundImage;
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = null;
+            pictureBox1.BackgroundImage = BackgroundImage;
+            pictureBox1.Image = pictureBox1.InitialImage;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -66,29 +69,18 @@ namespace QLDV
                         if (con.checkSllVaSt("sothe",textBox2.Text))
                         {
                             setInfor();
-
-                            byte[] anh;
-                            ImageConverter converter = new ImageConverter();
-                            anh = (byte[])converter.ConvertTo(pictureBox1.Image, typeof(byte[]));
-                            con.addSllVaSt(anh, textBox1.Text, textBox2.Text);
                             formThemVaThongTinDangVien ftvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-
-                            ucTTCBDangVien.check = true;
-                            ucQuaTrinhHoatDongVaCongTac2.check = true;
-                            UCDaoTaoChung3.check = true;
-                            ucDdlsVaQhng4.check = true;
-                            ucQuanHeGD5.check = true;
-                            ucHoanCanhGiaDinh6.check = true;
                             if (ftvttdv == null)
                             {
-                                ftvttdv = new formThemVaThongTinDangVien();
+                                
+                                ftvttdv = new formThemVaThongTinDangVien();                          
                                 ftvttdv.AutoScroll = true;
-
                             }
-                            ftvttdv.ShowDialog();
+                            ftvttdv.Show();
                             textBox1.Text = "";
                             textBox2.Text = "";
-                            pictureBox1.BackgroundImage = null;
+                            pictureBox1.Image = pictureBox1.InitialImage;
+                            pictureBox1.BackgroundImage = BackgroundImage;
                         }
                         else
                             MessageBox.Show("Mã số thẻ Đảng viên: " + textBox2.Text + " đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -107,8 +99,48 @@ namespace QLDV
         {
             dangvien.solylich = textBox1.Text;
             dangvien.sothedangvien = textBox2.Text;
-            
+            byte[] anh;
+            ImageConverter converter = new ImageConverter();
+            anh = (byte[])converter.ConvertTo(pictureBox1.Image, typeof(byte[]));
+            dangvien.anh = anh;
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            formMain fm = (formMain)Application.OpenForms["formMain"];
+            UCThongTin uc = new UCThongTin();
+            usercontrolForm.showcontrol(uc, fm.panel1);
+        }
+        
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            getinfor();
+            formThemVaThongTinDangVien.check = true;
+
+            formThemVaThongTinDangVien3.check = true;
+            formThemVaThongTinDangVien4.check = true;
+
+            formThemVaThongTinDangVien6.check = true;
+
+            formThemVaThongTinDangVien ftvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
+            
+            if (ftvttdv == null)
+            {
+                ftvttdv = new formThemVaThongTinDangVien();
+                ftvttdv.AutoScroll = true;
+            }
+            ftvttdv.Show();
+        }
+
+        private void getinfor()
+        {
+            dangvien.solylich = textBox1.Text;
+            dangvien.sothedangvien = textBox2.Text;
+            byte[] anh;
+            ImageConverter converter = new ImageConverter();
+            anh = (byte[])converter.ConvertTo(pictureBox1.Image, typeof(byte[]));
+            dangvien.anh = anh;
+        }
     }
 }
