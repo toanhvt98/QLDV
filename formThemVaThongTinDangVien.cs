@@ -360,6 +360,7 @@ namespace QLDV
 
         private void getinfor()
         {
+            //test
             connectDb con = new connectDb();
             con.con.Open();
                 using (SqlCommand cmd = new SqlCommand("select * from ttcbDv where solylich='" + dangvien.solylich + "'", con.con))
