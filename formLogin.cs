@@ -45,5 +45,10 @@ namespace QLDV
             else
                 MessageBox.Show("Tên đăng nhập hoặc tài khoản không đúng!");
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

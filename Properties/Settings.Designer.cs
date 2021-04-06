@@ -25,7 +25,7 @@ namespace QLDV.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-5APNC1IF;Initial Catalog=QLDV;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BUK4UQ5;Initial Catalog=QLDV;Integrated Security=True")]
         public string sqlStr {
             get {
                 return ((string)(this["sqlStr"]));
@@ -35,7 +35,7 @@ namespace QLDV.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-5APNC1IF;Initial Catalog=QLDV;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BUK4UQ5;Initial Catalog=QLDV;Integrated Security=True")]
         public string QLDVConnectionString {
             get {
                 return ((string)(this["QLDVConnectionString"]));
