@@ -56,6 +56,7 @@ namespace QLDV
         {
             radioButton1.Checked = true;
             loaddata();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
