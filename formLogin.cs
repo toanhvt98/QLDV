@@ -40,7 +40,7 @@ namespace QLDV
                 formMain fMain = new formMain();
                 fMain.quảnLýToolStripMenuItem.Visible = false;
                 fMain.ShowDialog();
-                this.Close();
+                this.Close();//
             }
             else
                 MessageBox.Show("Tên đăng nhập hoặc tài khoản không đúng!");
