@@ -78,14 +78,14 @@ namespace QLDV
             // tàiKhoảnToolStripMenuItem
             // 
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click);
             // 
             // chiBộToolStripMenuItem
             // 
             this.chiBộToolStripMenuItem.Name = "chiBộToolStripMenuItem";
-            this.chiBộToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chiBộToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.chiBộToolStripMenuItem.Text = "Chi bộ";
             this.chiBộToolStripMenuItem.Click += new System.EventHandler(this.chiBộToolStripMenuItem_Click);
             // 
@@ -157,7 +157,7 @@ namespace QLDV
             this.ClientSize = new System.Drawing.Size(843, 530);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;

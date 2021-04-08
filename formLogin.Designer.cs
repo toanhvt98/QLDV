@@ -64,7 +64,6 @@ namespace QLDV
             this.textBox2.Size = new System.Drawing.Size(224, 32);
             this.textBox2.TabIndex = 1;
             this.textBox2.UseSystemPasswordChar = true;
-
             // 
             // button1
             // 
@@ -118,7 +117,7 @@ namespace QLDV
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::QLDV.Properties.Resources.formImg;
             this.pictureBox1.Location = new System.Drawing.Point(104, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);

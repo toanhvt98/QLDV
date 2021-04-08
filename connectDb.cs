@@ -13,7 +13,7 @@ namespace QLDV
 {
     class connectDb
     {
-        public SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlStr.ToString());
+        public SqlConnection con = new SqlConnection("Data Source=DESKTOP-BUK4UQ5;Initial Catalog=QLDV;Integrated Security=True");
         
         public bool checkLogin(string tentk, string matkhau, string quyentruycap)
         {

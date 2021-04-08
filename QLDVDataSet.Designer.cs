@@ -906,7 +906,7 @@ SELECT id, anhdangvien, solylich, sothe, tendangvien FROM dangvien WHERE (id = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::QLDV.Properties.Settings.Default.QLDVConnectionString;
+            this._connection.ConnectionString = global::QLDV.Properties.Settings.Default.sqlStr;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
