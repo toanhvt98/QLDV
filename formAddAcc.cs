@@ -66,7 +66,5 @@ namespace QLDV
                 MessageBox.Show("Tài khoản không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             qltk.loaddata();
         }
-
-
     }
 }

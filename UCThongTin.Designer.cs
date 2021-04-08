@@ -56,6 +56,7 @@ namespace QLDV
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -64,58 +65,59 @@ namespace QLDV
             this.sotheDataGridViewTextBoxColumn,
             this.tendangvienDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.dangvienBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 104);
+            this.dataGridView1.Location = new System.Drawing.Point(115, 110);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 209);
+            this.dataGridView1.Size = new System.Drawing.Size(615, 319);
             this.dataGridView1.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
             // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // anhdangvienDataGridViewImageColumn
             // 
+            this.anhdangvienDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.anhdangvienDataGridViewImageColumn.DataPropertyName = "anhdangvien";
-            this.anhdangvienDataGridViewImageColumn.HeaderText = "anhdangvien";
+            this.anhdangvienDataGridViewImageColumn.HeaderText = "Ảnh đảng viên";
             this.anhdangvienDataGridViewImageColumn.MinimumWidth = 6;
             this.anhdangvienDataGridViewImageColumn.Name = "anhdangvienDataGridViewImageColumn";
             this.anhdangvienDataGridViewImageColumn.ReadOnly = true;
-            this.anhdangvienDataGridViewImageColumn.Width = 200;
             // 
             // solylichDataGridViewTextBoxColumn
             // 
+            this.solylichDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.solylichDataGridViewTextBoxColumn.DataPropertyName = "solylich";
-            this.solylichDataGridViewTextBoxColumn.HeaderText = "solylich";
+            this.solylichDataGridViewTextBoxColumn.HeaderText = "Số lý lịch";
             this.solylichDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.solylichDataGridViewTextBoxColumn.Name = "solylichDataGridViewTextBoxColumn";
             this.solylichDataGridViewTextBoxColumn.ReadOnly = true;
-            this.solylichDataGridViewTextBoxColumn.Width = 125;
             // 
             // sotheDataGridViewTextBoxColumn
             // 
+            this.sotheDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sotheDataGridViewTextBoxColumn.DataPropertyName = "sothe";
-            this.sotheDataGridViewTextBoxColumn.HeaderText = "sothe";
+            this.sotheDataGridViewTextBoxColumn.HeaderText = "Số thẻ";
             this.sotheDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sotheDataGridViewTextBoxColumn.Name = "sotheDataGridViewTextBoxColumn";
             this.sotheDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sotheDataGridViewTextBoxColumn.Width = 125;
             // 
             // tendangvienDataGridViewTextBoxColumn
             // 
+            this.tendangvienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tendangvienDataGridViewTextBoxColumn.DataPropertyName = "tendangvien";
-            this.tendangvienDataGridViewTextBoxColumn.HeaderText = "tendangvien";
+            this.tendangvienDataGridViewTextBoxColumn.HeaderText = "Tên đảng viên";
             this.tendangvienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tendangvienDataGridViewTextBoxColumn.Name = "tendangvienDataGridViewTextBoxColumn";
             this.tendangvienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tendangvienDataGridViewTextBoxColumn.Width = 125;
             // 
             // dangvienBindingSource
             // 
@@ -130,36 +132,44 @@ namespace QLDV
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(281, 16);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.label4.Location = new System.Drawing.Point(112, 23);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(246, 29);
+            this.label4.Size = new System.Drawing.Size(270, 31);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Thông tin Đảng viên";
+            this.label4.Text = "Thông tin đảng viên";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(250, 59);
+            this.textBox1.Location = new System.Drawing.Point(181, 67);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 22);
+            this.textBox1.Size = new System.Drawing.Size(142, 20);
             this.textBox1.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(167, 62);
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.label1.Location = new System.Drawing.Point(115, 72);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Tìm kiếm:";
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(417, 60);
+            this.radioButton1.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.radioButton1.Location = new System.Drawing.Point(332, 70);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 21);
+            this.radioButton1.Size = new System.Drawing.Size(67, 17);
             this.radioButton1.TabIndex = 10;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Số lý lịch";
@@ -168,9 +178,11 @@ namespace QLDV
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(519, 60);
+            this.radioButton2.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.radioButton2.Location = new System.Drawing.Point(408, 70);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 21);
+            this.radioButton2.Size = new System.Drawing.Size(56, 17);
             this.radioButton2.TabIndex = 10;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Số thẻ";
@@ -179,9 +191,11 @@ namespace QLDV
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(606, 60);
+            this.radioButton3.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.radioButton3.Location = new System.Drawing.Point(473, 70);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(54, 21);
+            this.radioButton3.Size = new System.Drawing.Size(44, 17);
             this.radioButton3.TabIndex = 10;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Tên";
@@ -189,13 +203,17 @@ namespace QLDV
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(694, 334);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(176)))), ((int)(((byte)(246)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button1.Location = new System.Drawing.Point(648, 61);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 50);
+            this.button1.Size = new System.Drawing.Size(70, 32);
             this.button1.TabIndex = 11;
             this.button1.Text = "Xem";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dangvienTableAdapter
@@ -204,9 +222,9 @@ namespace QLDV
             // 
             // UCThongTin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
@@ -215,8 +233,9 @@ namespace QLDV
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCThongTin";
-            this.Size = new System.Drawing.Size(1100, 591);
+            this.Size = new System.Drawing.Size(825, 480);
             this.Load += new System.EventHandler(this.UCThongTin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dangvienBindingSource)).EndInit();

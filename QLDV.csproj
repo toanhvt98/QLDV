@@ -216,6 +216,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="uclDangVien.resx">
       <DependentUpon>uclDangVien.cs</DependentUpon>
@@ -346,6 +347,7 @@
     <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\zh-hans\System.Collections.xml" />
     <Content Include="packages\System.Collections.4.3.0\ref\netstandard1.3\zh-hant\System.Collections.xml" />
     <Content Include="packages\System.Collections.4.3.0\ThirdPartyNotices.txt" />
+    <None Include="Resources\user-male.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

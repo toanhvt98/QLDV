@@ -360,7 +360,7 @@ namespace QLDV
 
         private void getinfor()
         {
-            //test
+
             connectDb con = new connectDb();
             con.con.Open();
                 using (SqlCommand cmd = new SqlCommand("select * from ttcbDv where solylich='" + dangvien.solylich + "'", con.con))
@@ -371,7 +371,7 @@ namespace QLDV
                         {
                             textBox1.Text = read.GetString(2);
                             gioitinh = read.GetString(3);
-                            textBox2.Text = read.GetString(4);
+                            textBox2.Text = read.GetString(4);//
 
 
                             dateTimePicker1.Value = read.GetDateTime(5);
