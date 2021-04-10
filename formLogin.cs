@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QLDV
 {
@@ -26,7 +27,12 @@ namespace QLDV
         private void button1_Click(object sender, EventArgs e)
         {
             connectDb con = new connectDb();
-            if (con.checkLogin(textBox1.Text, textBox2.Text, "admin"))
+            if(textBox1.Text == "setconnect" && textBox2.Text == "setconnect")
+            {
+                setConnectStr setCon = new setConnectStr();
+                setCon.ShowDialog();
+            }
+            else if (con.checkLogin(textBox1.Text, textBox2.Text, "admin"))
             {
                 this.Hide();
                 formMain fMain = new formMain();
