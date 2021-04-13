@@ -1038,5 +1038,10 @@ namespace QLDV
 
 
         }
+
+        public void exportExcel(string url)
+        {
+
+        }
     }
 }
