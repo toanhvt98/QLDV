@@ -13,8 +13,20 @@ namespace QLDV
 {
     class connectDb
     {
-        public SqlConnection con = new SqlConnection(File.ReadAllText("connect.txt"));
         
+        
+        
+        public static string connect()
+        {
+            string a = "";
+            if (File.Exists("connect.txt"))
+            {
+                a = File.ReadAllText("connect.txt");
+            }
+            return a;
+        }
+
+        public SqlConnection con = new SqlConnection(connect());
         public bool checkLogin(string tentk, string matkhau, string quyentruycap)
         {
             con.Open();
