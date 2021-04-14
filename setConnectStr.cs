@@ -21,7 +21,10 @@ namespace QLDV
 
         private void setConnectStr_Load(object sender, EventArgs e)
         {
-            textBox1.Text = File.ReadAllText("connect.txt");
+            if (File.Exists("connect.txt"))
+                textBox1.Text = File.ReadAllText("connect.txt");
+            else
+                textBox1.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)

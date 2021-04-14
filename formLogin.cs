@@ -30,6 +30,11 @@ namespace QLDV
             if(textBox1.Text == "setconnect" && textBox2.Text == "setconnect")
             {
                 setConnectStr setCon = new setConnectStr();
+                if (!File.Exists("connect.txt"))
+                {
+                    File.Create("connect.txt");
+                }
+                
                 setCon.ShowDialog();
             }
             else if (con.checkLogin(textBox1.Text, textBox2.Text, "admin"))
