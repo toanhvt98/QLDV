@@ -222,7 +222,7 @@ namespace QLDV
                 dangvien.ngayvaodang = null;
             }
 
-            dangvien.taichibo = comboBox3.SelectedText.ToString();
+            dangvien.taichibo = comboBox3.Text;
             dangvien.nguoigt1 = textBox10.Text;
             dangvien.chucvudonvi1 = textBox11.Text;
             dangvien.nguoigt2 = textBox12.Text;
@@ -246,7 +246,7 @@ namespace QLDV
                 dangvien.ngaychinhthuc = null;
             }
 
-            dangvien.taichibo2 = comboBox4.SelectedText.ToString();
+            dangvien.taichibo2 = comboBox4.Text;
 
             if (dt5 == true)
             {
@@ -492,12 +492,7 @@ namespace QLDV
             }
                 
 
-            con.con.Close();
-            
-
-
-
-            
+            con.con.Close();            
         }
     }
 }

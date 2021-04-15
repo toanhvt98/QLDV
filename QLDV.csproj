@@ -127,6 +127,12 @@
     <Compile Include="formThemVaThongTinDangVien6.Designer.cs">
       <DependentUpon>formThemVaThongTinDangVien6.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="formUpdateAcc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,18 @@
     <Compile Include="ucQLTK.Designer.cs">
       <DependentUpon>ucQLTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucTaiKhoanCaNhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTaiKhoanCaNhan.Designer.cs">
+      <DependentUpon>ucTaiKhoanCaNhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongKe.Designer.cs">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCThongTin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +195,7 @@
       <DependentUpon>UCThongTin.cs</DependentUpon>
     </Compile>
     <Compile Include="usercontrolForm.cs" />
+    <Compile Include="userInfor.cs" />
     <EmbeddedResource Include="formAddAcc.resx">
       <DependentUpon>formAddAcc.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +229,9 @@
     <EmbeddedResource Include="formThemVaThongTinDangVien6.resx">
       <DependentUpon>formThemVaThongTinDangVien6.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formUpdateAcc.resx">
       <DependentUpon>formUpdateAcc.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +259,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucQLTK.resx">
       <DependentUpon>ucQLTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTaiKhoanCaNhan.resx">
+      <DependentUpon>ucTaiKhoanCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongKe.resx">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCThongTin.resx">
       <DependentUpon>UCThongTin.cs</DependentUpon>

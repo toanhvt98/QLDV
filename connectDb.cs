@@ -1051,6 +1051,142 @@ namespace QLDV
 
         }
 
+        public void thongke(DataGridViewCell lb,DataGridViewCell lb1,DataGridViewCell lb2, DataGridViewCell lb3, DataGridViewCell lb4, string combobox)
+        {         
+            if(combobox == "Tất cả")
+            {
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv", con))
+                {
+                    con.Open();
+                    lb.Value = cmd.ExecuteScalar();
+                    con.Close();
+                }
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where  gioitinh=N'Nam'", con))
+                {
+                    con.Open();
+                    lb1.Value = cmd.ExecuteScalar();
+                    con.Close();
+                }
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where gioitinh=N'Nữ'", con))
+                {
+                    con.Open();
+                    lb2.Value = cmd.ExecuteScalar().ToString();
+                    con.Close();
+                }
+
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo1!='' ", con))
+                {
+                    con.Open();
+                    lb3.Value = cmd.ExecuteScalar().ToString();
+                    con.Close();
+                }
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo1 = ''", con))
+                {
+                    con.Open();
+                    lb4.Value = cmd.ExecuteScalar().ToString();
+                    con.Close();
+                }
+            }
+            else
+            {
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo=N'"+combobox+"'", con))
+                {
+                    con.Open();
+                    lb.Value = cmd.ExecuteScalar();
+                    con.Close();
+                }
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo = N'" + combobox + "' and gioitinh=N'Nam'", con))
+                {
+                    con.Open();
+                    lb1.Value = cmd.ExecuteScalar().ToString();
+                    con.Close();
+                }
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo = N'" + combobox + "' and gioitinh=N'Nữ'", con))
+                {
+                    con.Open();
+                    lb2.Value = cmd.ExecuteScalar().ToString();
+                    con.Close();
+                }
+
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo1 != '' and taichibo = N'" + combobox + "'", con))
+                {
+                    con.Open();
+                    lb3.Value = cmd.ExecuteScalar().ToString();
+                    con.Close();
+                }
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo1 = '' and taichibo = N'" + combobox + "'", con))
+                {
+                    con.Open();
+                    lb4.Value = cmd.ExecuteScalar().ToString();
+                    con.Close();
+                }
+            }
+        }
+
+        public void thongkeTuoi(DataGridViewCell lb, DataGridViewCell lb1, DataGridViewCell lb2, DataGridViewCell lb3, DataGridViewCell lb4, string combobox)
+        {
+
+            string start = "";
+            string end = "";
+            for(int i = 0; i < combobox.Length; i++)
+            {
+                if (char.IsDigit(combobox[i]))
+                {
+                    start += combobox[i];
+                    if(start.Length == 2)
+                    {
+                        end += combobox[i];
+                    }
+                }
+            }
+
+
+            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >= "+ start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end, con))
+            {
+                con.Open();
+                lb.Value = cmd.ExecuteScalar().ToString();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and gioitinh=N'Nam'", con))
+            {
+                con.Open();
+                lb1.Value = cmd.ExecuteScalar().ToString();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and gioitinh=N'Nữ'", con))
+            {
+                con.Open();
+                lb2.Value = cmd.ExecuteScalar().ToString();
+                con.Close();
+            }
+
+            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and taichibo1!='' ", con))
+            {
+                con.Open();
+                lb3.Value = cmd.ExecuteScalar().ToString();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and taichibo1 = ''", con))
+            {
+                con.Open();
+                lb4.Value = cmd.ExecuteScalar().ToString();
+                con.Close();
+            }
+
+        }
+
+        public string getNameChiBoOfAcc(string username)
+        {
+            string a = "";
+            using (SqlCommand cmd = new SqlCommand("select ten from chibo inner join taikhoan on ma = chibo where tentk='"+ username+"'", con))
+            {
+                con.Open();
+                a = cmd.ExecuteScalar().ToString();
+             
+                con.Close();
+            }
+            return a;
+        }
         public void exportExcel(string url)
         {
 

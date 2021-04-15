@@ -34,14 +34,16 @@ namespace QLDV
                 {
                     File.Create("connect.txt");
                 }
-                
+                userInfor.username = textBox1.Text;
+                userInfor.pwd = textBox1.Text;
                 setCon.ShowDialog();
             }
             else if (con.checkLogin(textBox1.Text, textBox2.Text, "admin"))
             {
                 this.Hide();
                 formMain fMain = new formMain();
-                
+                userInfor.username = textBox1.Text;
+                userInfor.pwd = textBox1.Text;
                 fMain.ShowDialog();
                 this.Close();
             }
@@ -50,8 +52,10 @@ namespace QLDV
                 this.Hide();
                 formMain fMain = new formMain();
                 fMain.quảnLýToolStripMenuItem.Visible = false;
+                userInfor.username = textBox1.Text;
+                userInfor.pwd = textBox1.Text;
                 fMain.ShowDialog();
-                this.Close();//
+                this.Close();
             }
             else
                 MessageBox.Show("Tên đăng nhập hoặc tài khoản không đúng!");

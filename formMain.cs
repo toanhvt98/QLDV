@@ -53,5 +53,17 @@ namespace QLDV
             uclDangVien uc = new uclDangVien();
             usercontrolForm.showcontrol(uc, panel1);
         }
+
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ucThongKe uc = new ucThongKe();
+            usercontrolForm.showcontrol(uc, panel1);
+        }
+
+        private void tàiKhoảnCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ucTaiKhoanCaNhan uc = new ucTaiKhoanCaNhan();
+            usercontrolForm.showcontrol(uc, panel1);
+        }
     }
 }
