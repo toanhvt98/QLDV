@@ -63,6 +63,16 @@ namespace QLDV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3eff04a4f8391a7f95820e1fa335b731 {
+            get {
+                object obj = ResourceManager.GetObject("3eff04a4f8391a7f95820e1fa335b731", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap formImg {
             get {
                 object obj = ResourceManager.GetObject("formImg", resourceCulture);

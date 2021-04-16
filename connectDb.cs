@@ -1125,20 +1125,17 @@ namespace QLDV
 
         public void thongkeTuoi(DataGridViewCell lb, DataGridViewCell lb1, DataGridViewCell lb2, DataGridViewCell lb3, DataGridViewCell lb4, string combobox)
         {
-
-            string start = "";
-            string end = "";
+            string str = "";
+            
             for(int i = 0; i < combobox.Length; i++)
             {
                 if (char.IsDigit(combobox[i]))
                 {
-                    start += combobox[i];
-                    if(start.Length == 2)
-                    {
-                        end += combobox[i];
-                    }
+                    str += combobox[i];                   
                 }
             }
+            string start = str.Substring(0, 2);
+            string end = str.Substring(2, 2);
 
 
             using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >= "+ start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end, con))
@@ -1175,17 +1172,52 @@ namespace QLDV
 
         }
 
-        public string getNameChiBoOfAcc(string username)
+        public void getNameChiBoOfAcc(string username,TextBox t)
         {
-            string a = "";
+            con.Open();
             using (SqlCommand cmd = new SqlCommand("select ten from chibo inner join taikhoan on ma = chibo where tentk='"+ username+"'", con))
             {
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        t.Text = read.GetValue(0).ToString();
+                    }
+                }
+            }
+            con.Close();
+        }
+
+        public void getQuyen(string username,TextBox t)
+        {
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand("select quyentruycap from taikhoan where tentk='" + username + "'", con))
+            {
+                using (SqlDataReader read= cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        t.Text = read.GetValue(0).ToString();
+                    }
+                }
+
+                
+            }
+            con.Close();
+        }
+
+        public void createAdminAcc(string acc, string pwd)
+        {
+            using (SqlCommand cmd = new SqlCommand("insert into taikhoan (tentk,matkhau,chibo,quyentruycap) values (@1,@2,@3,@4)", con))
+            {
+                cmd.Parameters.AddWithValue("@1",SqlDbType.NVarChar).Value = acc;
+                cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = pwd;
+                cmd.Parameters.AddWithValue("@3", SqlDbType.NVarChar).Value = DBNull.Value;
+                cmd.Parameters.AddWithValue("@4", SqlDbType.NVarChar).Value = "admin";
                 con.Open();
-                a = cmd.ExecuteScalar().ToString();
-             
+                cmd.ExecuteNonQuery();
                 con.Close();
             }
-            return a;
         }
         public void exportExcel(string url)
         {

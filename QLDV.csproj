@@ -73,6 +73,12 @@
     <Compile Include="formAddChiBo.Designer.cs">
       <DependentUpon>formAddChiBo.cs</DependentUpon>
     </Compile>
+    <Compile Include="formCreateAdminAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCreateAdminAcc.Designer.cs">
+      <DependentUpon>formCreateAdminAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="formDaoTaoChung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QLDVDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,6 +213,9 @@
     <EmbeddedResource Include="formAddChiBo.resx">
       <DependentUpon>formAddChiBo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formCreateAdminAcc.resx">
+      <DependentUpon>formCreateAdminAcc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formDaoTaoChung.resx">
       <DependentUpon>formDaoTaoChung.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,14 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="setConnectStr.resx">
       <DependentUpon>setConnectStr.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +346,7 @@
     <Content Include="bin\Debug\EntityFramework.xml" />
     <Content Include="bin\Debug\QLDV.exe" />
     <Content Include="bin\Debug\QLDV.pdb" />
+    <None Include="image\3eff04a4f8391a7f95820e1fa335b731.png" />
     <Content Include="image\formImg.ico" />
     <Content Include="image\formImg.png" />
     <Content Include="image\imgPicDefault.png" />

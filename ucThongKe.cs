@@ -46,6 +46,7 @@ namespace QLDV
             comboBox1.Visible = false;
             comboBox2.Visible = true;
             Dictionary<string, string> test = new Dictionary<string, string>();
+            
             test.Add("1", "Từ 25 đến 29");
             test.Add("2", "Từ 30 đến 34");
             test.Add("3", "Từ 35 đến 39");
@@ -53,7 +54,8 @@ namespace QLDV
             test.Add("5", "Từ 45 đến 49");
             test.Add("6", "Từ 50 đến 55");
             test.Add("7", "Từ 55 đến 59");
-            test.Add("8", "Từ 60 đến 70");
+            test.Add("8", "Từ 60 đến 69");
+            test.Add("9", "Từ 70 đến 80");
             comboBox2.DataSource = new BindingSource(test, null);
             comboBox2.DisplayMember = "Value";
             comboBox2.ValueMember = "Key";

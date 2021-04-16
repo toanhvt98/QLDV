@@ -65,5 +65,17 @@ namespace QLDV
             ucTaiKhoanCaNhan uc = new ucTaiKhoanCaNhan();
             usercontrolForm.showcontrol(uc, panel1);
         }
+
+        private void đăngXuấtToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có muốn đăng xuất khỏi tài khoản không?","Đăng xuất",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                this.Hide();
+                formLogin f = new formLogin();
+                f.ShowDialog();
+                this.Close();
+            }
+        }
     }
 }

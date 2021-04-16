@@ -27,7 +27,15 @@ namespace QLDV
         private void button1_Click(object sender, EventArgs e)
         {
             connectDb con = new connectDb();
-            if(textBox1.Text == "setconnect" && textBox2.Text == "setconnect")
+            if(textBox1.Text == "createadminaccount" && textBox2.Text == "createadminaccount")
+            {
+                textBox1.Text = "";
+                textBox2.Text = "";
+                formCreateAdminAcc f = new formCreateAdminAcc();
+                f.ShowDialog();
+                
+            }
+            else if(textBox1.Text == "setconnect" && textBox2.Text == "setconnect")
             {
                 setConnectStr setCon = new setConnectStr();
                 if (!File.Exists("connect.txt"))
