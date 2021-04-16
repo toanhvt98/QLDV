@@ -16,7 +16,7 @@ namespace QLDV
         {
             InitializeComponent();
         }
-
+        bool chiboAdmin = false;
         private void ucTaiKhoanCaNhan_Load(object sender, EventArgs e)
         {
             connectDb con = new connectDb();
@@ -30,6 +30,10 @@ namespace QLDV
             button4.Visible = false;
             button5.Visible = false;
             button6.Visible = false;
+            if(textBox3.Text == "")
+            {
+                chiboAdmin = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,7 +67,15 @@ namespace QLDV
             connectDb con = new connectDb();
             textBox1.Text = userInfor.username;
             textBox2.Text = userInfor.pwd;
-            con.getNameChiBoOfAcc(userInfor.username, textBox3);
+            if(chiboAdmin == true)
+            {
+                textBox3.Text = "";
+            }
+            else
+            {
+                con.getNameChiBoOfAcc(userInfor.username, textBox3);
+            }
+            
             textBox2.UseSystemPasswordChar = true;
             textBox1.UseSystemPasswordChar = false;
             textBox3.UseSystemPasswordChar = false;
