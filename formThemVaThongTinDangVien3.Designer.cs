@@ -91,35 +91,39 @@ namespace QLDV
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(24, 89);
+            this.panel1.Location = new System.Drawing.Point(18, 72);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1168, 781);
+            this.panel1.Size = new System.Drawing.Size(876, 635);
             this.panel1.TabIndex = 9;
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(402, 629);
+            this.richTextBox3.Location = new System.Drawing.Point(302, 511);
+            this.richTextBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox3.MaxLength = 1000;
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(547, 68);
+            this.richTextBox3.Size = new System.Drawing.Size(411, 56);
             this.richTextBox3.TabIndex = 42;
             this.richTextBox3.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(402, 553);
+            this.richTextBox2.Location = new System.Drawing.Point(302, 449);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox2.MaxLength = 1000;
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(547, 68);
+            this.richTextBox2.Size = new System.Drawing.Size(411, 56);
             this.richTextBox2.TabIndex = 41;
             this.richTextBox2.Text = "";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(402, 388);
+            this.richTextBox1.Location = new System.Drawing.Point(302, 315);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.MaxLength = 1000;
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(547, 68);
+            this.richTextBox1.Size = new System.Drawing.Size(411, 56);
             this.richTextBox1.TabIndex = 40;
             this.richTextBox1.Text = "";
             // 
@@ -128,9 +132,11 @@ namespace QLDV
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Location = new System.Drawing.Point(1016, 39);
+            this.groupBox1.Location = new System.Drawing.Point(762, 32);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(149, 218);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(112, 177);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tác vụ";
@@ -138,9 +144,10 @@ namespace QLDV
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(23, 141);
+            this.button9.Location = new System.Drawing.Point(17, 115);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(101, 42);
+            this.button9.Size = new System.Drawing.Size(76, 34);
             this.button9.TabIndex = 2;
             this.button9.Text = "Xóa";
             this.button9.UseVisualStyleBackColor = true;
@@ -149,9 +156,10 @@ namespace QLDV
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(23, 93);
+            this.button8.Location = new System.Drawing.Point(17, 76);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(101, 42);
+            this.button8.Size = new System.Drawing.Size(76, 34);
             this.button8.TabIndex = 1;
             this.button8.Text = "Sửa";
             this.button8.UseVisualStyleBackColor = true;
@@ -160,9 +168,10 @@ namespace QLDV
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(23, 45);
+            this.button5.Location = new System.Drawing.Point(17, 37);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 42);
+            this.button5.Size = new System.Drawing.Size(76, 34);
             this.button5.TabIndex = 0;
             this.button5.Text = "Thêm";
             this.button5.UseVisualStyleBackColor = true;
@@ -171,9 +180,10 @@ namespace QLDV
             // checkBox12
             // 
             this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(411, 516);
+            this.checkBox12.Location = new System.Drawing.Point(308, 419);
+            this.checkBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(77, 21);
+            this.checkBox12.Size = new System.Drawing.Size(61, 17);
             this.checkBox12.TabIndex = 37;
             this.checkBox12.Text = "65 năm";
             this.checkBox12.UseVisualStyleBackColor = true;
@@ -181,9 +191,10 @@ namespace QLDV
             // checkBox11
             // 
             this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(494, 516);
+            this.checkBox11.Location = new System.Drawing.Point(370, 419);
+            this.checkBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(77, 21);
+            this.checkBox11.Size = new System.Drawing.Size(61, 17);
             this.checkBox11.TabIndex = 36;
             this.checkBox11.Text = "70 năm";
             this.checkBox11.UseVisualStyleBackColor = true;
@@ -191,9 +202,10 @@ namespace QLDV
             // checkBox10
             // 
             this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(577, 516);
+            this.checkBox10.Location = new System.Drawing.Point(433, 419);
+            this.checkBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(77, 21);
+            this.checkBox10.Size = new System.Drawing.Size(61, 17);
             this.checkBox10.TabIndex = 35;
             this.checkBox10.Text = "75 năm";
             this.checkBox10.UseVisualStyleBackColor = true;
@@ -201,9 +213,10 @@ namespace QLDV
             // checkBox9
             // 
             this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(660, 516);
+            this.checkBox9.Location = new System.Drawing.Point(495, 419);
+            this.checkBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(77, 21);
+            this.checkBox9.Size = new System.Drawing.Size(61, 17);
             this.checkBox9.TabIndex = 34;
             this.checkBox9.Text = "80 năm";
             this.checkBox9.UseVisualStyleBackColor = true;
@@ -211,9 +224,10 @@ namespace QLDV
             // checkBox8
             // 
             this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(743, 516);
+            this.checkBox8.Location = new System.Drawing.Point(557, 419);
+            this.checkBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(77, 21);
+            this.checkBox8.Size = new System.Drawing.Size(61, 17);
             this.checkBox8.TabIndex = 33;
             this.checkBox8.Text = "85 năm";
             this.checkBox8.UseVisualStyleBackColor = true;
@@ -221,9 +235,10 @@ namespace QLDV
             // checkBox7
             // 
             this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(826, 516);
+            this.checkBox7.Location = new System.Drawing.Point(620, 419);
+            this.checkBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(77, 21);
+            this.checkBox7.Size = new System.Drawing.Size(61, 17);
             this.checkBox7.TabIndex = 32;
             this.checkBox7.Text = "90 năm";
             this.checkBox7.UseVisualStyleBackColor = true;
@@ -231,9 +246,10 @@ namespace QLDV
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(826, 475);
+            this.checkBox6.Location = new System.Drawing.Point(620, 386);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(77, 21);
+            this.checkBox6.Size = new System.Drawing.Size(61, 17);
             this.checkBox6.TabIndex = 38;
             this.checkBox6.Text = "60 năm";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -241,9 +257,10 @@ namespace QLDV
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(743, 475);
+            this.checkBox5.Location = new System.Drawing.Point(557, 386);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(77, 21);
+            this.checkBox5.Size = new System.Drawing.Size(61, 17);
             this.checkBox5.TabIndex = 31;
             this.checkBox5.Text = "55 năm";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -251,9 +268,10 @@ namespace QLDV
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(660, 474);
+            this.checkBox4.Location = new System.Drawing.Point(495, 385);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(77, 21);
+            this.checkBox4.Size = new System.Drawing.Size(61, 17);
             this.checkBox4.TabIndex = 30;
             this.checkBox4.Text = "50 năm";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -261,9 +279,10 @@ namespace QLDV
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(577, 475);
+            this.checkBox3.Location = new System.Drawing.Point(433, 386);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(77, 21);
+            this.checkBox3.Size = new System.Drawing.Size(61, 17);
             this.checkBox3.TabIndex = 29;
             this.checkBox3.Text = "45 năm";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -271,9 +290,10 @@ namespace QLDV
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(494, 475);
+            this.checkBox2.Location = new System.Drawing.Point(370, 386);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(77, 21);
+            this.checkBox2.Size = new System.Drawing.Size(61, 17);
             this.checkBox2.TabIndex = 28;
             this.checkBox2.Text = "40 năm";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -281,9 +301,10 @@ namespace QLDV
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(411, 475);
+            this.checkBox1.Location = new System.Drawing.Point(308, 386);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(77, 21);
+            this.checkBox1.Size = new System.Drawing.Size(61, 17);
             this.checkBox1.TabIndex = 27;
             this.checkBox1.Text = "30 năm";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -292,9 +313,10 @@ namespace QLDV
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(146, 632);
+            this.label4.Location = new System.Drawing.Point(110, 514);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 17);
+            this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 26;
             this.label4.Text = "26. Kỷ luật:";
             // 
@@ -302,9 +324,10 @@ namespace QLDV
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(146, 556);
+            this.label3.Location = new System.Drawing.Point(110, 452);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 17);
+            this.label3.Size = new System.Drawing.Size(163, 13);
             this.label3.TabIndex = 25;
             this.label3.Text = "25. Danh hiệu được phong:";
             // 
@@ -312,9 +335,10 @@ namespace QLDV
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(146, 475);
+            this.label5.Location = new System.Drawing.Point(110, 386);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(250, 17);
+            this.label5.Size = new System.Drawing.Size(199, 13);
             this.label5.TabIndex = 24;
             this.label5.Text = "24. Đã được tặng Huy hiệu Đảng:";
             // 
@@ -322,18 +346,20 @@ namespace QLDV
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(146, 391);
+            this.label6.Location = new System.Drawing.Point(110, 318);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 17);
+            this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 23;
             this.label6.Text = "23. Khen thưởng:";
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(909, 717);
+            this.button3.Location = new System.Drawing.Point(682, 583);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 42);
+            this.button3.Size = new System.Drawing.Size(76, 34);
             this.button3.TabIndex = 21;
             this.button3.Text = "Trở lại";
             this.button3.UseVisualStyleBackColor = true;
@@ -342,9 +368,10 @@ namespace QLDV
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1016, 717);
+            this.button1.Location = new System.Drawing.Point(762, 583);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 42);
+            this.button1.Size = new System.Drawing.Size(76, 34);
             this.button1.TabIndex = 20;
             this.button1.Text = "Tiếp tục";
             this.button1.UseVisualStyleBackColor = true;
@@ -356,20 +383,22 @@ namespace QLDV
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(99, 39);
+            this.dataGridView1.Location = new System.Drawing.Point(74, 32);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(911, 319);
+            this.dataGridView1.Size = new System.Drawing.Size(683, 259);
             this.dataGridView1.TabIndex = 22;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(353, 69);
+            this.label2.Location = new System.Drawing.Point(265, 56);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(548, 17);
+            this.label2.Size = new System.Drawing.Size(419, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Lưu ý: Ngày được định dạng theo: Tháng/Ngày/Năm. Các trường (*) không thể bỏ qua";
             // 
@@ -378,30 +407,33 @@ namespace QLDV
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1216, 49);
+            this.panel2.Size = new System.Drawing.Size(912, 40);
             this.panel2.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 9);
+            this.label1.Location = new System.Drawing.Point(14, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 29);
+            this.label1.Size = new System.Drawing.Size(224, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "I. THÔNG TIN CƠ BẢN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // formThemVaThongTinDangVien3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1216, 875);
+            this.ClientSize = new System.Drawing.Size(912, 609);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "formThemVaThongTinDangVien3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

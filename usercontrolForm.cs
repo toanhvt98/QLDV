@@ -35,7 +35,7 @@ namespace QLDV
                 {
                     Application.OpenForms[i].Close();
                 }
-            }s
+            }
         }
     }
 }

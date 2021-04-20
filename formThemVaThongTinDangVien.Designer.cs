@@ -131,7 +131,7 @@ namespace QLDV
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 7);
+            this.label1.Location = new System.Drawing.Point(18, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(224, 24);
@@ -144,7 +144,7 @@ namespace QLDV
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(912, 40);
             this.panel2.TabIndex = 4;
@@ -252,7 +252,7 @@ namespace QLDV
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label45);
             this.panel1.Location = new System.Drawing.Point(18, 57);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(876, 647);
             this.panel1.TabIndex = 6;
@@ -262,7 +262,7 @@ namespace QLDV
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(621, 284);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(228, 21);
             this.comboBox4.TabIndex = 133;
@@ -272,7 +272,7 @@ namespace QLDV
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(336, 155);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(122, 21);
             this.comboBox3.TabIndex = 132;
@@ -281,7 +281,7 @@ namespace QLDV
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(127, 522);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(56, 17);
             this.checkBox1.TabIndex = 126;
@@ -292,7 +292,7 @@ namespace QLDV
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(184, 522);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(141, 17);
             this.checkBox2.TabIndex = 127;
@@ -314,7 +314,7 @@ namespace QLDV
             "Các tôn giáo khác",
             "Không tôn giáo"});
             this.comboBox1.Location = new System.Drawing.Point(255, 118);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(88, 21);
             this.comboBox1.TabIndex = 98;
@@ -380,7 +380,7 @@ namespace QLDV
             "Si La",
             "Khác"});
             this.comboBox2.Location = new System.Drawing.Point(99, 118);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(77, 21);
             this.comboBox2.TabIndex = 97;
@@ -389,7 +389,7 @@ namespace QLDV
             // 
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker4.Location = new System.Drawing.Point(411, 283);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker4.TabIndex = 107;
@@ -398,7 +398,7 @@ namespace QLDV
             // 
             this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker7.Location = new System.Drawing.Point(545, 355);
-            this.dateTimePicker7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker7.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker7.Name = "dateTimePicker7";
             this.dateTimePicker7.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker7.TabIndex = 112;
@@ -407,7 +407,7 @@ namespace QLDV
             // 
             this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker9.Location = new System.Drawing.Point(258, 550);
-            this.dateTimePicker9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker9.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker9.Name = "dateTimePicker9";
             this.dateTimePicker9.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker9.TabIndex = 130;
@@ -416,7 +416,7 @@ namespace QLDV
             // 
             this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker8.Location = new System.Drawing.Point(748, 355);
-            this.dateTimePicker8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker8.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker8.Name = "dateTimePicker8";
             this.dateTimePicker8.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker8.TabIndex = 113;
@@ -425,7 +425,7 @@ namespace QLDV
             // 
             this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker6.Location = new System.Drawing.Point(747, 319);
-            this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker6.Name = "dateTimePicker6";
             this.dateTimePicker6.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker6.TabIndex = 110;
@@ -434,7 +434,7 @@ namespace QLDV
             // 
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker5.Location = new System.Drawing.Point(201, 322);
-            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker5.TabIndex = 108;
@@ -443,7 +443,7 @@ namespace QLDV
             // 
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker3.Location = new System.Drawing.Point(205, 283);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker3.TabIndex = 106;
@@ -452,7 +452,7 @@ namespace QLDV
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(147, 154);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(77, 20);
             this.dateTimePicker2.TabIndex = 101;
@@ -461,7 +461,7 @@ namespace QLDV
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(123, 51);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(78, 20);
             this.dateTimePicker1.TabIndex = 90;
@@ -470,7 +470,7 @@ namespace QLDV
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(450, 21);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(39, 17);
             this.radioButton2.TabIndex = 91;
@@ -482,7 +482,7 @@ namespace QLDV
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(394, 21);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(47, 17);
             this.radioButton1.TabIndex = 92;
@@ -493,7 +493,7 @@ namespace QLDV
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(530, 84);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.MaxLength = 500;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(326, 20);
@@ -502,7 +502,7 @@ namespace QLDV
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(138, 84);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.MaxLength = 500;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(286, 20);
@@ -511,7 +511,7 @@ namespace QLDV
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(610, 51);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.MaxLength = 300;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(238, 20);
@@ -520,7 +520,7 @@ namespace QLDV
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(291, 51);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.MaxLength = 300;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(212, 20);
@@ -529,7 +529,7 @@ namespace QLDV
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(741, 119);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.MaxLength = 100;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(106, 20);
@@ -538,7 +538,7 @@ namespace QLDV
             // textBox19
             // 
             this.textBox19.Location = new System.Drawing.Point(734, 392);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(2);
             this.textBox19.MaxLength = 300;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(114, 20);
@@ -547,7 +547,7 @@ namespace QLDV
             // textBox22
             // 
             this.textBox22.Location = new System.Drawing.Point(118, 461);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(2);
             this.textBox22.MaxLength = 100;
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(110, 20);
@@ -556,7 +556,7 @@ namespace QLDV
             // textBox25
             // 
             this.textBox25.Location = new System.Drawing.Point(117, 492);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox25.Margin = new System.Windows.Forms.Padding(2);
             this.textBox25.MaxLength = 100;
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(111, 20);
@@ -565,7 +565,7 @@ namespace QLDV
             // textBox27
             // 
             this.textBox27.Location = new System.Drawing.Point(691, 493);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox27.Margin = new System.Windows.Forms.Padding(2);
             this.textBox27.MaxLength = 50;
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(133, 20);
@@ -574,7 +574,7 @@ namespace QLDV
             // textBox29
             // 
             this.textBox29.Location = new System.Drawing.Point(671, 521);
-            this.textBox29.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox29.Margin = new System.Windows.Forms.Padding(2);
             this.textBox29.MaxLength = 50;
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(152, 20);
@@ -583,7 +583,7 @@ namespace QLDV
             // textBox28
             // 
             this.textBox28.Location = new System.Drawing.Point(416, 521);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox28.Margin = new System.Windows.Forms.Padding(2);
             this.textBox28.MaxLength = 50;
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(129, 20);
@@ -592,7 +592,7 @@ namespace QLDV
             // textBox26
             // 
             this.textBox26.Location = new System.Drawing.Point(409, 492);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox26.Margin = new System.Windows.Forms.Padding(2);
             this.textBox26.MaxLength = 50;
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(115, 20);
@@ -601,7 +601,7 @@ namespace QLDV
             // textBox24
             // 
             this.textBox24.Location = new System.Drawing.Point(734, 461);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(2);
             this.textBox24.MaxLength = 100;
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(92, 20);
@@ -610,7 +610,7 @@ namespace QLDV
             // textBox21
             // 
             this.textBox21.Location = new System.Drawing.Point(757, 428);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(2);
             this.textBox21.MaxLength = 100;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(69, 20);
@@ -619,7 +619,7 @@ namespace QLDV
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(457, 392);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(2);
             this.textBox18.MaxLength = 300;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(112, 20);
@@ -628,7 +628,7 @@ namespace QLDV
             // textBox23
             // 
             this.textBox23.Location = new System.Drawing.Point(394, 461);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox23.Margin = new System.Windows.Forms.Padding(2);
             this.textBox23.MaxLength = 100;
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(224, 20);
@@ -637,7 +637,7 @@ namespace QLDV
             // textBox30
             // 
             this.textBox30.Location = new System.Drawing.Point(497, 428);
-            this.textBox30.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox30.Margin = new System.Windows.Forms.Padding(2);
             this.textBox30.MaxLength = 300;
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(160, 20);
@@ -646,7 +646,7 @@ namespace QLDV
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(172, 428);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(2);
             this.textBox20.MaxLength = 300;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(160, 20);
@@ -655,7 +655,7 @@ namespace QLDV
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(164, 392);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox17.Margin = new System.Windows.Forms.Padding(2);
             this.textBox17.MaxLength = 300;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(133, 20);
@@ -664,7 +664,7 @@ namespace QLDV
             // textBox16
             // 
             this.textBox16.Location = new System.Drawing.Point(213, 355);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(2);
             this.textBox16.MaxLength = 300;
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(215, 20);
@@ -673,7 +673,7 @@ namespace QLDV
             // textBox15
             // 
             this.textBox15.Location = new System.Drawing.Point(433, 319);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(2);
             this.textBox15.MaxLength = 300;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(192, 20);
@@ -682,7 +682,7 @@ namespace QLDV
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(621, 249);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(2);
             this.textBox13.MaxLength = 300;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(228, 20);
@@ -691,7 +691,7 @@ namespace QLDV
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(621, 218);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
             this.textBox12.MaxLength = 300;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(228, 20);
@@ -700,7 +700,7 @@ namespace QLDV
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(621, 187);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
             this.textBox11.MaxLength = 300;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(228, 20);
@@ -709,7 +709,7 @@ namespace QLDV
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(621, 155);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
             this.textBox10.MaxLength = 300;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(228, 20);
@@ -718,7 +718,7 @@ namespace QLDV
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(492, 118);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.MaxLength = 100;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(71, 20);
@@ -727,7 +727,7 @@ namespace QLDV
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(638, 20);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.MaxLength = 300;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(218, 20);
@@ -736,7 +736,7 @@ namespace QLDV
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(164, 20);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.MaxLength = 300;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(146, 20);
@@ -746,7 +746,7 @@ namespace QLDV
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(770, 579);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 34);
             this.button1.TabIndex = 131;
@@ -1236,15 +1236,14 @@ namespace QLDV
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "formThemVaThongTinDangVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm thông tin Đảng viên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formThemVaThongTinDangVien_FormClosing);
-
             this.Load += new System.EventHandler(this.formThemVaThongTinDangVien_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
