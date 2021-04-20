@@ -100,5 +100,16 @@ namespace QLDV
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            connectDb con = new connectDb();
+            DialogResult dr = MessageBox.Show("Bạn có muốn xóa tất cả thông tin của Đảng viên này không?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if(dr == DialogResult.Yes)
+            {
+                con.dellDV(dataGridView1.CurrentRow.Cells[2].Value.ToString(), dataGridView1.CurrentRow.Cells[3].Value.ToString());
+            }
+            loaddata();
+        }
     }
 }

@@ -26,5 +26,16 @@ namespace QLDV
             c.Controls.Remove(c1);
             c.Dispose();
         }
+
+        public static void closeForm()
+        {
+            for(int i = 0; i < Application.OpenForms.Count; ++i)
+            {
+                if(Application.OpenForms[i].Name != "formLogin" && Application.OpenForms[i].Name != "formMain")
+                {
+                    Application.OpenForms[i].Close();
+                }
+            }s
+        }
     }
 }

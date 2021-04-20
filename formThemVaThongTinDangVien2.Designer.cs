@@ -293,6 +293,7 @@ namespace QLDV
             this.Name = "formThemVaThongTinDangVien2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm thông tin Đảng viên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formThemVaThongTinDangVien2_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formThemVaThongTinDangVien2_FormClosed);
             this.Load += new System.EventHandler(this.formThemVaThongTinDangVien2_Load);
             this.panel1.ResumeLayout(false);

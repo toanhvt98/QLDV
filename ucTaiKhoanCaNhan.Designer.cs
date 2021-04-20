@@ -206,7 +206,7 @@ namespace QLDV
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ucTaiKhoanCaNhan";
-            this.Size = new System.Drawing.Size(1095, 597);
+            this.Size = new System.Drawing.Size(1050, 579);
             this.Load += new System.EventHandler(this.ucTaiKhoanCaNhan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

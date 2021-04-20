@@ -261,37 +261,7 @@ namespace QLDV
 
         private void formThemVaThongTinDangVien4_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formThemVaThongTinDangVien f1 = new formThemVaThongTinDangVien();
-            if (f1 != null)
-            {
-                f1.Close();
-            }
-            formThemVaThongTinDangVien2 f2 = new formThemVaThongTinDangVien2();
-            if (f2 != null)
-            {
-                f2.Close();
-            }
-
-            formThemVaThongTinDangVien3 f3 = new formThemVaThongTinDangVien3();
-            if (f3 != null)
-            {
-                f3.Close();
-            }
-            formThemVaThongTinDangVien4 f4 = new formThemVaThongTinDangVien4();
-            if (f4 != null)
-            {
-                f4.Close();
-            }
-            formThemVaThongTinDangVien5 f5 = new formThemVaThongTinDangVien5(); ;
-            if (f5 != null)
-            {
-                f5.Close();
-            }
-            formThemVaThongTinDangVien5 f6 = new formThemVaThongTinDangVien5(); ;
-            if (f6 != null)
-            {
-                f6.Close();
-            }
+            usercontrolForm.closeForm();
         }
 
         private void getInfor()
@@ -413,6 +383,11 @@ namespace QLDV
                 }
             }
             con.con.Close();
+        }
+
+        private void formThemVaThongTinDangVien4_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            usercontrolForm.closeForm();
         }
     }
 }

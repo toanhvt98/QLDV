@@ -177,7 +177,7 @@ namespace QLDV
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "ucThongKe";
-            this.Size = new System.Drawing.Size(1095, 597);
+            this.Size = new System.Drawing.Size(1050, 579);
             this.Load += new System.EventHandler(this.ucThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

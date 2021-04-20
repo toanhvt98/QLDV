@@ -294,6 +294,65 @@ namespace QLDV
                 con.Close();
             }
         }
+        public void dellDV(string solylich, string sothe)
+        {
+            using (SqlCommand cmd = new SqlCommand("delete  from hcgiadinh  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {              
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("delete  from qhgiadinh  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("delete  from quatrinhhoatdong  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("delete  from qhnuocngoai  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("delete  from dacdiemlichsu  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("delete  from daotaochuyenmon  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("delete  from daotaochuyenmon2  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("delete  from ttcbDv  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            using (SqlCommand cmd = new SqlCommand("delete  from dangvien" +
+                "" +
+                "  where solylich='" + solylich + "' or sothe='" + sothe + "'", con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
 
 
         // form uclTTCBDangVien
@@ -905,9 +964,22 @@ namespace QLDV
                     "thongtinthem=@5,thongtinquanhe=@6,thongtinnguoithan=@7" +
                     " where solylich='"+solylich+"' or sothe='"+sothe+"'", con))
                 {
-                    
-                    cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = dinuocngoaitu;
-                    cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = dinuocngoaiden;
+                    if(dinuocngoaitu != null)
+                    {
+                        cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = dinuocngoaitu;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@3", SqlDbType.Date).Value = DBNull.Value;
+                    }
+                    if(dinuocngoaiden != null) 
+                    {
+                        cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = dinuocngoaiden;
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@4", SqlDbType.Date).Value = DBNull.Value;
+                    }
                     cmd.Parameters.AddWithValue("@5", SqlDbType.NText).Value = thongtindinuocngoai;
                     cmd.Parameters.AddWithValue("@6", SqlDbType.NText).Value = thamgiatochucnuocngoai;
                     cmd.Parameters.AddWithValue("@7", SqlDbType.NText).Value = nguoithannuocngoai;
@@ -1074,13 +1146,13 @@ namespace QLDV
                     con.Close();
                 }
 
-                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo1!='' ", con))
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where ngaychinhthuc is not null ", con))
                 {
                     con.Open();
                     lb3.Value = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
-                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo1 = ''", con))
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where ngaychinhthuc is null", con))
                 {
                     con.Open();
                     lb4.Value = cmd.ExecuteScalar().ToString();
@@ -1108,13 +1180,13 @@ namespace QLDV
                     con.Close();
                 }
 
-                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo1 != '' and taichibo = N'" + combobox + "'", con))
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where ngaychinhthuc is not null and taichibo = N'" + combobox + "'", con))
                 {
                     con.Open();
                     lb3.Value = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
-                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo1 = '' and taichibo = N'" + combobox + "'", con))
+                using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where ngaychinhthuc is null and taichibo = N'" + combobox + "'", con))
                 {
                     con.Open();
                     lb4.Value = cmd.ExecuteScalar().ToString();
@@ -1157,18 +1229,18 @@ namespace QLDV
                 con.Close();
             }
 
-            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and taichibo1!='' ", con))
+            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and ngaychinhthuc is not null ", con))
             {
                 con.Open();
                 lb3.Value = cmd.ExecuteScalar().ToString();
                 con.Close();
             }
-            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and taichibo1 = ''", con))
+            using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and ngaychinhthuc is null", con))
             {
                 con.Open();
                 lb4.Value = cmd.ExecuteScalar().ToString();
                 con.Close();
-            }
+            }       
 
         }
 

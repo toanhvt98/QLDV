@@ -267,6 +267,7 @@ namespace QLDV
             this.Name = "formThemVaThongTinDangVien5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formThemVaThongTinDangVien5";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formThemVaThongTinDangVien5_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formThemVaThongTinDangVien5_FormClosed);
             this.Load += new System.EventHandler(this.formThemVaThongTinDangVien5_Load);
             this.panel1.ResumeLayout(false);

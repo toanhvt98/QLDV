@@ -77,5 +77,7 @@ namespace QLDV
                 this.Close();
             }
         }
+
+
     }
 }

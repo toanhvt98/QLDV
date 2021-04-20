@@ -170,11 +170,12 @@ namespace QLDV
                     uc.pictureBox1.Image = uc.pictureBox1.InitialImage;
 
                     this.Close();
+                    
                 }
             }
             else if(check == true)
             {
-                con.addSllVaSt(dangvien.anh, dangvien.solylich, dangvien.sothedangvien);
+                con.updateAnh(dangvien.anh, dangvien.solylich, dangvien.sothedangvien);
                 con.updateDangvien(tendangdung, solylich, sothedangvien);
                 con.TTCBDangVien("update", solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
                  quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
@@ -204,12 +205,10 @@ namespace QLDV
                     "Số lý lịch: " + solylich + "\n" +
                     "Số thẻ Đảng viên: " + sothedangvien, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                uclDangVien uc = new uclDangVien();
-                uc.textBox1.Text = "";
-                uc.textBox2.Text = "";
-                uc.pictureBox1.Image = uc.pictureBox1.InitialImage;
+                
 
                 this.Close();
+               
             }
 
         }
@@ -443,37 +442,7 @@ namespace QLDV
 
         private void formThemVaThongTinDangVien6_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formThemVaThongTinDangVien f1 = new formThemVaThongTinDangVien();
-            if(f1 != null)
-            {
-                f1.Close();
-            }
-            formThemVaThongTinDangVien2 f2 = new formThemVaThongTinDangVien2();
-            if (f2 != null)
-            {
-                f2.Close();
-            }
-
-            formThemVaThongTinDangVien3 f3 = new formThemVaThongTinDangVien3();
-            if (f3 != null)
-            {
-                f3.Close();
-            }
-            formThemVaThongTinDangVien4 f4 = new formThemVaThongTinDangVien4();
-            if (f4 != null)
-            {
-                f4.Close();
-            }
-            formThemVaThongTinDangVien5 f5 = new formThemVaThongTinDangVien5(); ;
-            if (f5 != null)
-            {
-                f5.Close();
-            }
-            formThemVaThongTinDangVien5 f6 = new formThemVaThongTinDangVien5(); ;
-            if (f6 != null)
-            {
-                f6.Close();
-            }
+            usercontrolForm.closeForm();
 
         }
 
@@ -504,6 +473,11 @@ namespace QLDV
                 }
             }
             con.con.Close();
+        }
+
+        private void formThemVaThongTinDangVien6_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            usercontrolForm.closeForm();
         }
     }
 }
