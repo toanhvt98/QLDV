@@ -8,6 +8,9 @@ using System.Data;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
+using Microsoft.Win32;
+using OfficeOpenXml;
+using System.Diagnostics;
 
 namespace QLDV
 {
@@ -62,17 +65,68 @@ namespace QLDV
 
         public void selectDangVien(DataGridView dtg)
         {
-            DataTable dt = new DataTable();
-            con.Open();
-            
-            using (SqlCommand cmd = new SqlCommand("select * from dangvien", con))
+            //Stopwatch stopwatch = Stopwatch.StartNew();
+            //DataTable dt = new DataTable();
+            //con.Open();
+
+            //using (SqlCommand cmd = new SqlCommand("select * from dangvien", con))
+            //{
+            //    dt = new DataTable();
+            //    dt.Load(cmd.ExecuteReader());
+            //}
+            //con.Close();
+            //dtg.DataSource = dt;
+
+            try
             {
-                dt = new DataTable();
-                dt.Load(cmd.ExecuteReader());
+                Task.Run(() =>
+                {
+                    //Define DataTable
+                    var table = new DataTable();
+                    
+                    table.Columns.Add("Column 1", typeof(int));
+                    table.Columns.Add("Column 2", typeof(byte[]));
+                    table.Columns.Add("Column 3", typeof(string));
+                    table.Columns.Add("Column 4", typeof(string));
+                    table.Columns.Add("Column 5", typeof(string));
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("select * from dangvien", con))
+                    {
+                        using (SqlDataReader read = cmd.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                table.Rows.Add(new object[] { Convert.ToInt32(read.GetValue(0)), (byte[]) read.GetValue(1), read.GetValue(2), read.GetValue(3), read.GetValue(4) });
+                            }
+                        }
+                    }
+                    con.Close();
+
+                        //Set DataSource
+                   dtg.Invoke(new Action(() => { dtg.DataSource = table; dtg.Columns[0].HeaderText = "STT";
+                       dtg.Columns[1].HeaderText = "Ảnh Đảng viên";
+                       dtg.Columns[2].HeaderText = "Số lý lịch";
+                       dtg.Columns[3].HeaderText = "Số thẻ";
+                       dtg.Columns[4].HeaderText = "Tên Đảng viên";
+                       dtg.Columns[0].Visible = false;
+                       
+                       ((DataGridViewImageColumn)dtg.Columns[1]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                      dtg.Columns[0].Width = 70;
+                       dtg.Columns[1].Width = 170;
+                       dtg.Columns[2].Width = 120;
+                       dtg.Columns[3].Width = 120;
+                       dtg.Columns[4].Width = 150;
+                   }));
+                });
             }
-            con.Close();
-            dtg.DataSource = dt;
-            
+            catch
+            {
+                MessageBox.Show("Vuot qua so luong ");
+            }
+
+            //stopwatch.Stop();
+            //MessageBox.Show(stopwatch.ElapsedMilliseconds.ToString());
+
         }
 
         public void rfGridFormThemVaThongTin(DataGridView dtg, string tbl,string solylich, string sothe)
@@ -1123,39 +1177,39 @@ namespace QLDV
 
         }
 
-        public void thongke(DataGridViewCell lb,DataGridViewCell lb1,DataGridViewCell lb2, DataGridViewCell lb3, DataGridViewCell lb4, string combobox)
+        public void thongke(Label lb, Label lb1, Label lb2, Label lb3, Label lb4, string combobox)
         {         
             if(combobox == "Tất cả")
             {
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv", con))
                 {
                     con.Open();
-                    lb.Value = cmd.ExecuteScalar();
+                    lb.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where  gioitinh=N'Nam'", con))
                 {
                     con.Open();
-                    lb1.Value = cmd.ExecuteScalar();
+                    lb1.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where gioitinh=N'Nữ'", con))
                 {
                     con.Open();
-                    lb2.Value = cmd.ExecuteScalar().ToString();
+                    lb2.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
 
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where ngaychinhthuc is not null ", con))
                 {
                     con.Open();
-                    lb3.Value = cmd.ExecuteScalar().ToString();
+                    lb3.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where ngaychinhthuc is null", con))
                 {
                     con.Open();
-                    lb4.Value = cmd.ExecuteScalar().ToString();
+                    lb4.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
             }
@@ -1164,38 +1218,38 @@ namespace QLDV
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo=N'"+combobox+"'", con))
                 {
                     con.Open();
-                    lb.Value = cmd.ExecuteScalar();
+                    lb.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo = N'" + combobox + "' and gioitinh=N'Nam'", con))
                 {
                     con.Open();
-                    lb1.Value = cmd.ExecuteScalar().ToString();
+                    lb1.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where taichibo = N'" + combobox + "' and gioitinh=N'Nữ'", con))
                 {
                     con.Open();
-                    lb2.Value = cmd.ExecuteScalar().ToString();
+                    lb2.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
 
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where ngaychinhthuc is not null and taichibo = N'" + combobox + "'", con))
                 {
                     con.Open();
-                    lb3.Value = cmd.ExecuteScalar().ToString();
+                    lb3.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
                 using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where ngaychinhthuc is null and taichibo = N'" + combobox + "'", con))
                 {
                     con.Open();
-                    lb4.Value = cmd.ExecuteScalar().ToString();
+                    lb4.Text = cmd.ExecuteScalar().ToString();
                     con.Close();
                 }
             }
         }
 
-        public void thongkeTuoi(DataGridViewCell lb, DataGridViewCell lb1, DataGridViewCell lb2, DataGridViewCell lb3, DataGridViewCell lb4, string combobox)
+        public void thongkeTuoi(Label lb, Label lb1, Label lb2, Label lb3, Label lb4, string combobox)
         {
             string str = "";
             
@@ -1213,32 +1267,32 @@ namespace QLDV
             using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >= "+ start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end, con))
             {
                 con.Open();
-                lb.Value = cmd.ExecuteScalar().ToString();
+                lb.Text = cmd.ExecuteScalar().ToString();
                 con.Close();
             }
             using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and gioitinh=N'Nam'", con))
             {
                 con.Open();
-                lb1.Value = cmd.ExecuteScalar().ToString();
+                lb1.Text = cmd.ExecuteScalar().ToString();
                 con.Close();
             }
             using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and gioitinh=N'Nữ'", con))
             {
                 con.Open();
-                lb2.Value = cmd.ExecuteScalar().ToString();
+                lb2.Text = cmd.ExecuteScalar().ToString();
                 con.Close();
             }
 
             using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and ngaychinhthuc is not null ", con))
             {
                 con.Open();
-                lb3.Value = cmd.ExecuteScalar().ToString();
+                lb3.Text = cmd.ExecuteScalar().ToString();
                 con.Close();
             }
             using (SqlCommand cmd = new SqlCommand("select count(*) from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >=" + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end + " and ngaychinhthuc is null", con))
             {
                 con.Open();
-                lb4.Value = cmd.ExecuteScalar().ToString();
+                lb4.Text = cmd.ExecuteScalar().ToString();
                 con.Close();
             }       
 
@@ -1259,7 +1313,43 @@ namespace QLDV
             }
             con.Close();
         }
+        public string getNameChiBoOfAcc1(string username)
+        {
+            con.Open();
+            string t = "";
+            using (SqlCommand cmd = new SqlCommand("select ten from chibo inner join taikhoan on ma = chibo where tentk='" + username + "'", con))
+            {
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        t += read.GetValue(0).ToString();
+                    }
+                }
+            }
+            con.Close();
+            return t;
+        }
 
+        public string getQuyen4File(string username)
+        {
+            con.Open();
+            string a = "";
+            using (SqlCommand cmd = new SqlCommand("select quyentruycap from taikhoan where tentk='" + username + "'", con))
+            {
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        a = read.GetValue(0).ToString();
+                    }
+                }
+
+
+            }
+            con.Close();
+            return a;
+        }
         public void getQuyen(string username,TextBox t)
         {
             con.Open();
@@ -1291,9 +1381,834 @@ namespace QLDV
                 con.Close();
             }
         }
-        public void exportExcel(string url)
-        {
 
+        public string getTextCheckBox(string tbl,string col,string sll)
+        {
+            string a ="";
+            using (SqlCommand cmd = new SqlCommand("select "+col+" from "+tbl+" where solylich='"+sll+"'", con))
+            {
+                
+                con.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+                while (read.Read())
+                {
+                    a = read.GetString(0);
+                }
+                con.Close();
+            }
+            return a;
+        }
+        
+
+        public void sendfile(string nguoigui,string chibo,string quyennguoigui,DateTime ngaygui,string quyennguoinhan, string nguoinhan,string tieude,string noidung,byte[] f,string tenfile,string guituchibo)
+        {
+            using (SqlCommand cmd = new SqlCommand("insert into guifile (tkgui,chibo,quyentkgui,tknhan,ngaygui,quyentknhan,tieude,noidung,teptin,tenfile,chibotkgui) values (@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11)", con))
+            {
+                cmd.Parameters.AddWithValue("@1", SqlDbType.NVarChar).Value = nguoigui;
+                cmd.Parameters.AddWithValue("@2", SqlDbType.NVarChar).Value = chibo;
+                cmd.Parameters.AddWithValue("@3", SqlDbType.VarChar).Value = quyennguoigui;
+                cmd.Parameters.AddWithValue("@4", SqlDbType.NVarChar).Value = nguoinhan;
+                cmd.Parameters.AddWithValue("@5", SqlDbType.NVarChar).Value = ngaygui;
+                cmd.Parameters.AddWithValue("@6", SqlDbType.NVarChar).Value = quyennguoinhan;
+                cmd.Parameters.AddWithValue("@7", SqlDbType.NVarChar).Value = tieude;
+                cmd.Parameters.AddWithValue("@8", SqlDbType.NText).Value = noidung;
+                cmd.Parameters.AddWithValue("@9", SqlDbType.VarBinary).Value = f;
+                cmd.Parameters.AddWithValue("@10", SqlDbType.NVarChar).Value = tenfile;
+                cmd.Parameters.AddWithValue("@11", SqlDbType.NVarChar).Value = guituchibo;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+
+        public void getallAccToRickTextBox(CheckedListBox t)
+        {
+            con.Open();
+            List<string> ar = new List<string>();
+            using (SqlCommand cmd = new SqlCommand("select tentk from taikhoan where quyentruycap !='admin'",con))
+            {
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        t.Items.Add(read.GetString(0));
+                        
+                    }
+                }
+            }
+            
+            con.Close();
+        }
+        public void getallCBToRickTextBox(CheckedListBox t)
+        {
+            con.Open();
+            List<string> ar = new List<string>();
+            using (SqlCommand cmd = new SqlCommand("select ten from chibo", con))
+            {
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        t.Items.Add(read.GetString(0));
+
+                    }
+                }
+            }
+
+            con.Close();
+        }
+
+        public List<string> getaccOfChiBo(string chibo)
+        {
+            con.Open();
+            List<string> l = new List<string>();
+            using (SqlCommand cmd = new SqlCommand("select tentk from taikhoan inner join chibo on chibo=ma where ten=N'"+chibo+"'", con))
+            {
+                using (SqlDataReader read = cmd.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        l.Add(read.GetString(0));
+
+                    }
+                }
+            }
+            con.Close();
+            return l;
+        }
+
+        public void rfAccDataGrid4File(DataGridView dtg, string tbl,string tkgui=null,string tknhan=null,string ft=null )
+        {
+            using (con)
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter("select id,tkgui,quyentkgui,chibotkgui,tknhan,quyentknhan,chibo,tieude,noidung,tenfile,ngaygui from " + tbl + " where tkgui='"+tkgui+"' or tknhan='"+tknhan+"' "+ft+" order by ngaygui desc", con))
+                {
+                    DataTable dtb = new DataTable();
+                    sda.Fill(dtb);
+                    dtg.DataSource = dtb;
+                }
+            }
+        }
+
+        public void downloadFileDtg1(int id,string opt=null)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+            
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select teptin,tenfile,tkgui,chibotkgui from guifile where id="+id, con))
+                {
+                    SqlDataReader read = cmd.ExecuteReader();
+                   
+                        if (read.Read())
+                        {
+                        byte[] buffer = (byte[])read[0];
+                        string filename = read.GetString(1);
+                        string tkgui = read.GetString(2);
+                        string chibotkgui = read.GetString(3);
+                        FileStream fs = new FileStream(GetDownloadFolderPath()+"\\"+id.ToString()+ "-" + tkgui+"-"+chibotkgui+ "-" + filename, FileMode.Create);
+                        fs.Write(buffer, 0, buffer.Length);
+                        fs.Close();
+                        }
+                                      
+                }
+                con.Close();
+            
+        }
+        public void downloadFileDtg2(int id, string opt = null)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+
+
+            con.Open();
+            using (SqlCommand cmd = new SqlCommand("select teptin,tenfile,tknhan,chibo from guifile where id=" + id, con))
+            {
+                SqlDataReader read = cmd.ExecuteReader();
+
+                if (read.Read())
+                {
+                    byte[] buffer = (byte[])read[0];
+                    string filename = read.GetString(1);
+                    string tkgui = read.GetString(2);
+                    string chibotkgui = read.GetString(3).Trim();
+                    FileStream fs = new FileStream(GetDownloadFolderPath() + "\\" + id.ToString() + "-" + tkgui + "-" + chibotkgui + "-" + filename, FileMode.Create);
+                    fs.Write(buffer, 0, buffer.Length);
+                    fs.Close();
+                }
+
+            }
+            con.Close();
+
+        }
+        string GetDownloadFolderPath()
+        {
+            return Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString();
+        }
+        
+        public void deleteFile(int id)
+        {
+            
+            using (SqlCommand cmd = new SqlCommand("delete from guifile where id=" + id, con))
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+        public void dtgFilterForFile(DataGridView dtg,string col,string text,string tbl,string tkgui=null,string tknhan=null,string ft=null)
+        {
+            using (con)
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter("select id,tkgui,quyentkgui,chibotkgui,tknhan,quyentknhan,chibo,tieude,noidung,tenfile,ngaygui from " + tbl + " where tkgui='" + tkgui + "' or tknhan='" + tknhan + "' order by ngaygui desc", con))
+                {
+                    DataTable dtb = new DataTable();
+                    sda.Fill(dtb);
+                    dtb.DefaultView.RowFilter =col + " like '%"+text+"%'" ;
+                    dtg.DataSource = dtb;
+                }
+            }
+        }
+        public void exportExcel()
+        {
+            
+            SaveFileDialog sdf = new SaveFileDialog();
+            string filePath = "";
+            sdf.Filter = "Excel Files| *.xls; *.xlsx; *.xlsm";
+            
+            try
+            {
+                using (ExcelPackage pck = new ExcelPackage())
+                {
+                    pck.Workbook.Properties.Author = "By ToAnh";
+                    pck.Workbook.Properties.Title = "Báo cáo";
+                    pck.Workbook.Worksheets.Add("Thông tin Đảng viên");
+                    pck.Workbook.Worksheets.Add("Quá trình hoạt động");
+                    pck.Workbook.Worksheets.Add("Đào tạo chuyên môn");
+                    pck.Workbook.Worksheets.Add("Quan hệ gia đình");
+                    ExcelWorksheet ws1 = pck.Workbook.Worksheets[0];
+                    ExcelWorksheet ws2 = pck.Workbook.Worksheets[1];
+                    ExcelWorksheet ws3 = pck.Workbook.Worksheets[2];
+                    ExcelWorksheet ws4 = pck.Workbook.Worksheets[3];
+
+                    ws1.Cells[1,1].Value = "Thông tin cơ bản";
+                    using (SqlCommand cmd = new SqlCommand("", con))
+                    {
+                        con.Open();
+                        using(SqlDataReader read = cmd.ExecuteReader())
+                        {
+
+                        }
+                        con.Close();
+                    }
+
+                    byte[] bin = pck.GetAsByteArray();
+                    File.WriteAllBytes(filePath, bin);
+                }
+                MessageBox.Show("Xuất file thành công. Đường dẫn file: " + filePath);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }            
+        }
+
+        public void addCol(DataTable table)
+        {
+            table.Columns.Add("Số lý lịch");
+            table.Columns.Add("Số thẻ");
+            table.Columns.Add("Tên Đảng Viên");
+            table.Columns.Add("Giới tính");
+            table.Columns.Add("Tên khai sinh");
+            table.Columns.Add("Ngày sinh");
+            table.Columns.Add("Nơi sinh");
+            table.Columns.Add("Quê quán");
+            table.Columns.Add("Nơi thường trú");
+            table.Columns.Add("Nơi tạm trú");
+            table.Columns.Add("Dân tộc");
+            table.Columns.Add("Tôn giáo");
+            table.Columns.Add("Thành phần gia đình");
+            table.Columns.Add("Nghề hiện tại");
+            table.Columns.Add("Ngày vào Đảng");
+            table.Columns.Add("Tại chi bộ");
+            table.Columns.Add("Người giới thiệu 1");
+            table.Columns.Add("Chức vụ, đơn vị 1");
+            table.Columns.Add("Người giới thiệu 2");
+            table.Columns.Add("Chức vụ, đơn vị 2");
+            table.Columns.Add("Ngày cấp có thẩm quyền");
+            table.Columns.Add("Ngày chính thức");
+            table.Columns.Add("Tại chi bộ (Chính thức)");
+            table.Columns.Add("Ngày tuyển dụng");
+            table.Columns.Add("Cơ quan tuyển dụng");
+            table.Columns.Add("Ngày vào Đoàn");
+            table.Columns.Add("Tham gia tổ chức xã hội");
+            table.Columns.Add("Ngày nhập ngũ");
+            table.Columns.Add("Ngày xuất ngũ");
+            table.Columns.Add("Trình độ hiện tại");
+            table.Columns.Add("Giáo dục phổ thông");
+            table.Columns.Add("Giáo dục nghề nghiệp");
+            table.Columns.Add("Giáo dục Đại học");
+            table.Columns.Add("Giáo dục sau Đại học");
+            table.Columns.Add("Học vị");
+            table.Columns.Add("Học hàm");
+            table.Columns.Add("Lý luận chính trị");
+            table.Columns.Add("Ngoại ngữ");
+            table.Columns.Add("Tin học");
+            table.Columns.Add("Tình trạng sức khỏe");
+            table.Columns.Add("Thương binh");
+            table.Columns.Add("Gia đình");
+            table.Columns.Add("Chứng minh nhân dân");
+            table.Columns.Add("Căn cước");
+            table.Columns.Add("Miễn công tác ngày");
+            table.Columns.Add("Khen thưởng");
+            table.Columns.Add("Huy hiệu");
+            table.Columns.Add("Danh hiệu");
+            table.Columns.Add("Kỷ luật");
+            table.Columns.Add("Bị xóa khỏi danh sách Đảng viên");
+            table.Columns.Add("Thời gian");
+            table.Columns.Add("Tại chi bộ (Bị xóa)");
+            table.Columns.Add("Được kết nạp lại");
+            table.Columns.Add("Ngày vào");
+            table.Columns.Add("Tại chi bộ (Kết nạp lại)");
+            table.Columns.Add("Người giới thiệu thứ 1");
+            table.Columns.Add("Chức vụ người giới thiệu 1");
+            table.Columns.Add("Đơn vị người giới thiệu 1");
+            table.Columns.Add("Người giới thiệu thứ 2");
+            table.Columns.Add("Chức vụ người giới thiệu 2");
+            table.Columns.Add("Đơn vị người giới thiệu 2");
+            table.Columns.Add("Ngày chính thức lần 2");
+            table.Columns.Add("Tại chi bộ (Chính thức lần 2)");
+            table.Columns.Add("Ngày khôi phục Đảng tịch");
+            table.Columns.Add("Tại chi bộ (Khôi phục)");
+            table.Columns.Add("Ngày xử lý theo pháp luật");
+            table.Columns.Add("Thông tin xử lý theo pháp luật");
+            table.Columns.Add("Ngày làm việc trong chế độ cũ");
+            table.Columns.Add("Thông tin chế độ cũ");
+            table.Columns.Add("Từ ngày");
+            table.Columns.Add("Đến ngày");
+            table.Columns.Add("Thông tin thêm");
+            table.Columns.Add("Thông tin quan hệ");
+            table.Columns.Add("Thông tin người thân");
+
+            table.Columns.Add("Tổng thu nhập gia đình");
+            table.Columns.Add("Bình quân");
+            table.Columns.Add("Nhà ở (được cấp,được thuê,loại nhà)");
+            table.Columns.Add("Diện tích(m²)");
+            table.Columns.Add("Nhà ở (tự mua,tự xây,loại nhà)");
+            table.Columns.Add("Diện tích( m²)");
+            table.Columns.Add("Đất được cấp(m²)");
+            table.Columns.Add("Đất tự mua(m²)");
+            table.Columns.Add("Hoạt động kinh tế");
+            table.Columns.Add("Diện tích đất kinh doanh (ha)");
+            table.Columns.Add("Số lao động thuê mướn");
+            table.Columns.Add("Tài sản trên 50tr");
+            table.Columns.Add("Giá trị");
+        }
+
+        public void alterDatatable(DataTable table,string chibo,string q=null,string q1=null,string q2=null)
+        {
+            
+            addCol(table);
+            if (chibo != "Tất cả")
+            {
+                try
+                {
+                    Task.Run(() =>
+                    {
+                        string querry = "select * from ttcbDv inner join daotaochuyenmon2 on ttcbDv.solylich = daotaochuyenmon2.solylich inner join dacdiemlichsu on ttcbDv.solylich = dacdiemlichsu.solylich " +
+                            "inner join qhnuocngoai on ttcbDv.solylich = qhnuocngoai.solylich inner join hcgiadinh on ttcbDv.solylich = hcgiadinh.solylich where taichibo1=N'"+chibo+"'"+q+q1+q2;
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand(querry, con))
+                        {
+                            using (SqlDataReader read = cmd.ExecuteReader())
+                            {
+                                while (read.Read())
+                                {
+                                    table.Rows.Add(new object[] {
+                                    read.GetValue(0),
+                                    read.GetValue(1),
+                                    read.GetValue(2),
+                                    read.GetValue(3),
+                                    read.GetValue(4),
+                                    read.GetValue(5),
+                                    read.GetValue(6),
+                                    read.GetValue(7),
+                                    read.GetValue(8),
+                                    read.GetValue(9),
+                                    read.GetValue(10),
+                                    read.GetValue(11),
+                                    read.GetValue(12),
+                                    read.GetValue(13),
+                                    read.GetValue(14),
+                                    read.GetValue(15),
+                                    read.GetValue(16),
+                                    read.GetValue(17),
+                                    read.GetValue(18),
+                                    read.GetValue(19),
+                                    read.GetValue(20),
+                                    read.GetValue(21),
+                                    read.GetValue(22),
+                                    read.GetValue(23),
+                                    read.GetValue(24),
+                                    read.GetValue(25),
+                                    read.GetValue(26),
+                                    read.GetValue(27),
+                                    read.GetValue(28),
+                                    read.GetValue(29),
+                                    read.GetValue(30),
+                                    read.GetValue(31),
+                                    read.GetValue(32),
+                                    read.GetValue(33),
+                                    read.GetValue(34),
+                                    read.GetValue(35),
+                                    read.GetValue(36),
+                                    read.GetValue(37),
+                                    read.GetValue(38),
+                                    read.GetValue(39),
+                                    read.GetValue(40),
+                                    read.GetValue(41),
+                                    read.GetValue(42),
+                                    read.GetValue(43),
+                                    read.GetValue(44),
+                                    read.GetValue(47),
+                                    read.GetValue(48),
+                                    read.GetValue(49),
+                                    read.GetValue(50),
+                                    read.GetValue(53),
+                                    read.GetValue(54),
+                                    read.GetValue(55),
+                                    read.GetValue(56),
+                                    read.GetValue(57),
+                                    read.GetValue(58),
+                                    read.GetValue(59),
+                                    read.GetValue(60),
+                                    read.GetValue(61),
+                                    read.GetValue(62),
+                                    read.GetValue(63),
+                                    read.GetValue(64),
+                                    read.GetValue(65),
+                                    read.GetValue(66),
+                                    read.GetValue(67),
+                                    read.GetValue(68),
+                                    read.GetValue(69),
+                                    read.GetValue(70),
+                                    read.GetValue(71),
+                                    read.GetValue(72),
+                                    read.GetValue(75),
+                                    read.GetValue(76),
+                                    read.GetValue(77),
+                                    read.GetValue(78),
+                                    read.GetValue(79),
+                                    read.GetValue(82),
+                                    read.GetValue(83),
+                                    read.GetValue(84),
+                                    read.GetValue(85),
+                                    read.GetValue(86),
+                                    read.GetValue(87),
+                                    read.GetValue(88),
+                                    read.GetValue(89),
+                                    read.GetValue(90),
+                                    read.GetValue(91),
+                                    read.GetValue(92),
+                                    read.GetValue(93),
+                                    read.GetValue(94),
+                                    });
+                                }
+
+                            }
+                        }
+                        con.Close();
+                        MessageBox.Show("done");
+                    });
+
+                }
+                catch
+                {
+                    MessageBox.Show("Vuot qua so luong ");
+                }
+            }
+            else
+            {
+                
+                try
+                {
+                    Task.Run(() =>
+                    {
+                        string querry = "select * from ttcbDv inner join daotaochuyenmon2 on ttcbDv.solylich = daotaochuyenmon2.solylich inner join dacdiemlichsu on ttcbDv.solylich = dacdiemlichsu.solylich " +
+                            "inner join qhnuocngoai on ttcbDv.solylich = qhnuocngoai.solylich inner join hcgiadinh on ttcbDv.solylich = hcgiadinh.solylich  "+q+q1+q2;
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand(querry, con))
+                        {
+                            using (SqlDataReader read = cmd.ExecuteReader())
+                            {
+                                while (read.Read())
+                                {
+                                    table.Rows.Add(new object[] {
+                                    read.GetValue(0),
+                                    read.GetValue(1),
+                                    read.GetValue(2),
+                                    read.GetValue(3),
+                                    read.GetValue(4),
+                                    read.GetValue(5),
+                                    read.GetValue(6),
+                                    read.GetValue(7),
+                                    read.GetValue(8),
+                                    read.GetValue(9),
+                                    read.GetValue(10),
+                                    read.GetValue(11),
+                                    read.GetValue(12),
+                                    read.GetValue(13),
+                                    read.GetValue(14),
+                                    read.GetValue(15),
+                                    read.GetValue(16),
+                                    read.GetValue(17),
+                                    read.GetValue(18),
+                                    read.GetValue(19),
+                                    read.GetValue(20),
+                                    read.GetValue(21),
+                                    read.GetValue(22),
+                                    read.GetValue(23),
+                                    read.GetValue(24),
+                                    read.GetValue(25),
+                                    read.GetValue(26),
+                                    read.GetValue(27),
+                                    read.GetValue(28),
+                                    read.GetValue(29),
+                                    read.GetValue(30),
+                                    read.GetValue(31),
+                                    read.GetValue(32),
+                                    read.GetValue(33),
+                                    read.GetValue(34),
+                                    read.GetValue(35),
+                                    read.GetValue(36),
+                                    read.GetValue(37),
+                                    read.GetValue(38),
+                                    read.GetValue(39),
+                                    read.GetValue(40),
+                                    read.GetValue(41),
+                                    read.GetValue(42),
+                                    read.GetValue(43),
+                                    read.GetValue(44),
+                                    read.GetValue(47),
+                                    read.GetValue(48),
+                                    read.GetValue(49),
+                                    read.GetValue(50),
+                                    read.GetValue(53),
+                                    read.GetValue(54),
+                                    read.GetValue(55),
+                                    read.GetValue(56),
+                                    read.GetValue(57),
+                                    read.GetValue(58),
+                                    read.GetValue(59),
+                                    read.GetValue(60),
+                                    read.GetValue(61),
+                                    read.GetValue(62),
+                                    read.GetValue(63),
+                                    read.GetValue(64),
+                                    read.GetValue(65),
+                                    read.GetValue(66),
+                                    read.GetValue(67),
+                                    read.GetValue(68),
+                                    read.GetValue(69),
+                                    read.GetValue(70),
+                                    read.GetValue(71),
+                                    read.GetValue(72),
+                                    read.GetValue(75),
+                                    read.GetValue(76),
+                                    read.GetValue(77),
+                                    read.GetValue(78),
+                                    read.GetValue(79),
+                                    read.GetValue(82),
+                                    read.GetValue(83),
+                                    read.GetValue(84),
+                                    read.GetValue(85),
+                                    read.GetValue(86),
+                                    read.GetValue(87),
+                                    read.GetValue(88),
+                                    read.GetValue(89),
+                                    read.GetValue(90),
+                                    read.GetValue(91),
+                                    read.GetValue(92),
+                                    read.GetValue(93),
+                                    read.GetValue(94),
+
+                                    });
+                                }
+
+                            }
+                        }
+                        con.Close();
+                        MessageBox.Show("done");
+                    });
+
+                }
+                catch
+                {
+                    MessageBox.Show("Vuot qua so luong ");
+                }
+            }
+        }
+
+        public void alterDatatable1(DataTable table, string combobox, string q = null, string q1 = null, string q2 = null)
+        {
+            addCol(table);
+            string str = "";
+            for (int i = 0; i < combobox.Length; i++)
+            {
+                if (char.IsDigit(combobox[i]))
+                {
+                    str += combobox[i];
+                }
+            }
+            string start = str.Substring(0, 2);
+            string end = str.Substring(2, 2);
+            
+                try
+                {
+                    Task.Run(() =>
+                    {
+                        string querry = "select * from ttcbDv inner join daotaochuyenmon2 on ttcbDv.solylich = daotaochuyenmon2.solylich inner join dacdiemlichsu on ttcbDv.solylich = dacdiemlichsu.solylich " +
+                            "inner join qhnuocngoai on ttcbDv.solylich = qhnuocngoai.solylich inner join hcgiadinh on ttcbDv.solylich = hcgiadinh.solylich where DATEDIFF(YY,ngaysinh,GETDATE()) >= " + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end +q+q1+q2;
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand(querry, con))
+                        {
+                            using (SqlDataReader read = cmd.ExecuteReader())
+                            {
+                                while (read.Read())
+                                {
+                                    table.Rows.Add(new object[] {
+                                    read.GetValue(0),
+                                    read.GetValue(1),
+                                    read.GetValue(2),
+                                    read.GetValue(3),
+                                    read.GetValue(4),
+                                    read.GetValue(5),
+                                    read.GetValue(6),
+                                    read.GetValue(7),
+                                    read.GetValue(8),
+                                    read.GetValue(9),
+                                    read.GetValue(10),
+                                    read.GetValue(11),
+                                    read.GetValue(12),
+                                    read.GetValue(13),
+                                    read.GetValue(14),
+                                    read.GetValue(15),
+                                    read.GetValue(16),
+                                    read.GetValue(17),
+                                    read.GetValue(18),
+                                    read.GetValue(19),
+                                    read.GetValue(20),
+                                    read.GetValue(21),
+                                    read.GetValue(22),
+                                    read.GetValue(23),
+                                    read.GetValue(24),
+                                    read.GetValue(25),
+                                    read.GetValue(26),
+                                    read.GetValue(27),
+                                    read.GetValue(28),
+                                    read.GetValue(29),
+                                    read.GetValue(30),
+                                    read.GetValue(31),
+                                    read.GetValue(32),
+                                    read.GetValue(33),
+                                    read.GetValue(34),
+                                    read.GetValue(35),
+                                    read.GetValue(36),
+                                    read.GetValue(37),
+                                    read.GetValue(38),
+                                    read.GetValue(39),
+                                    read.GetValue(40),
+                                    read.GetValue(41),
+                                    read.GetValue(42),
+                                    read.GetValue(43),
+                                    read.GetValue(44),
+                                    read.GetValue(47),
+                                    read.GetValue(48),
+                                    read.GetValue(49),
+                                    read.GetValue(50),
+                                    read.GetValue(53),
+                                    read.GetValue(54),
+                                    read.GetValue(55),
+                                    read.GetValue(56),
+                                    read.GetValue(57),
+                                    read.GetValue(58),
+                                    read.GetValue(59),
+                                    read.GetValue(60),
+                                    read.GetValue(61),
+                                    read.GetValue(62),
+                                    read.GetValue(63),
+                                    read.GetValue(64),
+                                    read.GetValue(65),
+                                    read.GetValue(66),
+                                    read.GetValue(67),
+                                    read.GetValue(68),
+                                    read.GetValue(69),
+                                    read.GetValue(70),
+                                    read.GetValue(71),
+                                    read.GetValue(72),
+                                    read.GetValue(75),
+                                    read.GetValue(76),
+                                    read.GetValue(77),
+                                    read.GetValue(78),
+                                    read.GetValue(79),
+                                    read.GetValue(82),
+                                    read.GetValue(83),
+                                    read.GetValue(84),
+                                    read.GetValue(85),
+                                    read.GetValue(86),
+                                    read.GetValue(87),
+                                    read.GetValue(88),
+                                    read.GetValue(89),
+                                    read.GetValue(90),
+                                    read.GetValue(91),
+                                    read.GetValue(92),
+                                    read.GetValue(93),
+                                    read.GetValue(94),
+
+                                    });
+                                }
+
+                            }
+                        }
+                        con.Close();
+                        MessageBox.Show("done");
+                    });
+
+                }
+                catch
+                {
+                    MessageBox.Show("Vuot qua so luong ");
+                }
+            
+            
+            
+        }
+
+        public void rfDtg4ThongKeChibo(DataGridView dtg,string chibo)
+        {
+            Task.Run(() =>
+            {
+                con.Open();
+                if(chibo != "Tất cả")
+                using (SqlCommand cmd = new SqlCommand("Select solylich,sothe,tendangvien,gioitinh,ngaychinhthuc,taichibo1 from ttcbDv where taichibo1=N'" + chibo + "'", con))
+                {
+                    DataTable dt = new DataTable();
+                    for (int i = 0; i <6; i++)
+                    {
+                        dt.Columns.Add(i.ToString());
+                    }
+                    using (SqlDataReader read = cmd.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            dt.Rows.Add(new object[] {
+                                read.GetValue(0),
+                                read.GetValue(1),
+                                read.GetValue(2),
+                                read.GetValue(3),read.GetValue(4),read.GetValue(5)
+                            });
+                        }
+                        dtg.Invoke(new Action(() =>
+                        {
+                            dtg.DataSource = dt;
+                            dtg.Columns[0].HeaderText = "Số lý lịch";
+                            dtg.Columns[1].HeaderText = "Số thẻ";
+                            dtg.Columns[2].HeaderText = "Tên Đảng Viên";
+                            dtg.Columns[3].HeaderText = "Giới tính";
+                            dtg.Columns[4].HeaderText = "Ngày chính thức";
+                            dtg.Columns[5].HeaderText = "Chi bộ";
+                        }));
+                    }
+                }
+                
+                else
+                {
+                    using (SqlCommand cmd = new SqlCommand("Select solylich,sothe,tendangvien,gioitinh,ngaychinhthuc,taichibo1 from ttcbDv", con))
+                    {
+                        DataTable dt1 = new DataTable();
+                        for (int i = 0; i < 6; i++)
+                        {
+                            dt1.Columns.Add(i.ToString());
+                        }
+                        using (SqlDataReader read = cmd.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                dt1.Rows.Add(new object[] {
+                                read.GetValue(0),
+                                read.GetValue(1),
+                                read.GetValue(2),
+                                read.GetValue(3),read.GetValue(4),read.GetValue(5)
+                            });
+                            }
+                            dtg.Invoke(new Action(() =>
+                            {
+                                dtg.DataSource = dt1;
+                                dtg.Columns[0].HeaderText = "Số lý lịch";
+                                dtg.Columns[1].HeaderText = "Số thẻ";
+                                dtg.Columns[2].HeaderText = "Tên Đảng Viên";
+                                dtg.Columns[3].HeaderText = "Giới tính";
+                                dtg.Columns[4].HeaderText = "Ngày chính thức";
+                                dtg.Columns[5].HeaderText = "Chi bộ";
+                            }));
+                        }
+                    }
+                    con.Close();
+                }
+                });
+            
+        }
+        public void rfDtg4ThongKeDoTuoi(DataGridView dtg, string combobox)
+        {
+            string str = "";
+
+            for (int i = 0; i < combobox.Length; i++)
+            {
+                if (char.IsDigit(combobox[i]))
+                {
+                    str += combobox[i];
+                }
+            }
+            string start = str.Substring(0, 2);
+            string end = str.Substring(2, 2);
+            
+            Task.Run(() => {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("select solylich,sothe,tendangvien,gioitinh,ngaysinh from ttcbDv where DATEDIFF(YY,ngaysinh,GETDATE()) >= " + start + " and DATEDIFF(YY,ngaysinh,GETDATE()) <= " + end, con))
+                {
+                    DataTable dt = new DataTable();
+                    for(int i = 0; i < 5; i++)
+                    {
+                        dt.Columns.Add(i.ToString());
+                    }
+                    using(SqlDataReader read= cmd.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            dt.Rows.Add(new object[]
+                            {
+                                read.GetValue(0),
+                                read.GetValue(1),
+                                read.GetValue(2),
+                                read.GetValue(3),read.GetValue(4)
+                            });
+                        }
+                        dtg.Invoke(new Action(() =>
+                        {
+                            dtg.DataSource = dt;
+                            dtg.Columns[0].HeaderText = "Số lý lịch";
+                            dtg.Columns[1].HeaderText = "Số thẻ";
+                            dtg.Columns[2].HeaderText = "Tên Đảng Viên";
+                            dtg.Columns[3].HeaderText = "Giới tính";
+
+                            dtg.Columns[4].HeaderText = "Ngày sinh";
+                        }));
+                    }
+                }
+                con.Close();
+            });
+            
         }
     }
 }

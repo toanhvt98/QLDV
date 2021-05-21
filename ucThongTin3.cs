@@ -11,101 +11,106 @@ using System.Windows.Forms;
 
 namespace QLDV
 {
-    public partial class formThemVaThongTinDangVien3 : Form
+    public partial class ucThongTin3 : UserControl
     {
-
         public List<string> l = new List<string>();
         string huyhieudang = "";
         public static bool check = false;
-        public formThemVaThongTinDangVien3()
+
+        public ucThongTin3()
         {
             InitializeComponent();
         }
-
-
-
-        private void formThemVaThongTinDangVien3_Load(object sender, EventArgs e)
+        private static ucThongTin3 _instance;
+        public static ucThongTin3 Instance
         {
-            int x = (panel2.Size.Width - label1.Size.Width) / 2;
-            loaddata();
-            label1.Location = new Point(x, label1.Location.Y);
-            label1.Text = "III. ĐÀO TẠO, BỒI DƯỠNG VỀ CHUYÊN MÔN, NGHIỆP VỤ, LÝ LUẬN CHÍNH TRỊ, NGOẠI NGỮ";
-
-            if(check == true)
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new ucThongTin3();
+                }
+                return _instance;
+            }
+        }
+        private void ucThongTin3cs_Load(object sender, EventArgs e)
+        {
+            connectDb con = new connectDb();
+            if (check == true)
             {
                 getInfor();
-                foreach(string text in huyhieudang.Split(','))
+                string a = String.Concat(con.getTextCheckBox("daotaochuyenmon2", "huyhieu", dangvien.solylich).Where(c => !Char.IsWhiteSpace(c)));
+                List<string> l = a.Split(',').ToList();
+                for (int i = 0; i < l.Count; i++)
                 {
-                    if(checkBox1.Text == text)
+                    if (l[i] == String.Concat(checkBox1.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox1.Checked = true;
                     }
-                    if (checkBox2.Text == text)
+                    if (l[i] == String.Concat(checkBox2.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox2.Checked = true;
                     }
-                    if (checkBox3.Text == text)
+                    if (l[i] == String.Concat(checkBox3.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox3.Checked = true;
                     }
-                    if (checkBox4.Text == text)
+                    if (l[i] == String.Concat(checkBox4.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox4.Checked = true;
                     }
-                    if (checkBox5.Text == text)
+                    if (l[i] == String.Concat(checkBox5.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox5.Checked = true;
                     }
-                    if (checkBox6.Text == text)
+                    if (l[i] == String.Concat(checkBox6.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox6.Checked = true;
                     }
-                    if (checkBox7.Text == text)
+                    if (l[i] == String.Concat(checkBox7.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox7.Checked = true;
                     }
-                    if (checkBox8.Text == text)
+                    if (l[i] == String.Concat(checkBox8.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox8.Checked = true;
                     }
-                    if (checkBox9.Text == text)
+                    if (l[i] == String.Concat(checkBox9.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox9.Checked = true;
                     }
-                    if (checkBox10.Text == text)
+                    if (l[i] == String.Concat(checkBox10.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox10.Checked = true;
                     }
-                    if (checkBox11.Text == text)
+                    if (l[i] == String.Concat(checkBox11.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox11.Checked = true;
                     }
-                    if (checkBox12.Text == text)
+                    if (l[i] == String.Concat(checkBox12.Text.Where(c => !Char.IsWhiteSpace(c))))
                     {
                         checkBox12.Checked = true;
                     }
                 }
             }
+            loaddata();
         }
-
-
-
-
-        private void setInfor()
+        public void setInfor()
         {
-            dangvien.khenthuong = richTextBox1.Text;
-            dangvien.huyhieudang = string.Join(", ", l.ToArray());
+            dangvien.khenthuong = ucThongTin3.Instance.richTextBox1.Text;
+            List<string> checkedItems = (from Control c in Controls where c is CheckBox && ((CheckBox)c).Checked select c.Text).ToList();
+            dangvien.huyhieudang = string.Join(", ", checkedItems.ToArray());
 
-            dangvien.danhhieu = richTextBox2.Text;
-            dangvien.kyluat = richTextBox3.Text;
+            dangvien.danhhieu = ucThongTin3.Instance.richTextBox2.Text;
+            dangvien.kyluat = ucThongTin3.Instance.richTextBox3.Text;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             formDaoTaoChung f = (formDaoTaoChung)Application.OpenForms["formDaoTaoChung"];
-            if(f == null)
+            if (f == null)
             {
-                f = new formDaoTaoChung(this);        
+                f = new formDaoTaoChung(this);
             }
             f.Show();
         }
@@ -172,40 +177,7 @@ namespace QLDV
             dataGridView1.Columns[9].Width = 150;
             dataGridView1.Columns[10].Width = 150;
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-            formThemVaThongTinDangVien2 f = (formThemVaThongTinDangVien2)Application.OpenForms["formThemVaThongTinDangVien2"];
-            if (f == null)
-            {
-                f = new formThemVaThongTinDangVien2();
-                f.AutoScroll = true;
-            }
-            f.Show();
-            this.Hide();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            setInfor();
-            formThemVaThongTinDangVien4 f = (formThemVaThongTinDangVien4)Application.OpenForms["formThemVaThongTinDangVien4"];
-            if (f == null)
-            {
-                f = new formThemVaThongTinDangVien4();
-                f.AutoScroll = true;
-            }
-
-            f.Show();
-            this.Hide();
-        }
-
-        private void formThemVaThongTinDangVien3_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            usercontrolForm.closeForm();
-        }
-
-        private void getInfor()
+        public void getInfor()
         {
             connectDb con = new connectDb();
             con.con.Open();
@@ -225,9 +197,5 @@ namespace QLDV
             con.con.Close();
         }
 
-        private void formThemVaThongTinDangVien3_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            usercontrolForm.closeForm();
-        }
     }
 }

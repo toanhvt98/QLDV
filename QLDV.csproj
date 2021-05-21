@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,14 +35,36 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.6.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.5.6.3\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Syncfusion.Compression.Base, Version=19.1460.0.63, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Compression.Base.19.1.0.63\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=19.1460.0.63, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.Licensing.19.1.0.63\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Base, Version=19.1460.0.63, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>packages\Syncfusion.XlsIO.WinForms.19.1.0.63\lib\net46\Syncfusion.XlsIO.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -47,6 +72,7 @@
     <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,8 +83,39 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formChonNguoiNhanFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formChonNguoiNhanFile.Designer.cs">
+      <DependentUpon>formChonNguoiNhanFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="optionExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="optionExport.Designer.cs">
+      <DependentUpon>optionExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLDVDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDVDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLDVDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDVDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="saveForExcel.cs" />
+    <Compile Include="saveForSendFile.cs" />
+    <Compile Include="SendFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SendFile.Designer.cs">
+      <DependentUpon>SendFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="connectDb.cs" />
     <Compile Include="dangvien.cs" />
     <Compile Include="formAddAcc.cs">
@@ -97,41 +154,17 @@
     <Compile Include="formMain.Designer.cs">
       <DependentUpon>formMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="formSenFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSenFile.Designer.cs">
+      <DependentUpon>formSenFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="formThemVaThongTinDangVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formThemVaThongTinDangVien.Designer.cs">
       <DependentUpon>formThemVaThongTinDangVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien2.Designer.cs">
-      <DependentUpon>formThemVaThongTinDangVien2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien3.Designer.cs">
-      <DependentUpon>formThemVaThongTinDangVien3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien4.Designer.cs">
-      <DependentUpon>formThemVaThongTinDangVien4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien5.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien5.Designer.cs">
-      <DependentUpon>formThemVaThongTinDangVien5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien6.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formThemVaThongTinDangVien6.Designer.cs">
-      <DependentUpon>formThemVaThongTinDangVien6.cs</DependentUpon>
     </Compile>
     <Compile Include="formUpdateAcc.cs">
       <SubType>Form</SubType>
@@ -181,6 +214,12 @@
     <Compile Include="ucQLTK.Designer.cs">
       <DependentUpon>ucQLTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucQuanLyFilecs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQuanLyFilecs.Designer.cs">
+      <DependentUpon>ucQuanLyFilecs.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucTaiKhoanCaNhan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,8 +238,53 @@
     <Compile Include="UCThongTin.Designer.cs">
       <DependentUpon>UCThongTin.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucThongTin1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongTin1.Designer.cs">
+      <DependentUpon>ucThongTin1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThongTin2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongTin2.Designer.cs">
+      <DependentUpon>ucThongTin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThongTin3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongTin3.Designer.cs">
+      <DependentUpon>ucThongTin3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThongTin4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongTin4.Designer.cs">
+      <DependentUpon>ucThongTin4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThongTin5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongTin5.Designer.cs">
+      <DependentUpon>ucThongTin5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucThongTin6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucThongTin6.Designer.cs">
+      <DependentUpon>ucThongTin6.cs</DependentUpon>
+    </Compile>
     <Compile Include="usercontrolForm.cs" />
     <Compile Include="userInfor.cs" />
+    <EmbeddedResource Include="formChonNguoiNhanFile.resx">
+      <DependentUpon>formChonNguoiNhanFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="optionExport.resx">
+      <DependentUpon>optionExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SendFile.resx">
+      <DependentUpon>SendFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formAddAcc.resx">
       <DependentUpon>formAddAcc.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,23 +303,11 @@
     <EmbeddedResource Include="formMain.resx">
       <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formSenFile.resx">
+      <DependentUpon>formSenFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formThemVaThongTinDangVien.resx">
       <DependentUpon>formThemVaThongTinDangVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formThemVaThongTinDangVien2.resx">
-      <DependentUpon>formThemVaThongTinDangVien2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formThemVaThongTinDangVien3.resx">
-      <DependentUpon>formThemVaThongTinDangVien3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formThemVaThongTinDangVien4.resx">
-      <DependentUpon>formThemVaThongTinDangVien4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formThemVaThongTinDangVien5.resx">
-      <DependentUpon>formThemVaThongTinDangVien5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formThemVaThongTinDangVien6.resx">
-      <DependentUpon>formThemVaThongTinDangVien6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formUpdateAcc.resx">
       <DependentUpon>formUpdateAcc.cs</DependentUpon>
@@ -260,6 +332,9 @@
     <EmbeddedResource Include="ucQLTK.resx">
       <DependentUpon>ucQLTK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucQuanLyFilecs.resx">
+      <DependentUpon>ucQuanLyFilecs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucTaiKhoanCaNhan.resx">
       <DependentUpon>ucTaiKhoanCaNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +343,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCThongTin.resx">
       <DependentUpon>UCThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongTin1.resx">
+      <DependentUpon>ucThongTin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongTin2.resx">
+      <DependentUpon>ucThongTin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongTin3.resx">
+      <DependentUpon>ucThongTin3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongTin4.resx">
+      <DependentUpon>ucThongTin4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongTin5.resx">
+      <DependentUpon>ucThongTin5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucThongTin6.resx">
+      <DependentUpon>ucThongTin6.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\QLDV.exe.config" />
     <None Include="packages.config" />
@@ -321,6 +414,28 @@
     </None>
     <None Include="QLDVDataSet.xss">
       <DependentUpon>QLDVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLDVDataSet1.xsc">
+      <DependentUpon>QLDVDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLDVDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDVDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDVDataSet1.xss">
+      <DependentUpon>QLDVDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLDVDataSet2.xsc">
+      <DependentUpon>QLDVDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLDVDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDVDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDVDataSet2.xss">
+      <DependentUpon>QLDVDataSet2.xsd</DependentUpon>
     </None>
     <None Include="README.md" />
   </ItemGroup>
@@ -393,5 +508,16 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

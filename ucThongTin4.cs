@@ -11,9 +11,8 @@ using System.Windows.Forms;
 
 namespace QLDV
 {
-    public partial class formThemVaThongTinDangVien4 : Form
+    public partial class ucThongTin4 : UserControl
     {
-
         public static bool check = false;
         public bool dt1 = false;
         public bool dt2 = false;
@@ -23,13 +22,25 @@ namespace QLDV
         public bool dt6 = false;
         public bool dt7 = false;
         public bool dt8 = false;
-        public formThemVaThongTinDangVien4()
+        public ucThongTin4()
         {
             InitializeComponent();
         }
-
-        private void formThemVaThongTinDangVien4_Load(object sender, EventArgs e)
+        private static ucThongTin4 _instance;
+        public static ucThongTin4 Instance
         {
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new ucThongTin4();
+                }
+                return _instance;
+            }
+        }
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            
             dateTimePicker1.ValueChanged += new EventHandler(dateTimePicker1_ValueChanged);
             dateTimePicker2.ValueChanged += new EventHandler(dateTimePicker2_ValueChanged);
             dateTimePicker3.ValueChanged += new EventHandler(dateTimePicker3_ValueChanged);
@@ -52,30 +63,13 @@ namespace QLDV
             con.themChiBoCombo(comboBox3);
             con.themChiBoCombo(comboBox4);
 
-            enableGrb(checkBox1, groupBox1);
-            enableGrb(checkBox2, groupBox2);
+            
 
-            if(check == true)
+            
+            if (check == true)
             {
                 getInfor();
             }
-        }
-
-
-        private void enableGrb(CheckBox cb, GroupBox grb)
-        {
-            grb.Enabled = cb.Checked;
-        }
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -118,34 +112,28 @@ namespace QLDV
             dt8 = true;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            enableGrb(checkBox1, groupBox1);
-        }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            enableGrb(checkBox2, groupBox2);
-        }
 
-        private void setInfor()
+
+
+        public void setInfor()
         {
-            dangvien.bixoaten = textBox1.Text;
+            dangvien.bixoaten = ucThongTin4.Instance.textBox1.Text;
             if (dt1 == true)
             {
-                dangvien.thoigian = dateTimePicker1.Value;
+                dangvien.thoigian = ucThongTin4.Instance.dateTimePicker1.Value;
             }
             else
             {
                 dangvien.thoigian = null;
             }
 
-            dangvien.xoataichibo = comboBox1.SelectedText.ToString();
-            dangvien.ketnaplai = textBox3.Text;
+            dangvien.xoataichibo = ucThongTin4.Instance.comboBox1.SelectedText.ToString();
+            dangvien.ketnaplai = ucThongTin4.Instance.textBox3.Text;
 
             if (dt2 == true)
             {
-                dangvien.ngayvao = dateTimePicker2.Value;
+                dangvien.ngayvao = ucThongTin4.Instance.dateTimePicker2.Value;
             }
             else
             {
@@ -153,17 +141,17 @@ namespace QLDV
             }
 
 
-            dangvien.vaochibo = comboBox2.SelectedText.ToString();
-            dangvien.vaonguoigt1 = textBox5.Text;
-            dangvien.vaochucvu1 = textBox6.Text;
-            dangvien.vaodonvi1 = textBox7.Text;
-            dangvien.vaonguoigt2 = textBox8.Text;
-            dangvien.vaochucvu2 = textBox10.Text;
-            dangvien.vaodonvi2 = textBox9.Text;
+            dangvien.vaochibo = ucThongTin4.Instance.comboBox2.SelectedText.ToString();
+            dangvien.vaonguoigt1 = ucThongTin4.Instance.textBox5.Text;
+            dangvien.vaochucvu1 = ucThongTin4.Instance.textBox6.Text;
+            dangvien.vaodonvi1 = ucThongTin4.Instance.textBox7.Text;
+            dangvien.vaonguoigt2 = ucThongTin4.Instance.textBox8.Text;
+            dangvien.vaochucvu2 = ucThongTin4.Instance.textBox10.Text;
+            dangvien.vaodonvi2 = ucThongTin4.Instance.textBox9.Text;
 
             if (dt3 == true)
             {
-                dangvien.ngaychinhthuc2 = dateTimePicker3.Value;
+                dangvien.ngaychinhthuc2 = ucThongTin4.Instance.dateTimePicker3.Value;
             }
             else
             {
@@ -171,44 +159,44 @@ namespace QLDV
             }
 
 
-            dangvien.vaochibo2 = comboBox3.SelectedText.ToString();
+            dangvien.vaochibo2 = ucThongTin4.Instance.comboBox3.SelectedText.ToString();
 
             if (dt4 == true)
             {
-                dangvien.ngaykhoiphucdangtich = dateTimePicker4.Value;
+                dangvien.ngaykhoiphucdangtich = ucThongTin4.Instance.dateTimePicker4.Value;
             }
             else
             {
                 dangvien.ngaykhoiphucdangtich = null;
             }
 
-            dangvien.vaochibo3 = comboBox4.SelectedText.ToString();
+            dangvien.vaochibo3 = ucThongTin4.Instance.comboBox4.SelectedText.ToString();
 
             if (dt5 == true)
             {
-                dangvien.ngaybikyluat = dateTimePicker5.Value;
+                dangvien.ngaybikyluat = ucThongTin4.Instance.dateTimePicker5.Value;
             }
             else
             {
                 dangvien.ngaybikyluat = null;
             }
 
-            dangvien.thongtinkyluat = richTextBox5.Text;
+            dangvien.thongtinkyluat = ucThongTin4.Instance.richTextBox5.Text;
 
             if (dt6 == true)
             {
-                dangvien.ngaylamviecchedocu = dateTimePicker6.Value;
+                dangvien.ngaylamviecchedocu = ucThongTin4.Instance.dateTimePicker6.Value;
             }
             else
             {
                 dangvien.ngaylamviecchedocu = null;
             }
 
-            dangvien.thongtinchedocu = richTextBox2.Text;
+            dangvien.thongtinchedocu = ucThongTin4.Instance.richTextBox2.Text;
 
             if (dt7 == true)
             {
-                dangvien.dinuocngoaitu = dateTimePicker7.Value;
+                dangvien.dinuocngoaitu = ucThongTin4.Instance.dateTimePicker7.Value;
             }
             else
             {
@@ -217,54 +205,18 @@ namespace QLDV
 
             if (dt8 == true)
             {
-                dangvien.dinuocngoaiden = dateTimePicker8.Value;
+                dangvien.dinuocngoaiden = ucThongTin4.Instance.dateTimePicker8.Value;
             }
             else
             {
                 dangvien.dinuocngoaiden = null;
             }
 
-            dangvien.thongtindinuocngoai = richTextBox1.Text;
-            dangvien.thamgiatochucnuocngoai = richTextBox3.Text;
-            dangvien.nguoithannuocngoai = richTextBox4.Text;
+            dangvien.thongtindinuocngoai = ucThongTin4.Instance.richTextBox1.Text;
+            dangvien.thamgiatochucnuocngoai = ucThongTin4.Instance.richTextBox3.Text;
+            dangvien.nguoithannuocngoai = ucThongTin4.Instance.richTextBox4.Text;
         }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            formThemVaThongTinDangVien3 f = (formThemVaThongTinDangVien3)Application.OpenForms["formThemVaThongTinDangVien3"];
-            if (f == null)
-            {
-                f = new formThemVaThongTinDangVien3();
-                f.AutoScroll = true;
-            }
-            f.Show();
-            this.Hide();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            setInfor();
-            formThemVaThongTinDangVien5 f = (formThemVaThongTinDangVien5)Application.OpenForms["formThemVaThongTinDangVien5"];
-            if (f == null)
-            {
-                f = new formThemVaThongTinDangVien5();
-                f.AutoScroll = true;
-            }
-            f.Show();
-            this.Hide();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void formThemVaThongTinDangVien4_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            usercontrolForm.closeForm();
-        }
-
-        private void getInfor()
+        public void getInfor()
         {
             connectDb con = new connectDb();
             con.con.Open();
@@ -385,9 +337,11 @@ namespace QLDV
             con.con.Close();
         }
 
-        private void formThemVaThongTinDangVien4_FormClosing(object sender, FormClosingEventArgs e)
+        private void ucThongTin4_Load(object sender, EventArgs e)
         {
-            usercontrolForm.closeForm();
+
         }
+
+
     }
 }

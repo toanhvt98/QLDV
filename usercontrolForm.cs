@@ -29,13 +29,7 @@ namespace QLDV
 
         public static void closeForm()
         {
-            for(int i = 0; i < Application.OpenForms.Count; ++i)
-            {
-                if(Application.OpenForms[i].Name != "formLogin" && Application.OpenForms[i].Name != "formMain")
-                {
-                    Application.OpenForms[i].Close();
-                }
-            }s
+            
         }
     }
 }

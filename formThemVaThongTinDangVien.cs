@@ -13,22 +13,105 @@ namespace QLDV
 {
     public partial class formThemVaThongTinDangVien : Form
     {
-        public List<string> l = new List<string>();
-        public bool dt1 = false;
-        public bool dt2 = false;
-        public bool dt3 = false;
-        public bool dt4 = false;
-        public bool dt5 = false;
-        public bool dt6 = false;
-        public bool dt7 = false;
-        public bool dt8 = false;
-        public bool dt9 = false;
-
-
-
+        private string solylich;
+        private string sothedangvien;
         public static bool check = false;
-        string gioitinh = "";
-        string giadinh = "";
+
+        // thong tin co ban 1
+        private string tendangdung;
+        private string gioitinh;
+        private string tenkhaisinh;
+        private DateTime ngaysinh;
+        private string noisinh;
+        private string quequan;
+        private string noithuongtru;
+        private string noitamtru;
+        private string dantoc;
+        private string tongiao;
+        private string thanhphangd;
+        private string nghenghiephiennay;
+        private DateTime? ngayvaodang;
+        private string taichibo;
+        private string nguoigt1;
+        private string chucvudonvi1;
+        private string nguoigt2;
+        private string chucvudonvi2;
+        private DateTime? ngaycap;
+        private DateTime? ngaychinhthuc;
+        private string taichibo2;
+        private DateTime? ngayduoctuyendung;
+        private string coquantuyendung;
+        private DateTime? ngayvaodoan;
+        private string thamgiatochucxh;
+        private DateTime? ngaynhapngu;
+        private DateTime? ngayxuatngu;
+        private string trinhdohiennay;
+        private string gdphothong;
+        private string gdNgheNghiep;
+        private string gddaihoc;
+        private string gdsaudaihoc;
+        private string hocvi;
+        private string hocham;
+        private string lyluanct;
+        private string ngoaingu;
+        private string tinhoc;
+        private string tinhtrangsuckhoe;
+        private string thuongbinhloai;
+        private string giadinh;
+        private string cmnd;
+        private string cancuoccdan;
+        private DateTime? mienCtac;
+
+        // dao tao chung 3
+        private string khenthuong;
+        private string huyhieudang;
+        private string danhhieu;
+        private string kyluat;
+
+
+        // dac dien lich su va quan he nuoc ngoai 4
+        private string bixoaten;
+        private DateTime? thoigian;
+        private string xoataichibo;
+        private string ketnaplai;
+        private DateTime? ngayvao;
+        private string vaochibo;
+        private string vaonguoigt1;
+        private string vaochucvu1;
+        private string vaodonvi1;
+        private string vaonguoigt2;
+        private string vaochucvu2;
+        private string vaodonvi2;
+        private DateTime? ngaychinhthuc2;
+        private string vaochibo2;
+        private DateTime? ngaykhoiphucdangtich;
+        private string vaochibo3;
+        private DateTime? ngaybikyluat;
+        private string thongtinkyluat;
+        private DateTime? ngaylamviecchedocu;
+        private string thongtinchedocu;
+
+        private DateTime? dinuocngoaitu;
+        private DateTime? dinuocngoaiden;
+        private string thongtindinuocngoai;
+        private string thamgiatochucnuocngoai;
+        private string nguoithannuocngoai;
+
+        //hoan canh kinh te 6
+
+        private string tongthunhap;
+        private string binhquandaunguoi;
+        private string nhaoduoccap;
+        private string dientichnhaoduoccap;
+        private string nhaotumua;
+        private string dientichnhaotumua;
+        private string datoduoccap;
+        private string datotumua;
+        private string hdkinhte;
+        private string dientichtrangtrai;
+        private string soldthue;
+        private string taisancogiatricao;
+        private string giatri;
 
         private static formThemVaThongTinDangVien _instance;
         public static formThemVaThongTinDangVien Instance
@@ -46,420 +129,427 @@ namespace QLDV
         public formThemVaThongTinDangVien()
         {
             InitializeComponent();
+            ucThongTin6.Instance.Dock = DockStyle.Fill;
+            ucThongTin5.Instance.Dock = DockStyle.Fill;
+            ucThongTin4.Instance.Dock = DockStyle.Fill;
+            ucThongTin3.Instance.Dock = DockStyle.Fill;
+            ucThongTin2.Instance.Dock = DockStyle.Fill;
+            ucThongTin1.Instance.Dock = DockStyle.Fill;
+
+
+            panel1.Controls.Add(ucThongTin6.Instance);
+            panel1.Controls.Add(ucThongTin5.Instance);
+            panel1.Controls.Add(ucThongTin4.Instance);
+            panel1.Controls.Add(ucThongTin3.Instance);
+            panel1.Controls.Add(ucThongTin2.Instance);
+            panel1.Controls.Add(ucThongTin1.Instance);
+            ucThongTin6.Instance.BringToFront();
+            ucThongTin5.Instance.BringToFront();
+            ucThongTin4.Instance.BringToFront();
+            ucThongTin3.Instance.BringToFront();
+            ucThongTin2.Instance.BringToFront();
+            ucThongTin1.Instance.BringToFront();
         }
 
 
 
         private void formThemVaThongTinDangVien_Load(object sender, EventArgs e)
-        {
-            int x = (panel2.Size.Width - label1.Size.Width) / 2;
-            label1.Location = new Point(x, label1.Location.Y);
-            label1.Text = "I. THÔNG TIN CƠ BẢN";
-            radioButton1.Checked = true;
-            dateTimePicker1.ValueChanged += new EventHandler(dateTimePicker1_ValueChanged);
-            dateTimePicker2.ValueChanged += new EventHandler(dateTimePicker2_ValueChanged);
-            dateTimePicker3.ValueChanged += new EventHandler(dateTimePicker3_ValueChanged);
-            dateTimePicker4.ValueChanged += new EventHandler(dateTimePicker4_ValueChanged);
-            dateTimePicker5.ValueChanged += new EventHandler(dateTimePicker5_ValueChanged);
-            dateTimePicker6.ValueChanged += new EventHandler(dateTimePicker6_ValueChanged);
-            dateTimePicker7.ValueChanged += new EventHandler(dateTimePicker7_ValueChanged);
-            dateTimePicker8.ValueChanged += new EventHandler(dateTimePicker8_ValueChanged);
-            dateTimePicker9.ValueChanged += new EventHandler(dateTimePicker9_ValueChanged);
-            dateTimePicker1.MaxDate = DateTime.Now;
-            dateTimePicker2.MaxDate = DateTime.Now;
-            dateTimePicker3.MaxDate = DateTime.Now;
-            dateTimePicker4.MaxDate = DateTime.Now;
-            dateTimePicker5.MaxDate = DateTime.Now;
-            dateTimePicker6.MaxDate = DateTime.Now;
-            dateTimePicker7.MaxDate = DateTime.Now;
-            dateTimePicker8.MaxDate = DateTime.Now;
-            dateTimePicker9.MaxDate = DateTime.Now;
-
-            connectDb con = new connectDb();
-            con.themChiBoCombo(comboBox3);
-            con.themChiBoCombo(comboBox4);
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox3.SelectedIndex = 0;
-            comboBox4.SelectedIndex = 0;
-
-            if (check == true)
-            {
-                getinfor();
-                foreach (string text in giadinh.Split(','))
-                {
-                    if (text == checkBox1.Text)
-                    {
-                        checkBox1.Checked = true;
-                    }
-                    if (text == checkBox2.Text)
-                    {
-                        checkBox1.Checked = true;
-                    }
-                }
-
-                if (gioitinh == "Nam")
-                {
-                    radioButton1.Checked = true;
-                }
-                else
-                {
-                    radioButton2.Checked = true;
-                }
-            }
+        {                        
+            button2.Visible = false;
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
-
-
-            List<string> l = new List<string>();
-
-            if (checkBox1.Checked)
+            if (button1.Text == ">> 2")
             {
-                l.Add(checkBox1.Text);
+                
+                
+                button2.Visible = true;
+                button2.Text = "1 <<";
+                button1.Text = ">> 3";
+                ucThongTin2.Instance.BringToFront();
             }
-            if (checkBox2.Checked)
+            else if (button1.Text == ">> 3")
             {
-                l.Add(checkBox2.Text);
+                button2.Visible = true;
+                button2.Text = "2 <<";
+                button1.Text = ">> 4";
+                ucThongTin3.Instance.BringToFront();
             }
-
-
+            else if (button1.Text == ">> 4")
+            {
+                button2.Visible = true;
+                button2.Text = "3 <<";
+                button1.Text = ">> 5";
+                ucThongTin4.Instance.BringToFront();
+            }
+            else if (button1.Text == ">> 5")
+            {
+                button2.Visible = true;
+                button2.Text = "4 <<";
+                button1.Text = ">> 6";
+                ucThongTin5.Instance.BringToFront();
+            }
+            else if (button1.Text == ">> 6")
+            {
+                button2.Visible = true;
+                button2.Text = "5 <<";
+                button1.Text = "Hoàn Thành";
+                ucThongTin6.Instance.BringToFront();
+            }
+            else if (button1.Text == "Hoàn Thành")
+            {
+                
+                ucThongTin1.Instance.setInfor();
+                ucThongTin3.Instance.setInfor();
+                ucThongTin4.Instance.setInfor();
+                ucThongTin6.Instance.setInfor();
                 setInfor();
-                formThemVaThongTinDangVien2 f = (formThemVaThongTinDangVien2)Application.OpenForms["formThemVaThongTinDangVien2"];
-                if (f == null)
+                setAllInfor();
+                connectDb con = new connectDb();
+                if (check == false)
                 {
-                    f = new formThemVaThongTinDangVien2();
-                    f.AutoScroll = true;
-                }
-                f.Show();
-                this.Hide();
-
-            
-            
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            dt1 = true;
-        }
-
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-            dt2 = true;
-        }
-
-        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
-        {
-            dt3 = true;
-        }
-
-        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
-        {
-            dt4 = true;
-        }
-
-        private void dateTimePicker5_ValueChanged(object sender, EventArgs e)
-        {
-            dt5 = true;
-        }
-
-        private void dateTimePicker6_ValueChanged(object sender, EventArgs e)
-        {
-            dt6 = true;
-        }
-
-        private void dateTimePicker7_ValueChanged(object sender, EventArgs e)
-        {
-            dt7 = true;
-        }
-
-        private void dateTimePicker8_ValueChanged(object sender, EventArgs e)
-        {
-            dt8 = true;
-        }
-
-        private void dateTimePicker9_ValueChanged(object sender, EventArgs e)
-        {
-            dt9 = true;
-        }
-
-
-        private void setInfor()
-        {
-            dangvien.tendangdung = textBox1.Text;
-            if (radioButton1.Checked)
-            {
-                dangvien.gioitinh = radioButton1.Text;
-            }
-            else
-                dangvien.gioitinh = radioButton2.Text;
-
-            dangvien.tenkhaisinh = textBox2.Text;
-
-            dangvien.ngaysinh = dateTimePicker1.Value;
-
-
-            dangvien.noisinh = textBox3.Text;
-            dangvien.quequan = textBox4.Text;
-            dangvien.noithuongtru = textBox5.Text;
-            dangvien.noitamtru = textBox6.Text;
-            dangvien.dantoc = comboBox2.Text;
-            dangvien.tongiao = comboBox1.Text;
-            dangvien.thanhphangd = textBox7.Text;
-            dangvien.nghenghiephiennay = textBox8.Text;
-
-            if (dt2 == true)
-            {
-                dangvien.ngayvaodang = dateTimePicker2.Value;
-            }
-            else
-            {
-                dangvien.ngayvaodang = null;
-            }
-
-            dangvien.taichibo = comboBox3.Text;
-            dangvien.nguoigt1 = textBox10.Text;
-            dangvien.chucvudonvi1 = textBox11.Text;
-            dangvien.nguoigt2 = textBox12.Text;
-            dangvien.chucvudonvi2 = textBox13.Text;
-
-            if (dt3 == true)
-            {
-                dangvien.ngaycap = dateTimePicker3.Value;
-            }
-            else
-            {
-                dangvien.ngaycap = null;
-            }
-
-            if (dt4 == true)
-            {
-                dangvien.ngaychinhthuc = dateTimePicker4.Value;
-            }
-            else
-            {
-                dangvien.ngaychinhthuc = null;
-            }
-
-            dangvien.taichibo2 = comboBox4.Text;
-
-            if (dt5 == true)
-            {
-                dangvien.ngayduoctuyendung = dateTimePicker5.Value;
-            }
-            else
-            {
-                dangvien.ngayduoctuyendung = null;
-            }
-
-            dangvien.coquantuyendung = textBox15.Text;
-
-            if (dt6 == true)
-            {
-                dangvien.ngayvaodoan = dateTimePicker6.Value;
-            }
-            else
-            {
-                dangvien.ngayvaodoan = null;
-            }
-
-
-            dangvien.thamgiatochucxh = textBox16.Text;
-
-            if (dt7 == true)
-            {
-                dangvien.ngaynhapngu = dateTimePicker7.Value;
-            }
-            else
-            {
-                dangvien.ngaynhapngu = null;
-            }
-
-            if (dt8 == true)
-            {
-                dangvien.ngayxuatngu = dateTimePicker8.Value;
-            }
-            else
-            {
-                dangvien.ngayxuatngu = null;
-            }
-
-            dangvien.trinhdohiennay = textBox17.Text;
-            dangvien.gdphothong = textBox18.Text;
-            dangvien.gdNgheNghiep = textBox19.Text;
-            dangvien.gddaihoc = textBox20.Text;
-            dangvien.gdsaudaihoc = textBox30.Text;
-            dangvien.hocvi = textBox21.Text;
-            dangvien.hocham = textBox22.Text;
-            dangvien.lyluanct = textBox23.Text;
-            dangvien.ngoaingu = textBox24.Text;
-            dangvien.tinhoc = textBox25.Text;
-            dangvien.tinhtrangsuckhoe = textBox26.Text;
-            dangvien.thuongbinhloai = textBox27.Text;
-
-            dangvien.giadinh = string.Join(", ", l.ToArray());
-
-
-            dangvien.cmnd = textBox28.Text; ;
-            dangvien.cancuoccdan = textBox29.Text;
-
-            if (dt9 == true)
-            {
-                dangvien.mienCtac = dateTimePicker9.Value;
-            }
-            else
-            {
-                dangvien.mienCtac = null;
-            }
-        }
-
-
-        private void formThemVaThongTinDangVien_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            usercontrolForm.closeForm();
-        }
-
-
-        private void getinfor()
-        {
-
-            connectDb con = new connectDb();
-            con.con.Open();
-                using (SqlCommand cmd = new SqlCommand("select * from ttcbDv where solylich='" + dangvien.solylich + "'", con.con))
-                {
-                    using (SqlDataReader read = cmd.ExecuteReader())
+                    DialogResult dr = MessageBox.Show("Bạn có muốn thêm người này vào danh sách Đảng viên không?\n Tên Đảng viên:  " + tendangdung + "\n" +
+                        "Số lý lịch: " + solylich + "\n" +
+                        "Số thẻ Đảng viên: " + sothedangvien, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
                     {
-                        while (read.Read())
-                        {
-                            textBox1.Text = read.GetString(2);
-                            gioitinh = read.GetString(3);
-                            textBox2.Text = read.GetString(4);//
+                        con.addSllVaSt(dangvien.anh, dangvien.solylich, dangvien.sothedangvien);
+                        con.updateDangvien(tendangdung, solylich, sothedangvien);
+                        con.TTCBDangVien("insert", solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
+                         quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
+                         nghenghiephiennay, ngayvaodang, taichibo, nguoigt1, chucvudonvi1,
+                         nguoigt2, chucvudonvi2, ngaycap, ngaychinhthuc, taichibo2,
+                         ngayduoctuyendung, coquantuyendung, ngayvaodoan, thamgiatochucxh,
+                         ngaynhapngu, ngayxuatngu, trinhdohiennay, gdphothong, gdNgheNghiep,
+                         gddaihoc, gdsaudaihoc, hocvi, hocham, lyluanct, ngoaingu, tinhoc,
+                         tinhtrangsuckhoe, thuongbinhloai, giadinh, cmnd, cancuoccdan, mienCtac);
 
+                        con.DaoTaoChung2("insert", solylich, sothedangvien, khenthuong, huyhieudang, danhhieu, kyluat);
 
-                            dateTimePicker1.Value = read.GetDateTime(5);
+                        con.Ddls("insert", solylich, sothedangvien, bixoaten, thoigian,
+                                        xoataichibo, ketnaplai, ngayvao, vaochibo,
+                                        vaonguoigt1, vaochucvu1, vaodonvi1, vaonguoigt2, vaochucvu2, vaodonvi2,
+                                        ngaychinhthuc2, vaochibo2, ngaykhoiphucdangtich, vaochibo3, ngaybikyluat,
+                                        thongtinkyluat, ngaylamviecchedocu, thongtinchedocu);
+                        con.Qhng("insert", solylich, sothedangvien, dinuocngoaitu,
+                            dinuocngoaiden, thongtindinuocngoai, thamgiatochucnuocngoai, nguoithannuocngoai);
 
-                        textBox3.Text = read.GetString(6);
-                        textBox4.Text = read.GetString(7);
-                        textBox5.Text = read.GetString(8);
-                        textBox6.Text = read.GetString(9);
-                        comboBox2.Text = read.GetString(10);
-                        comboBox1.Text = read.GetString(11);
-                        textBox7.Text = read.GetString(12);
-                        textBox8.Text = read.GetString(13);
+                        con.hoancanhgd("insert", solylich, sothedangvien, tongthunhap, binhquandaunguoi,
+                                       nhaoduoccap, dientichnhaoduoccap, nhaotumua, dientichnhaotumua,
+                                        datoduoccap, datotumua, hdkinhte, dientichtrangtrai, soldthue,
+                                        taisancogiatricao, giatri);
+                        MessageBox.Show("Thêm đảng viên thành công.\n" +
+                            "Tên Đảng viên: " + tendangdung + "\n" +
+                            "Số lý lịch: " + solylich + "\n" +
+                            "Số thẻ Đảng viên: " + sothedangvien, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            if (!read.IsDBNull(14))
-                            {
-                            dateTimePicker2.Value = read.GetDateTime(14);
-                            }
-                            else
-                            {
-                            dateTimePicker2.Value = DateTime.Today;
-                            }
-
-                        comboBox3.Text = read.GetString(15);
-                        textBox10.Text = read.GetString(16);
-                        textBox11.Text = read.GetString(17);
-                        textBox12.Text = read.GetString(18);
-                        textBox13.Text = read.GetString(19);
-
-                            if (!read.IsDBNull(20))
-                            {
-                            dateTimePicker3.Value = read.GetDateTime(20);
-                            }
-                            else
-                            {
-                            dateTimePicker3.Value = DateTime.Today;
-                            }
-
-                            if (!read.IsDBNull(21))
-                            {
-                            dateTimePicker4.Value = read.GetDateTime(21);
-                            }
-                            else
-                            {
-                            dateTimePicker4.Value = DateTime.Today;
-                            }
-
-
-                        comboBox4.SelectedText = read.GetString(22);
-
-                            if (!read.IsDBNull(23))
-                            {
-                            dateTimePicker5.Value = read.GetDateTime(23);
-                            }
-                            else
-                            {
-                            dateTimePicker5.Value = DateTime.Today;
-                            }
-
-                        textBox15.Text = read.GetString(24);
-
-                            if (!read.IsDBNull(25))
-                            {
-                            dateTimePicker6.Value = read.GetDateTime(25);
-                            }
-                            else
-                            {
-                            dateTimePicker6.Value = DateTime.Today;
-                            }
-
-                        textBox16.Text = read.GetString(26);
-
-                            if (!read.IsDBNull(27))
-                            {
-                            dateTimePicker7.Value = read.GetDateTime(27);
-                            }
-                            else
-                            {
-                            dateTimePicker7.Value = DateTime.Today;
-                            }
-
-                            if (!read.IsDBNull(28))
-                            {
-                            dateTimePicker8.Value = read.GetDateTime(28);
-                            }
-                            else
-                            {
-                            dateTimePicker8.Value = DateTime.Today;
-                            }
-
-
-                        textBox17.Text = read.GetString(29);
-                        textBox18.Text = read.GetString(30);
-                        textBox19.Text = read.GetString(31);
-                        textBox20.Text = read.GetString(32);
-                        textBox30.Text = read.GetString(33);
-                        textBox21.Text = read.GetString(34);
-                        textBox22.Text = read.GetString(35);
-                        textBox23.Text = read.GetString(36);
-                        textBox24.Text = read.GetString(37);
-                        textBox25.Text = read.GetString(38);
-                        textBox26.Text = read.GetString(39);
-                        textBox27.Text = read.GetString(40);
-                            giadinh = read.GetString(41);
-                        textBox28.Text = read.GetString(42);
-                            textBox29.Text = read.GetString(43);
-
-                            if (!read.IsDBNull(44))
-                            {
-                                dateTimePicker9.Value = read.GetDateTime(44);
-                            }
-                            else
-                            {
-                                dateTimePicker9.Value = DateTime.Today;
-                            }
+                        uclDangVien uc = new uclDangVien();
+                        uc.textBox1.Text = "";
+                        uc.textBox2.Text = "";
+                        uc.pictureBox1.Image = uc.pictureBox1.InitialImage;
+                        //rmvAll();
+                        this.Close();
                         
                     }
                 }
-            }
-                
+                else if (check == true)
+                {
+                    con.updateAnh(dangvien.anh, dangvien.solylich, dangvien.sothedangvien);
+                    con.updateDangvien(tendangdung, solylich, sothedangvien);
+                    con.TTCBDangVien("update", solylich, sothedangvien, tendangdung, gioitinh, tenkhaisinh, ngaysinh, noisinh,
+                     quequan, noithuongtru, noitamtru, dantoc, tongiao, thanhphangd,
+                     nghenghiephiennay, ngayvaodang, taichibo, nguoigt1, chucvudonvi1,
+                     nguoigt2, chucvudonvi2, ngaycap, ngaychinhthuc, taichibo2,
+                     ngayduoctuyendung, coquantuyendung, ngayvaodoan, thamgiatochucxh,
+                     ngaynhapngu, ngayxuatngu, trinhdohiennay, gdphothong, gdNgheNghiep,
+                     gddaihoc, gdsaudaihoc, hocvi, hocham, lyluanct, ngoaingu, tinhoc,
+                     tinhtrangsuckhoe, thuongbinhloai, giadinh, cmnd, cancuoccdan, mienCtac);
 
-            con.con.Close();            
+                    con.DaoTaoChung2("update", solylich, sothedangvien, khenthuong, huyhieudang, danhhieu, kyluat);
+
+                    con.Ddls("update", solylich, sothedangvien, bixoaten, thoigian,
+                                    xoataichibo, ketnaplai, ngayvao, vaochibo,
+                                    vaonguoigt1, vaochucvu1, vaodonvi1, vaonguoigt2, vaochucvu2, vaodonvi2,
+                                    ngaychinhthuc2, vaochibo2, ngaykhoiphucdangtich, vaochibo3, ngaybikyluat,
+                                    thongtinkyluat, ngaylamviecchedocu, thongtinchedocu);
+                    con.Qhng("update", solylich, sothedangvien, dinuocngoaitu,
+                        dinuocngoaiden, thongtindinuocngoai, thamgiatochucnuocngoai, nguoithannuocngoai);
+
+                    con.hoancanhgd("update", solylich, sothedangvien, tongthunhap, binhquandaunguoi,
+                                   nhaoduoccap, dientichnhaoduoccap, nhaotumua, dientichnhaotumua,
+                                    datoduoccap, datotumua, hdkinhte, dientichtrangtrai, soldthue,
+                                    taisancogiatricao, giatri);
+                    MessageBox.Show("Cập nhật đảng viên thành công.\n" +
+                        "Tên Đảng viên: " + tendangdung + "\n" +
+                        "Số lý lịch: " + solylich + "\n" +
+                        "Số thẻ Đảng viên: " + sothedangvien, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    
+                   // rmvAll();
+                    this.Close();
+                    
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (button2.Text == "1 <<")
+            {
+                button2.Visible = false;
+                button1.Text = ">> 2";
+                ucThongTin1.Instance.BringToFront();
+            }
+            else if (button2.Text == "2 <<")
+            {
+                button2.Visible = true;
+                button2.Text = "1 <<";
+                button1.Text = ">> 3";
+                ucThongTin2.Instance.BringToFront();
+            }
+            else if (button2.Text == "3 <<")
+            {
+                button2.Visible = true;
+                button2.Text = "2 <<";
+                button1.Text = ">> 4";
+                ucThongTin3.Instance.BringToFront();
+            }
+            else if (button2.Text == "4 <<")
+            {
+                button2.Visible = true;
+                button2.Text = "3 <<";
+                button1.Text = ">> 5";
+                ucThongTin4.Instance.BringToFront();
+            }
+            else if (button2.Text == "5 <<")
+            {
+                button2.Visible = true;
+                button2.Text = "4 <<";
+                button1.Text = ">> 6";
+                ucThongTin5.Instance.BringToFront();
+            }
+        }
+
+        private void setInfor()
+        {
+            
+            dangvien.tongthunhap = ucThongTin6.Instance.textBox1.Text;
+            dangvien.binhquandaunguoi = ucThongTin6.Instance.textBox2.Text;
+            dangvien.nhaoduoccap = ucThongTin6.Instance.textBox3.Text;
+            dangvien.dientichnhaoduoccap = ucThongTin6.Instance.textBox4.Text;
+            dangvien.nhaotumua = ucThongTin6.Instance.textBox5.Text;
+            dangvien.dientichnhaotumua = ucThongTin6.Instance.textBox6.Text;
+            dangvien.datoduoccap = ucThongTin6.Instance.textBox7.Text;
+            dangvien.datotumua = ucThongTin6.Instance.textBox8.Text;
+            dangvien.hdkinhte = ucThongTin6.Instance.textBox9.Text;
+            dangvien.dientichtrangtrai = ucThongTin6.Instance.textBox10.Text;
+            dangvien.soldthue = ucThongTin6.Instance.textBox11.Text;
+            dangvien.taisancogiatricao = ucThongTin6.Instance.richTextBox1.Text;
+            dangvien.giatri = ucThongTin6.Instance.textBox12.Text;
+        }
+
+        public void setAllInfor()
+        {
+
+
+            solylich = dangvien.solylich;
+            sothedangvien = dangvien.sothedangvien;
+
+
+            // thong tin co ban 1
+            tendangdung = dangvien.tendangdung;
+            gioitinh = dangvien.gioitinh;
+
+            tenkhaisinh = dangvien.tenkhaisinh;
+            ngaysinh = dangvien.ngaysinh;
+
+            noisinh = dangvien.noisinh;
+            quequan = dangvien.quequan;
+            noithuongtru = dangvien.noithuongtru;
+            noitamtru = dangvien.noitamtru;
+            dantoc = dangvien.dantoc;
+            tongiao = dangvien.tongiao;
+            thanhphangd = dangvien.thanhphangd;
+            nghenghiephiennay = dangvien.nghenghiephiennay;
+
+            ngayvaodang = dangvien.ngayvaodang;
+
+
+            taichibo = dangvien.taichibo;
+            nguoigt1 = dangvien.nguoigt1;
+            chucvudonvi1 = dangvien.chucvudonvi1;
+            nguoigt2 = dangvien.nguoigt2;
+            chucvudonvi2 = dangvien.chucvudonvi2;
+
+            ngaycap = dangvien.ngaycap;
+            ngaychinhthuc = dangvien.ngaychinhthuc;
+
+
+            taichibo2 = dangvien.taichibo2;
+
+            ngayduoctuyendung = dangvien.ngayduoctuyendung;
+
+
+            coquantuyendung = dangvien.coquantuyendung;
+            ngayvaodoan = dangvien.ngayvaodoan;
+
+
+
+            thamgiatochucxh = dangvien.thamgiatochucxh;
+
+            ngaynhapngu = dangvien.ngaynhapngu;
+
+            ngayxuatngu = dangvien.ngayxuatngu;
+
+
+            trinhdohiennay = dangvien.trinhdohiennay;
+            gdphothong = dangvien.gdphothong;
+            gdNgheNghiep = dangvien.gdNgheNghiep;
+            gddaihoc = dangvien.gddaihoc;
+            gdsaudaihoc = dangvien.gdsaudaihoc;
+            hocvi = dangvien.hocvi;
+            hocham = dangvien.hocham;
+            lyluanct = dangvien.lyluanct;
+            ngoaingu = dangvien.ngoaingu;
+            tinhoc = dangvien.tinhoc;
+            tinhtrangsuckhoe = dangvien.tinhtrangsuckhoe;
+            thuongbinhloai = dangvien.thuongbinhloai;
+
+            giadinh = dangvien.giadinh;
+
+
+            cmnd = dangvien.cmnd;
+            cancuoccdan = dangvien.cancuoccdan;
+
+            mienCtac = dangvien.mienCtac;
+
+
+            //// dao tao chung 3
+
+            khenthuong = dangvien.khenthuong;
+            huyhieudang = dangvien.huyhieudang;
+
+            danhhieu = dangvien.danhhieu;
+            kyluat = dangvien.kyluat;
+
+
+            //// dac dien lich su va quan he nuoc ngoai 4
+            ///
+
+            bixoaten = dangvien.bixoaten;
+            thoigian = dangvien.thoigian;
+
+
+            xoataichibo = dangvien.xoataichibo;
+            ketnaplai = dangvien.ketnaplai;
+            ngayvao = dangvien.ngayvao;
+
+
+
+            vaochibo = dangvien.vaochibo;
+            vaonguoigt1 = dangvien.vaonguoigt1;
+            vaochucvu1 = dangvien.vaochucvu1;
+            vaodonvi1 = dangvien.vaodonvi1;
+            vaonguoigt2 = dangvien.vaonguoigt2;
+            vaochucvu2 = dangvien.vaochucvu2;
+            vaodonvi2 = dangvien.vaodonvi2;
+
+
+            ngaychinhthuc2 = dangvien.ngaychinhthuc2;
+
+
+
+            vaochibo2 = dangvien.vaochibo2;
+
+
+            ngaykhoiphucdangtich = dangvien.ngaykhoiphucdangtich;
+
+
+            vaochibo3 = dangvien.vaochibo3;
+
+            ngaybikyluat = dangvien.ngaybikyluat;
+
+
+            thongtinkyluat = dangvien.thongtinkyluat;
+
+            ngaylamviecchedocu = dangvien.ngaylamviecchedocu;
+
+
+            thongtinchedocu = dangvien.thongtinchedocu;
+
+            dinuocngoaitu = dangvien.dinuocngoaitu;
+
+
+            dinuocngoaiden = dangvien.dinuocngoaiden;
+
+
+            thongtindinuocngoai = dangvien.thongtindinuocngoai;
+            thamgiatochucnuocngoai = dangvien.thamgiatochucnuocngoai;
+            nguoithannuocngoai = dangvien.nguoithannuocngoai;
+
+            //setInfor();
+
+            // hoan canh gia dinh 6
+            tongthunhap = dangvien.tongthunhap;
+            binhquandaunguoi = dangvien.binhquandaunguoi;
+            nhaoduoccap = dangvien.nhaoduoccap;
+            dientichnhaoduoccap = dangvien.dientichnhaoduoccap;
+            nhaotumua = dangvien.nhaotumua;
+            dientichnhaotumua = dangvien.dientichnhaotumua;
+            datoduoccap = dangvien.datoduoccap;
+            datotumua = dangvien.datotumua;
+            hdkinhte = dangvien.hdkinhte;
+            dientichtrangtrai = dangvien.dientichtrangtrai;
+            soldthue = dangvien.soldthue;
+            taisancogiatricao = dangvien.taisancogiatricao;
+            giatri = dangvien.giatri;
+        }
+
+        private void formThemVaThongTinDangVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            foreach (Control c in panel1.Controls)
+            {
+                foreach (Control c1 in c.Controls)
+                {
+                    if (c1 is TextBox)
+                    {
+                        TextBox t = (TextBox)c1;
+                        t.Text = "";
+                    }
+                    if(c1 is DateTimePicker)
+                    {
+                        DateTimePicker dt = (DateTimePicker)c1;
+                        dt.MaxDate = DateTime.Now;
+                        dt.Value = DateTime.Today;
+                    }
+                    if(c1 is ComboBox)
+                    {
+                        ComboBox cb = (ComboBox)c1;
+                        cb.SelectedIndex = 0;
+                    }
+                    if(c1 is RadioButton)
+                    {
+                        RadioButton rdb = (RadioButton)c1;
+                        rdb.Checked = false;
+                    }
+                    if (c1 is CheckBox)
+                    {
+                        CheckBox rdb = (CheckBox)c1;
+                        rdb.Checked = false;
+                    }
+                    if(c1 is RichTextBox)
+                    {
+                        RichTextBox rdb = (RichTextBox)c1;
+                        rdb.Text = "";
+                    }
+                }
+            }
+        }
+
+        private void formThemVaThongTinDangVien_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

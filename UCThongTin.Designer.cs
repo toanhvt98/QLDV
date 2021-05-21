@@ -29,15 +29,7 @@ namespace QLDV
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.anhdangvienDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.solylichDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sotheDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tendangvienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dangvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDVDataSet = new QLDV.QLDVDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,28 +37,17 @@ namespace QLDV
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.dangvienTableAdapter = new QLDV.QLDVDataSetTableAdapters.dangvienTableAdapter();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangvienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDVDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.anhdangvienDataGridViewImageColumn,
-            this.solylichDataGridViewTextBoxColumn,
-            this.sotheDataGridViewTextBoxColumn,
-            this.tendangvienDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.dangvienBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(153, 135);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
@@ -75,61 +56,7 @@ namespace QLDV
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(820, 393);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // anhdangvienDataGridViewImageColumn
-            // 
-            this.anhdangvienDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.anhdangvienDataGridViewImageColumn.DataPropertyName = "anhdangvien";
-            this.anhdangvienDataGridViewImageColumn.HeaderText = "Ảnh đảng viên";
-            this.anhdangvienDataGridViewImageColumn.MinimumWidth = 6;
-            this.anhdangvienDataGridViewImageColumn.Name = "anhdangvienDataGridViewImageColumn";
-            this.anhdangvienDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // solylichDataGridViewTextBoxColumn
-            // 
-            this.solylichDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.solylichDataGridViewTextBoxColumn.DataPropertyName = "solylich";
-            this.solylichDataGridViewTextBoxColumn.HeaderText = "Số lý lịch";
-            this.solylichDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.solylichDataGridViewTextBoxColumn.Name = "solylichDataGridViewTextBoxColumn";
-            this.solylichDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sotheDataGridViewTextBoxColumn
-            // 
-            this.sotheDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sotheDataGridViewTextBoxColumn.DataPropertyName = "sothe";
-            this.sotheDataGridViewTextBoxColumn.HeaderText = "Số thẻ";
-            this.sotheDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sotheDataGridViewTextBoxColumn.Name = "sotheDataGridViewTextBoxColumn";
-            this.sotheDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tendangvienDataGridViewTextBoxColumn
-            // 
-            this.tendangvienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tendangvienDataGridViewTextBoxColumn.DataPropertyName = "tendangvien";
-            this.tendangvienDataGridViewTextBoxColumn.HeaderText = "Tên đảng viên";
-            this.tendangvienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tendangvienDataGridViewTextBoxColumn.Name = "tendangvienDataGridViewTextBoxColumn";
-            this.tendangvienDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dangvienBindingSource
-            // 
-            this.dangvienBindingSource.DataMember = "dangvien";
-            this.dangvienBindingSource.DataSource = this.qLDVDataSet;
-            // 
-            // qLDVDataSet
-            // 
-            this.qLDVDataSet.DataSetName = "QLDVDataSet";
-            this.qLDVDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label4
             // 
@@ -150,6 +77,7 @@ namespace QLDV
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(188, 22);
             this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -174,6 +102,7 @@ namespace QLDV
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Số lý lịch";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -187,6 +116,7 @@ namespace QLDV
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Số thẻ";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -200,6 +130,7 @@ namespace QLDV
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Tên";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // button1
             // 
@@ -215,10 +146,6 @@ namespace QLDV
             this.button1.Text = "Xem";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dangvienTableAdapter
-            // 
-            this.dangvienTableAdapter.ClearBeforeFill = true;
             // 
             // button2
             // 
@@ -266,8 +193,6 @@ namespace QLDV
             this.Size = new System.Drawing.Size(1050, 579);
             this.Load += new System.EventHandler(this.UCThongTin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangvienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDVDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,14 +208,6 @@ namespace QLDV
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.BindingSource dangvienBindingSource;
-        private QLDVDataSet qLDVDataSet;
-        private QLDVDataSetTableAdapters.dangvienTableAdapter dangvienTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn anhdangvienDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn solylichDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sotheDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tendangvienDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }

@@ -9,36 +9,51 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace QLDV
 {
     public partial class ucThongKe : UserControl
     {
+        string nam = null;
+        string nu = null;
+        string congCm = null;
+        string huyhieu = null;
+        DataTable dt = new DataTable();
         public ucThongKe()
         {
             InitializeComponent();
+            for(int i = 0; i < 5; i++)
+            {
+                dt.Columns.Add(i.ToString());
+            }
         }
 
         private void ucThongKe_Load(object sender, EventArgs e)
         {
+            connectDb con = new connectDb();
+            var table = new DataTable();
+            for (int i = 0; i < 87; i++)
+            {
+                table.Columns.Add("Columns" + i.ToString());
+            }
+            //con.rfDtg4excel(table,dataGridView1);
+            
             foreach (DataGridViewColumn col in dataGridView1.Columns)
             {
                 col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             radioButton1.Checked = true;
-            
+
             
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             connectDb con = new connectDb();
-
-                con.thongke(dataGridView1.Rows[0].Cells[0], dataGridView1.Rows[0].Cells[1], dataGridView1.Rows[0].Cells[2],
-                    dataGridView1.Rows[0].Cells[3], dataGridView1.Rows[0].Cells[4], comboBox1.Text);
-
-            
-
+                con.thongke(label4, label6, label8,
+                    label10, label12, comboBox1.Text);
+            con.rfDtg4ThongKeChibo(dataGridView1,comboBox1.Text);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -85,13 +100,24 @@ namespace QLDV
             comboBox1.ValueMember = "Key";
 
             con.con.Close();
+            
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             connectDb con = new connectDb();
-            con.thongkeTuoi(dataGridView1.Rows[0].Cells[0], dataGridView1.Rows[0].Cells[1], dataGridView1.Rows[0].Cells[2],
-                   dataGridView1.Rows[0].Cells[3], dataGridView1.Rows[0].Cells[4], comboBox2.Text);
+            con.thongkeTuoi(label4, label6, label8,
+                    label10, label12, comboBox2.Text);
+            con.rfDtg4ThongKeDoTuoi(dataGridView1, comboBox2.Text);
         }
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }

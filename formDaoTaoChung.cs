@@ -12,12 +12,12 @@ namespace QLDV
 {
     public partial class formDaoTaoChung : Form
     {
-        private readonly formThemVaThongTinDangVien3 ucDTC3;
+        private readonly ucThongTin3 ucDTC3;
 
         public static bool dt1 = false;
         public static bool dt2 = false;
 
-        public formDaoTaoChung(formThemVaThongTinDangVien3 ucDTC3)
+        public formDaoTaoChung(ucThongTin3 ucDTC3)
         {
             InitializeComponent();
             this.ucDTC3 = ucDTC3;
@@ -92,6 +92,11 @@ namespace QLDV
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formDaoTaoChung_Load(object sender, EventArgs e)
         {
 
         }

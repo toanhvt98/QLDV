@@ -76,7 +76,7 @@ namespace QLDV
                                 ftvttdv = new formThemVaThongTinDangVien();                          
                                 ftvttdv.AutoScroll = true;
                             }
-                            ftvttdv.Show();
+                            ftvttdv.ShowDialog();
                             textBox1.Text = "";
                             textBox2.Text = "";
                             pictureBox1.Image = pictureBox1.InitialImage;
@@ -115,22 +115,27 @@ namespace QLDV
 
         private void button4_Click(object sender, EventArgs e)
         {
-            getinfor();
-            formThemVaThongTinDangVien.check = true;
-
-            formThemVaThongTinDangVien3.check = true;
-            formThemVaThongTinDangVien4.check = true;
-
-            formThemVaThongTinDangVien6.check = true;
+            
 
             formThemVaThongTinDangVien ftvttdv = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            
             if (ftvttdv == null)
             {
+
                 ftvttdv = new formThemVaThongTinDangVien();
                 ftvttdv.AutoScroll = true;
+                formThemVaThongTinDangVien.check = true;
+                getinfor();
+                ucThongTin1.check = true;
+                
+                
+
+
+                ucThongTin3.check = true;
+                ucThongTin4.check = true;
+                ucThongTin6.check = true;
+               
             }
-            ftvttdv.Show();
+            ftvttdv.ShowDialog();
         }
 
         private void getinfor()

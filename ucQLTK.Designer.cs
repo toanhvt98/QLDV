@@ -128,6 +128,7 @@ namespace QLDV
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tên";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -141,6 +142,7 @@ namespace QLDV
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Mã chi bộ";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // dataGridView1
             // 

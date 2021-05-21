@@ -12,6 +12,20 @@ namespace QLDV
 {
     public partial class formMain : Form
     {
+
+        private static formMain _instance;
+        public static formMain Instance
+        {
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new formMain();
+                }
+                return _instance;
+
+            }
+        }
         public formMain()
         {
             InitializeComponent();
@@ -52,6 +66,7 @@ namespace QLDV
         {
             uclDangVien uc = new uclDangVien();
             usercontrolForm.showcontrol(uc, panel1);
+            
         }
 
         private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,6 +93,10 @@ namespace QLDV
             }
         }
 
-
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ucQuanLyFilecs uc = new ucQuanLyFilecs();
+            usercontrolForm.showcontrol(uc, panel1);
+        }
     }
 }

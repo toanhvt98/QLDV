@@ -61,38 +61,40 @@ namespace QLDV
 
         private void button2_Click(object sender, EventArgs e)
         {
-            formAddAcc faa = (formAddAcc)Application.OpenForms["formAddAcc"];
-            if(faa == null)
-            {
-                faa = new formAddAcc(this);
-            }
-            faa.Show();
+            formAddAcc faa = new formAddAcc(this);
+            
+            faa.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            formUpdateAcc fua = (formUpdateAcc)Application.OpenForms["formUpdateAcc"];
-            if (fua == null)
+            if (dataGridView1.CurrentRow != null)
             {
-                fua = new formUpdateAcc(this);
+                formUpdateAcc fua = new formUpdateAcc(this);
+
+
                 fua.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 fua.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 fua.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+                fua.ShowDialog();
             }
-            fua.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string tentk = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            connectDb con = new connectDb();
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa tài khoản: "+tentk+" không?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if(dr == DialogResult.Yes)
+            if (dataGridView1.CurrentRow != null)
             {
-                con.del(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),"taikhoan");
-                MessageBox.Show("Xóa thành công tài khoản: " + tentk  , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string tentk = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                connectDb con = new connectDb();
+                DialogResult dr = MessageBox.Show("Bạn có muốn xóa tài khoản: " + tentk + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    con.del(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), "taikhoan");
+                    MessageBox.Show("Xóa thành công tài khoản: " + tentk, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                loaddata();
             }
-            loaddata();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -109,6 +111,17 @@ namespace QLDV
             }
             setViewDtg();
             con.dtgFilter(dataGridView1,col,textBox1.Text,"taikhoan");
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
         }
     }
 }

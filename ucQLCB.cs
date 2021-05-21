@@ -58,44 +58,46 @@ namespace QLDV
 
         private void button2_Click(object sender, EventArgs e)
         {
-            formAddChiBo facb = (formAddChiBo)Application.OpenForms["formAddChiBo"];
-            if(facb == null)
-            {
-                facb = new formAddChiBo(this);
-            }
-            facb.Show();
+            
+                formAddChiBo facb = new formAddChiBo(this);
+
+            facb.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            formUpdateChiBo facb = (formUpdateChiBo)Application.OpenForms["formAddChiBo"];
-            if (facb == null)
-            {
-                facb = new formUpdateChiBo(this);
-                facb.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                facb.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                facb.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            }
-            facb.Show();
+            if (dataGridView1.CurrentRow != null) {
+            formUpdateChiBo facb = new formUpdateChiBo(this);
+
+            facb = new formUpdateChiBo(this);
+            facb.id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            facb.textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            facb.textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+
+            facb.ShowDialog();
+        }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string tenchibo = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            connectDb con = new connectDb();
-            DialogResult dr = MessageBox.Show("Bạn có muốn xóa chi bộ: " + tenchibo + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (dataGridView1.CurrentRow != null)
             {
-                con.del(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), "chibo");
-                MessageBox.Show("Xóa thành công chi bộ: " + tenchibo, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string tenchibo = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                connectDb con = new connectDb();
+                DialogResult dr = MessageBox.Show("Bạn có muốn xóa chi bộ: " + tenchibo + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    con.del(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value), "chibo");
+                    MessageBox.Show("Xóa thành công chi bộ: " + tenchibo, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                loaddata();
             }
-            loaddata();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             connectDb con = new connectDb();
-            string col = "";
+            string col;
             if (radioButton1.Checked)
             {
                 col = "ten";
@@ -106,6 +108,16 @@ namespace QLDV
             }
             setViewDtg();
             con.dtgFilter(dataGridView1,col,textBox1.Text,"chibo");
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
         }
     }
 }

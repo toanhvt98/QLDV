@@ -10,40 +10,35 @@ using System.Windows.Forms;
 
 namespace QLDV
 {
-    public partial class formThemVaThongTinDangVien2 : Form
+    public partial class ucThongTin2 : UserControl
     {
-
         public bool dt1 = false;
         public bool dt2 = false;
-        public formThemVaThongTinDangVien2()
+        public ucThongTin2()
         {
             InitializeComponent();
         }
-
-        private void formThemVaThongTinDangVien2_Load(object sender, EventArgs e)
+        private static ucThongTin2 _instance;
+        public static ucThongTin2 Instance
         {
-            int x = (panel2.Size.Width - label1.Size.Width) / 2;
-            label1.Location = new Point(x, label1.Location.Y);
-            label1.Text = "II. TÓM TẮT QUÁ TRÌNH HOẠT ĐỘNG VÀ CÔNG TÁC";
+            get
+            {
+                if(_instance == null)
+                {
+                    _instance = new ucThongTin2();
+                }
+                return _instance;
+            }
+        }
+
+        private void ucThongTin2_Load(object sender, EventArgs e)
+        {
             dateTimePicker1.ValueChanged += new EventHandler(dateTimePicker1_ValueChanged);
             dateTimePicker2.ValueChanged += new EventHandler(dateTimePicker2_ValueChanged);
             dateTimePicker1.MaxDate = DateTime.Now;
             dateTimePicker2.MaxDate = DateTime.Now;
             loaddata();
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             dt1 = true;
@@ -53,12 +48,9 @@ namespace QLDV
         {
             dt2 = true;
         }
-
-
-
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
             connectDb con = new connectDb();
             if (dt1 == true && dt2 == true)
             {
@@ -150,45 +142,6 @@ namespace QLDV
                 textBox3.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
             }
 
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            formThemVaThongTinDangVien f = (formThemVaThongTinDangVien)Application.OpenForms["formThemVaThongTinDangVien"];
-            if (f == null)
-            {
-                f = new formThemVaThongTinDangVien();
-                f.AutoScroll = true;
-            }
-            f.Show();
-            this.Hide();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            formThemVaThongTinDangVien3 f = (formThemVaThongTinDangVien3)Application.OpenForms["formThemVaThongTinDangVien3"];
-            if (f == null)
-            {
-                f = new formThemVaThongTinDangVien3();
-                f.AutoScroll = true;
-            }
-            f.Show();
-            this.Hide();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void formThemVaThongTinDangVien2_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            usercontrolForm.closeForm();
-        }
-
-        private void formThemVaThongTinDangVien2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            usercontrolForm.closeForm();
         }
     }
 }
