@@ -182,7 +182,7 @@ namespace QLDV
                         saveForExcel.q2 = " and huyhieu != null ";
                     }
                     else
-                        saveForExcel.q2 = "t";
+                        saveForExcel.q2 = "";
                 
             }
             DataTable tb1 = new DataTable();
