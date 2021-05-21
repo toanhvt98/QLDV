@@ -159,7 +159,7 @@ namespace QLDV
                         saveForExcel.q2 = " and huyhieu != null ";
                     }
                     else
-                        saveForExcel.q2 = "";
+                        saveForExcel.q2 = "t";
                 }
                 else
                 {
